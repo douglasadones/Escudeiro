@@ -1,0 +1,104 @@
+[gd_scene load_steps=19 format=4 uid="uid://bovgdvr1ebglg"]
+
+[ext_resource type="Texture2D" uid="uid://pgqpccpwxmm2" path="res://assets/Caverna/Piso_textura_caverna.png" id="1_kchbl"]
+[ext_resource type="PackedScene" uid="uid://c7ni6wpm5nbkc" path="res://scenes/levels/Caverna/env/background.tscn" id="2_u41vv"]
+[ext_resource type="Texture2D" uid="uid://b7841dcnholw7" path="res://assets/Caverna/Barril_caverma.png" id="3_b08eq"]
+[ext_resource type="Texture2D" uid="uid://bspne4x6gva2l" path="res://assets/Caverna/Palanque_Barril_caverna.png" id="3_t4h06"]
+[ext_resource type="PackedScene" uid="uid://bonufneox2ebu" path="res://scenes/player/player.tscn" id="3_u41vv"]
+[ext_resource type="Texture2D" uid="uid://dmxjvw7evn56m" path="res://assets/Caverna/Palanque_caverna.png" id="3_y087k"]
+[ext_resource type="Texture2D" uid="uid://crxogex7l5cu5" path="res://assets/Caverna/Pilar de madeira.png" id="5_1y6au"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4h06"]
+texture = ExtResource("3_b08eq")
+texture_region_size = Vector2i(432, 312)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u41vv"]
+tile_size = Vector2i(432, 312)
+sources/0 = SubResource("TileSetAtlasSource_t4h06")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y087k"]
+texture = ExtResource("3_t4h06")
+texture_region_size = Vector2i(636, 576)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b08eq"]
+tile_size = Vector2i(636, 576)
+sources/0 = SubResource("TileSetAtlasSource_y087k")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y6au"]
+texture = ExtResource("3_y087k")
+texture_region_size = Vector2i(636, 264)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1y6au"]
+tile_size = Vector2i(636, 264)
+sources/0 = SubResource("TileSetAtlasSource_1y6au")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b08eq"]
+texture = ExtResource("1_kchbl")
+texture_region_size = Vector2i(96, 162)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -81, 48, -81, 48, 81, -48, 81)
+
+[sub_resource type="TileSet" id="TileSet_t4h06"]
+tile_size = Vector2i(96, 162)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_b08eq")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85lxd"]
+texture = ExtResource("5_1y6au")
+texture_region_size = Vector2i(576, 768)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y087k"]
+tile_size = Vector2i(576, 768)
+sources/0 = SubResource("TileSetAtlasSource_85lxd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y6au"]
+size = Vector2(68, 1575)
+
+[node name="Caverna" type="Node2D"]
+position = Vector2(0, 21)
+
+[node name="LevelDesign" type="Node2D" parent="."]
+
+[node name="barril" type="TileMapLayer" parent="LevelDesign"]
+show_behind_parent = true
+position = Vector2(807, 149)
+tile_map_data = PackedByteArray("AAAFAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_u41vv")
+
+[node name="palanque_barril" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(81, 259)
+tile_map_data = PackedByteArray("AAAKAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_b08eq")
+
+[node name="palanque" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(113, 107)
+tile_map_data = PackedByteArray("AAADAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_1y6au")
+
+[node name="Floor" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-5, 94)
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_t4h06")
+
+[node name="pilar" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-6, -128)
+tile_map_data = PackedByteArray("AAACAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_y087k")
+
+[node name="Background" parent="." instance=ExtResource("2_u41vv")]
+
+[node name="Player" parent="." instance=ExtResource("3_u41vv")]
+position = Vector2(1162, 1038)
+speed = 900
+jump_force = -700
+
+[node name="WorldBorder" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(-32, 764)
+shape = SubResource("RectangleShape2D_1y6au")
