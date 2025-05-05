@@ -1,0 +1,108 @@
+[gd_scene load_steps=18 format=4 uid="uid://bovgdvr1ebglg"]
+
+[ext_resource type="PackedScene" uid="uid://c7ni6wpm5nbkc" path="res://scenes/levels/Caverna/env/background.tscn" id="2_u41vv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ktnf8"]
+load_path = "res://.godot/imported/Barril_caverma.png-6137935695ae83aca120bf35a08b367e.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4h06"]
+texture = SubResource("CompressedTexture2D_ktnf8")
+texture_region_size = Vector2i(432, 312)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u41vv"]
+tile_size = Vector2i(432, 312)
+sources/0 = SubResource("TileSetAtlasSource_t4h06")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kchbl"]
+load_path = "res://.godot/imported/Palanque_Barril_caverna.png-f45a5800b474460a0cddc50db0b96e10.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y087k"]
+texture = SubResource("CompressedTexture2D_kchbl")
+texture_region_size = Vector2i(636, 576)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b08eq"]
+tile_size = Vector2i(636, 576)
+sources/0 = SubResource("TileSetAtlasSource_y087k")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u41vv"]
+load_path = "res://.godot/imported/Palanque_caverna.png-8573b2379619a42b07af1ba6db0212f9.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y6au"]
+texture = SubResource("CompressedTexture2D_u41vv")
+texture_region_size = Vector2i(636, 264)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1y6au"]
+tile_size = Vector2i(636, 264)
+sources/0 = SubResource("TileSetAtlasSource_1y6au")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b08eq"]
+load_path = "res://.godot/imported/Piso_textura_caverna.png-bbae36f4c24b07edd6b8e4e3ab6bfd5e.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b08eq"]
+texture = SubResource("CompressedTexture2D_b08eq")
+texture_region_size = Vector2i(96, 162)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -81, 48, -81, 48, 81, -48, 81)
+
+[sub_resource type="TileSet" id="TileSet_t4h06"]
+tile_size = Vector2i(96, 162)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_b08eq")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t4h06"]
+load_path = "res://.godot/imported/Pilar de madeira.png-8af8cfc2dcdd1efd4abc392f26add9af.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85lxd"]
+texture = SubResource("CompressedTexture2D_t4h06")
+texture_region_size = Vector2i(576, 768)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y087k"]
+tile_size = Vector2i(576, 768)
+sources/0 = SubResource("TileSetAtlasSource_85lxd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y6au"]
+size = Vector2(68, 1575)
+
+[node name="Caverna" type="Node2D"]
+position = Vector2(0, 21)
+
+[node name="LevelDesign" type="Node2D" parent="."]
+
+[node name="barril" type="TileMapLayer" parent="LevelDesign"]
+show_behind_parent = true
+position = Vector2(807, 149)
+tile_map_data = PackedByteArray("AAAFAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_u41vv")
+
+[node name="palanque_barril" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(81, 259)
+tile_map_data = PackedByteArray("AAAKAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_b08eq")
+
+[node name="palanque" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(113, 107)
+tile_map_data = PackedByteArray("AAADAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_1y6au")
+
+[node name="Floor" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-5, 94)
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_t4h06")
+
+[node name="pilar" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-6, -128)
+tile_map_data = PackedByteArray("AAACAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_y087k")
+
+[node name="Background" parent="." instance=ExtResource("2_u41vv")]
+
+[node name="WorldBorder" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(-32, 764)
+shape = SubResource("RectangleShape2D_1y6au")
