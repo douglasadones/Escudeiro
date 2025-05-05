@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7ni6wpm5nbkc"]
+
+[ext_resource type="Texture2D" uid="uid://cqaxasqitw51t" path="res://assets/sprites/Caverna/BG_caverna.png" id="1_simqu"]
+[ext_resource type="Texture2D" uid="uid://0h0k02xjwoen" path="res://assets/sprites/Caverna/BG3_caverna.png" id="2_ntxvk"]
+[ext_resource type="Texture2D" uid="uid://cx5ng77ct3fdw" path="res://assets/sprites/Caverna/BG2_caverna.png" id="3_s0nnj"]
+[ext_resource type="Texture2D" uid="uid://gquw5nv5vb3u" path="res://assets/sprites/Caverna/BG1_caverna.png" id="4_bpbak"]
+[ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="5_bpbak"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="Layer1" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(7680, 1520)
+
+[node name="Texture" type="TextureRect" parent="Layer1"]
+offset_left = -3.0
+offset_right = 7677.0
+offset_bottom = 1536.0
+texture = ExtResource("1_simqu")
+
+[node name="Layer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(7680, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer2"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ntxvk")
+
+[node name="Layer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(7680, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer3"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_s0nnj")
+
+[node name="Layer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(7680, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer4"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_bpbak")
+
+[node name="Mask" parent="." instance=ExtResource("5_bpbak")]
