@@ -1,11 +1,11 @@
 [gd_scene load_steps=46 format=3 uid="uid://drb2riddr2sr6"]
 
-[ext_resource type="Script" uid="uid://6qevp5ufnqh6" path="res://scripts/escudeiro.gd" id="1_cq4o1"]
+[ext_resource type="Script" uid="uid://6qevp5ufnqh6" path="res://scripts/player/escudeiro.gd" id="1_cq4o1"]
 [ext_resource type="Texture2D" uid="uid://cljerioyk0dhy" path="res://assets/sprites/Escudeiro_Sprite Sheet/Recebe_Dano_Escudeiro/Recebe_dano_Escudeiro-Sheet.png" id="2_cq4o1"]
 [ext_resource type="Texture2D" uid="uid://bpwjxfgx1525" path="res://assets/sprites/Escudeiro_Sprite Sheet/Parado_Escudeiro/Idle_escudeiro-Sheet.png" id="3_i0r3n"]
 [ext_resource type="Texture2D" uid="uid://ooe5cnu8wmd6" path="res://assets/sprites/Escudeiro_Sprite Sheet/Pulo_Escudeiro/Escudeiro_pulo_completo.png" id="4_cdifx"]
 [ext_resource type="Texture2D" uid="uid://dek0mqq0qsuu4" path="res://assets/sprites/Escudeiro_Sprite Sheet/Correndo_Escudeiro/Correndo_Escudeiro-Sheet.png" id="5_43a1i"]
-[ext_resource type="PackedScene" uid="uid://b45r4vmfeae23" path="res://scenes/health_bar.tscn" id="5_shct2"]
+[ext_resource type="PackedScene" uid="uid://b45r4vmfeae23" path="res://scenes/ui/health_bar.tscn" id="5_shct2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuoug"]
 atlas = ExtResource("2_cq4o1")

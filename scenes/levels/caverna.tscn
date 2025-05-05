@@ -1,17 +1,17 @@
 [gd_scene load_steps=20 format=3 uid="uid://bdgcw6wpd4e5i"]
 
-[ext_resource type="Script" uid="uid://cfp5d06ra7ciy" path="res://scripts/caverna.gd" id="1_kaa42"]
-[ext_resource type="Texture2D" uid="uid://dsa8cbrrsj3th" path="res://assets/sprites/Caverna/Piso_textura_caverna.png" id="2_o4v3j"]
-[ext_resource type="Texture2D" uid="uid://b3l8f7awce0a" path="res://assets/sprites/Caverna/Palanque_caverna.png" id="3_v25rr"]
-[ext_resource type="Texture2D" uid="uid://dpk4cc2fpjwxj" path="res://assets/sprites/Caverna/Palanque_Barril_caverna.png" id="4_dbd84"]
-[ext_resource type="Texture2D" uid="uid://3clg54awh33g" path="res://assets/sprites/Caverna/Barril_caverma.png" id="5_lvysb"]
-[ext_resource type="PackedScene" uid="uid://drb2riddr2sr6" path="res://scenes/escudeiro.tscn" id="6_ifiqq"]
-[ext_resource type="Texture2D" uid="uid://esil521mag4s" path="res://assets/sprites/Mobília-Estrutura/Caverna/Pilar de madeira.png" id="6_ul8u6"]
-[ext_resource type="Texture2D" uid="uid://di5juh4b1q8b1" path="res://assets/sprites/Mobília-Estrutura/Caverna/Piso_Caverna1.png" id="7_oa03v"]
-[ext_resource type="AudioStream" uid="uid://rg0vlpnycahs" path="res://assets/audio/RPG Game.mp3" id="8_p2bb0"]
+[ext_resource type="Script" uid="uid://cfp5d06ra7ciy" path="res://scripts/levels/caverna.gd" id="1_a23ln"]
+[ext_resource type="Texture2D" uid="uid://dsa8cbrrsj3th" path="res://assets/sprites/Caverna/Piso_textura_caverna.png" id="2_brdyd"]
+[ext_resource type="Texture2D" uid="uid://b3l8f7awce0a" path="res://assets/sprites/Caverna/Palanque_caverna.png" id="3_hhjs4"]
+[ext_resource type="Texture2D" uid="uid://dpk4cc2fpjwxj" path="res://assets/sprites/Caverna/Palanque_Barril_caverna.png" id="4_r4e3i"]
+[ext_resource type="Texture2D" uid="uid://3clg54awh33g" path="res://assets/sprites/Caverna/Barril_caverma.png" id="5_6f5yq"]
+[ext_resource type="Texture2D" uid="uid://esil521mag4s" path="res://assets/sprites/Mobília-Estrutura/Caverna/Pilar de madeira.png" id="6_nbg4h"]
+[ext_resource type="Texture2D" uid="uid://di5juh4b1q8b1" path="res://assets/sprites/Mobília-Estrutura/Caverna/Piso_Caverna1.png" id="7_o5t25"]
+[ext_resource type="PackedScene" uid="uid://drb2riddr2sr6" path="res://scenes/player/escudeiro.tscn" id="8_r57av"]
+[ext_resource type="AudioStream" uid="uid://rg0vlpnycahs" path="res://assets/audio/RPG Game.mp3" id="9_1rehj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8o2b0"]
-texture = ExtResource("2_o4v3j")
+texture = ExtResource("2_brdyd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -74,7 +74,7 @@ texture = ExtResource("2_o4v3j")
 5:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tg61u"]
-texture = ExtResource("3_v25rr")
+texture = ExtResource("3_hhjs4")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -499,7 +499,7 @@ texture = ExtResource("3_v25rr")
 30:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ktab"]
-texture = ExtResource("4_dbd84")
+texture = ExtResource("4_r4e3i")
 14:0/0 = 0
 15:0/0 = 0
 16:0/0 = 0
@@ -1363,7 +1363,7 @@ texture = ExtResource("4_dbd84")
 30:35/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4aiu"]
-texture = ExtResource("5_lvysb")
+texture = ExtResource("5_6f5yq")
 7:0/0 = 0
 8:0/0 = 0
 9:0/0 = 0
@@ -1771,7 +1771,7 @@ texture = ExtResource("5_lvysb")
 25:18/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j6x5v"]
-texture = ExtResource("6_ul8u6")
+texture = ExtResource("6_nbg4h")
 20:1/0 = 0
 21:1/0 = 0
 22:1/0 = 0
@@ -2365,7 +2365,7 @@ texture = ExtResource("6_ul8u6")
 58:47/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u4ve"]
-texture = ExtResource("7_oa03v")
+texture = ExtResource("7_o5t25")
 12:3/0 = 0
 13:3/0 = 0
 14:3/0 = 0
@@ -2735,7 +2735,7 @@ size = Vector2(4311, 20)
 size = Vector2(57, 1437)
 
 [node name="Caverna" type="Node2D"]
-script = ExtResource("1_kaa42")
+script = ExtResource("1_a23ln")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_k0bij")
@@ -2764,9 +2764,9 @@ shape = SubResource("RectangleShape2D_o4v3j")
 position = Vector2(2632, -184)
 shape = SubResource("RectangleShape2D_o4v3j")
 
-[node name="Escudeiro" parent="." instance=ExtResource("6_ifiqq")]
+[node name="Escudeiro" parent="." instance=ExtResource("8_r57av")]
 position = Vector2(-1458, 313)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_p2bb0")
+stream = ExtResource("9_1rehj")
 volume_db = -1.0
