@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://drb2riddr2sr6"]
+[gd_scene load_steps=46 format=3 uid="uid://ca426214fppn1"]
 
 [ext_resource type="Script" uid="uid://6qevp5ufnqh6" path="res://scripts/player/escudeiro.gd" id="1_cq4o1"]
 [ext_resource type="Texture2D" uid="uid://cljerioyk0dhy" path="res://assets/sprites/Escudeiro_Sprite Sheet/Recebe_Dano_Escudeiro/Recebe_dano_Escudeiro-Sheet.png" id="2_cq4o1"]
@@ -311,6 +311,8 @@ position = Vector2(-10, 72)
 shape = SubResource("CapsuleShape2D_b6mvr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, -371)
+limit_left = 0
 
 [node name="healthBar" parent="." instance=ExtResource("5_shct2")]
 offset_left = -127.0

@@ -1,12 +1,14 @@
-[gd_scene load_steps=18 format=4 uid="uid://bovgdvr1ebglg"]
+[gd_scene load_steps=19 format=4 uid="uid://bovgdvr1ebglg"]
 
+[ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
+[ext_resource type="Texture2D" uid="uid://3clg54awh33g" path="res://assets/sprites/Caverna/Barril_caverma.png" id="1_y087k"]
+[ext_resource type="Texture2D" uid="uid://dpk4cc2fpjwxj" path="res://assets/sprites/Caverna/Palanque_Barril_caverna.png" id="2_1y6au"]
 [ext_resource type="PackedScene" uid="uid://c7ni6wpm5nbkc" path="res://scenes/levels/Caverna/env/background.tscn" id="2_u41vv"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ktnf8"]
-load_path = "res://.godot/imported/Barril_caverma.png-6137935695ae83aca120bf35a08b367e.ctex"
+[ext_resource type="Texture2D" uid="uid://b3l8f7awce0a" path="res://assets/sprites/Caverna/Palanque_caverna.png" id="3_85lxd"]
+[ext_resource type="Texture2D" uid="uid://s2yukff8w6yq" path="res://assets/sprites/Caverna/Pilar de madeira.png" id="4_5e8sv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4h06"]
-texture = SubResource("CompressedTexture2D_ktnf8")
+texture = ExtResource("1_y087k")
 texture_region_size = Vector2i(432, 312)
 0:0/0 = 0
 
@@ -14,11 +16,8 @@ texture_region_size = Vector2i(432, 312)
 tile_size = Vector2i(432, 312)
 sources/0 = SubResource("TileSetAtlasSource_t4h06")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kchbl"]
-load_path = "res://.godot/imported/Palanque_Barril_caverna.png-f45a5800b474460a0cddc50db0b96e10.ctex"
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y087k"]
-texture = SubResource("CompressedTexture2D_kchbl")
+texture = ExtResource("2_1y6au")
 texture_region_size = Vector2i(636, 576)
 0:0/0 = 0
 
@@ -26,11 +25,8 @@ texture_region_size = Vector2i(636, 576)
 tile_size = Vector2i(636, 576)
 sources/0 = SubResource("TileSetAtlasSource_y087k")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u41vv"]
-load_path = "res://.godot/imported/Palanque_caverna.png-8573b2379619a42b07af1ba6db0212f9.ctex"
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y6au"]
-texture = SubResource("CompressedTexture2D_u41vv")
+texture = ExtResource("3_85lxd")
 texture_region_size = Vector2i(636, 264)
 0:0/0 = 0
 
@@ -52,11 +48,8 @@ tile_size = Vector2i(96, 162)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_b08eq")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t4h06"]
-load_path = "res://.godot/imported/Pilar de madeira.png-8af8cfc2dcdd1efd4abc392f26add9af.ctex"
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85lxd"]
-texture = SubResource("CompressedTexture2D_t4h06")
+texture = ExtResource("4_5e8sv")
 texture_region_size = Vector2i(576, 768)
 0:0/0 = 0
 1:0/0 = 0
@@ -100,6 +93,9 @@ tile_map_data = PackedByteArray("AAACAAEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_y087k")
 
 [node name="Background" parent="." instance=ExtResource("2_u41vv")]
+
+[node name="Escudeiro" parent="." instance=ExtResource("1_kchbl")]
+position = Vector2(398, 1110)
 
 [node name="WorldBorder" type="StaticBody2D" parent="."]
 
