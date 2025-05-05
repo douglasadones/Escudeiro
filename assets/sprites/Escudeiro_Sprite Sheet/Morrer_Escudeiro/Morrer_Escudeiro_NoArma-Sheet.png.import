@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3l8f7awce0a"
-path="res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"
+uid="uid://bv17serenk0om"
+path="res://.godot/imported/Morrer_Escudeiro_NoArma-Sheet.png-d92064f76e241cc83bdbbe50ec263d63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Palanque_caverna.png"
-dest_files=["res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"]
+source_file="res://assets/sprites/Escudeiro_Sprite Sheet/Morrer_Escudeiro/Morrer_Escudeiro_NoArma-Sheet.png"
+dest_files=["res://.godot/imported/Morrer_Escudeiro_NoArma-Sheet.png-d92064f76e241cc83bdbbe50ec263d63.ctex"]
 
 [params]
 

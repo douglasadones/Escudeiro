@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3l8f7awce0a"
-path="res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"
+uid="uid://di5juh4b1q8b1"
+path="res://.godot/imported/Piso_Caverna1.png-03fbfab3d9e8feb6618d94fefd2f6430.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Palanque_caverna.png"
-dest_files=["res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"]
+source_file="res://assets/sprites/Mobília-Estrutura/Caverna/Piso_Caverna1.png"
+dest_files=["res://.godot/imported/Piso_Caverna1.png-03fbfab3d9e8feb6618d94fefd2f6430.ctex"]
 
 [params]
 

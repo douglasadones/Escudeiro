@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3l8f7awce0a"
-path="res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"
+uid="uid://bnnhmhphk6xaj"
+path="res://.godot/imported/Fornalha-Sheet.png-dc3fe894ebccff37af99b9e6fe79e542.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Palanque_caverna.png"
-dest_files=["res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"]
+source_file="res://assets/sprites/Mobília-Estrutura/Fornalha/Fornalha-Sheet.png"
+dest_files=["res://.godot/imported/Fornalha-Sheet.png-dc3fe894ebccff37af99b9e6fe79e542.ctex"]
 
 [params]
 

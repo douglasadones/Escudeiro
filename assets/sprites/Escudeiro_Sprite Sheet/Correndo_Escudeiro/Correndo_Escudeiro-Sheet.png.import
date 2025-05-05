@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3l8f7awce0a"
-path="res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"
+uid="uid://dek0mqq0qsuu4"
+path="res://.godot/imported/Correndo_Escudeiro-Sheet.png-bd31a5b3be08587f32084e5aa7c4e9c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Palanque_caverna.png"
-dest_files=["res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"]
+source_file="res://assets/sprites/Escudeiro_Sprite Sheet/Correndo_Escudeiro/Correndo_Escudeiro-Sheet.png"
+dest_files=["res://.godot/imported/Correndo_Escudeiro-Sheet.png-bd31a5b3be08587f32084e5aa7c4e9c5.ctex"]
 
 [params]
 
