@@ -91,11 +91,11 @@ func handle_moviment_animation(dir):
 			is_idle = true
 			is_crouch = false
 			is_running = false
-			$Camera2D.zoom = Vector2(0.2,0.2)
+			$Camera2D.zoom = Vector2(0.45,0.45)
 			
 			
 		if velocity:
-			$Camera2D.zoom = Vector2(0.2,0.2)
+			$Camera2D.zoom = Vector2(0.45,0.45)
 			is_idle = false
 			is_crouch = false
 			toogle_flip_sprite(dir)

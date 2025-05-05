@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx35ed6ypaixt"
-path="res://.godot/imported/BG1_caverna.png-583a2fbaf7230b1eaa6d034b1b63555e.ctex"
+uid="uid://s2yukff8w6yq"
+path="res://.godot/imported/Pilar de madeira.png-180e98273637b2101849be670f25b4c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/BG1_caverna.png"
-dest_files=["res://.godot/imported/BG1_caverna.png-583a2fbaf7230b1eaa6d034b1b63555e.ctex"]
+source_file="res://assets/sprites/Caverna/Pilar de madeira.png"
+dest_files=["res://.godot/imported/Pilar de madeira.png-180e98273637b2101849be670f25b4c5.ctex"]
 
 [params]
 

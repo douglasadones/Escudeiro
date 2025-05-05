@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bdgcw6wpd4e5i"]
+[gd_scene load_steps=20 format=3 uid="uid://b5jd3g4iwe1nr"]
 
 [ext_resource type="Script" uid="uid://cfp5d06ra7ciy" path="res://scripts/levels/caverna.gd" id="1_a23ln"]
 [ext_resource type="Texture2D" uid="uid://dsa8cbrrsj3th" path="res://assets/sprites/Caverna/Piso_textura_caverna.png" id="2_brdyd"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://3clg54awh33g" path="res://assets/sprites/Caverna/Barril_caverma.png" id="5_6f5yq"]
 [ext_resource type="Texture2D" uid="uid://esil521mag4s" path="res://assets/sprites/Mobília-Estrutura/Caverna/Pilar de madeira.png" id="6_nbg4h"]
 [ext_resource type="Texture2D" uid="uid://di5juh4b1q8b1" path="res://assets/sprites/Mobília-Estrutura/Caverna/Piso_Caverna1.png" id="7_o5t25"]
-[ext_resource type="PackedScene" uid="uid://drb2riddr2sr6" path="res://scenes/player/escudeiro.tscn" id="8_r57av"]
+[ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="8_r57av"]
 [ext_resource type="AudioStream" uid="uid://rg0vlpnycahs" path="res://assets/audio/RPG Game.mp3" id="9_1rehj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8o2b0"]
