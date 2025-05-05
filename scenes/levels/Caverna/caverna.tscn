@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dpk4cc2fpjwxj" path="res://assets/sprites/Caverna/Palanque_Barril_caverna.png" id="2_1y6au"]
 [ext_resource type="PackedScene" uid="uid://c7ni6wpm5nbkc" path="res://scenes/levels/Caverna/env/background.tscn" id="2_u41vv"]
 [ext_resource type="Texture2D" uid="uid://b3l8f7awce0a" path="res://assets/sprites/Caverna/Palanque_caverna.png" id="3_85lxd"]
+[ext_resource type="Texture2D" uid="uid://dsa8cbrrsj3th" path="res://assets/sprites/Caverna/Piso_textura_caverna.png" id="4_1y6au"]
 [ext_resource type="Texture2D" uid="uid://s2yukff8w6yq" path="res://assets/sprites/Caverna/Pilar de madeira.png" id="4_5e8sv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4h06"]
@@ -34,11 +35,8 @@ texture_region_size = Vector2i(636, 264)
 tile_size = Vector2i(636, 264)
 sources/0 = SubResource("TileSetAtlasSource_1y6au")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b08eq"]
-load_path = "res://.godot/imported/Piso_textura_caverna.png-bbae36f4c24b07edd6b8e4e3ab6bfd5e.ctex"
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b08eq"]
-texture = SubResource("CompressedTexture2D_b08eq")
+texture = ExtResource("4_1y6au")
 texture_region_size = Vector2i(96, 162)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -81, 48, -81, 48, 81, -48, 81)
