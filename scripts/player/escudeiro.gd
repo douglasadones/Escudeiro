@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 720.0
-const JUMP_VELOCITY = -820.0
+const JUMP_VELOCITY = -810.0
 var max_health = 100
 var min_health = 0
 var health = 100
@@ -26,7 +26,11 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		$Camera2D.drag_vertical_enabled = true
+		$Camera2D.drag_top_margin = 0.4
+		$Camera2D.drag_bottom_margin = 0.4
+		
+		velocity += (get_gravity() * 1.5 ) * delta
 
 	if Input.is_action_just_pressed("pular") and is_on_floor() and !is_rolling:
 		velocity.y = JUMP_VELOCITY
@@ -123,12 +127,28 @@ func handle_moviment_animation(dir):
 			is_running = false
 			toogle_flip_sprite(dir)
 			
-	if !is_on_floor():
+	if !is_on_floor() and sign(velocity.y) == 0:
 		is_idle = false
 		is_crouch = false
 		is_running = false
 		is_rolling = false
-		animated_knight.play("jump")
+		animated_knight.play("jump_top")
+		if dir:
+			toogle_flip_sprite(dir)
+	if !is_on_floor() and sign(velocity.y) == -1:
+		is_idle = false
+		is_crouch = false
+		is_running = false
+		is_rolling = false
+		animated_knight.play("jump_start")
+		if dir:
+			toogle_flip_sprite(dir)
+	if !is_on_floor() and sign(velocity.y) == 1:
+		is_idle = false
+		is_crouch = false
+		is_running = false
+		is_rolling = false
+		animated_knight.play("jump_end")
 		if dir:
 			toogle_flip_sprite(dir)
 	

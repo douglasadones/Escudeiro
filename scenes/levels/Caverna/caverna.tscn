@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bovgdvr1ebglg"]
+[gd_scene load_steps=19 format=4 uid="uid://du1u8gkq7fhm0"]
 
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
 [ext_resource type="Texture2D" uid="uid://3clg54awh33g" path="res://assets/sprites/Caverna/Barril_caverma.png" id="1_y087k"]
@@ -93,7 +93,7 @@ tile_set = SubResource("TileSet_y087k")
 [node name="Background" parent="." instance=ExtResource("2_u41vv")]
 
 [node name="Escudeiro" parent="." instance=ExtResource("1_kchbl")]
-position = Vector2(398, 1110)
+position = Vector2(405, 1211)
 
 [node name="WorldBorder" type="StaticBody2D" parent="."]
 
