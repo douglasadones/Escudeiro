@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3clg54awh33g"
-path="res://.godot/imported/Barril_caverma.png-3225573c45a5f5ed7fd767af30883ea6.ctex"
+uid="uid://c3ux4osuon8wx"
+path="res://.godot/imported/Escudeiro_pulo_meio.png-f9270c660b960dee7fcecad2178aacd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Barril_caverma.png"
-dest_files=["res://.godot/imported/Barril_caverma.png-3225573c45a5f5ed7fd767af30883ea6.ctex"]
+source_file="res://assets/sprites/Escudeiro_Sprite Sheet/Pulo_Escudeiro/Escudeiro_pulo_meio.png"
+dest_files=["res://.godot/imported/Escudeiro_pulo_meio.png-f9270c660b960dee7fcecad2178aacd7.ctex"]
 
 [params]
 

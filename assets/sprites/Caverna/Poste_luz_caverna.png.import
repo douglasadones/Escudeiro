@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpk4cc2fpjwxj"
-path="res://.godot/imported/Palanque_Barril_caverna.png-fb63ddb7d0955bf49e4333ad795f44c3.ctex"
+uid="uid://bjj8hiq4e5bf"
+path="res://.godot/imported/Poste_luz_caverna.png-0dc052ae33a5207c17a6960a86ff542b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Palanque_Barril_caverna.png"
-dest_files=["res://.godot/imported/Palanque_Barril_caverna.png-fb63ddb7d0955bf49e4333ad795f44c3.ctex"]
+source_file="res://assets/sprites/Caverna/Poste_luz_caverna.png"
+dest_files=["res://.godot/imported/Poste_luz_caverna.png-0dc052ae33a5207c17a6960a86ff542b.ctex"]
 
 [params]
 

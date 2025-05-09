@@ -19,9 +19,15 @@ Global="*res://scripts/global.gd"
 
 [display]
 
+window/size/viewport_width=455
+window/size/viewport_height=256
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Escudeiro"
 
 [input]
 

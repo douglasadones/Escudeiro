@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnkhowxywxc82"
-path="res://.godot/imported/Final_pulo.png-2dca8b57fe5930fd12b2457977f63be2.ctex"
+uid="uid://drkveh2cww57f"
+path="res://.godot/imported/Escudeiro_pulo_começo.png-d6ec0fbb6aa2261653cc6dff943c0a3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Escudeiro_Sprite Sheet/Pulo_Escudeiro/Final_pulo.png"
-dest_files=["res://.godot/imported/Final_pulo.png-2dca8b57fe5930fd12b2457977f63be2.ctex"]
+source_file="res://assets/sprites/Escudeiro_Sprite Sheet/Pulo_Escudeiro/Escudeiro_pulo_começo.png"
+dest_files=["res://.godot/imported/Escudeiro_pulo_começo.png-d6ec0fbb6aa2261653cc6dff943c0a3e.ctex"]
 
 [params]
 

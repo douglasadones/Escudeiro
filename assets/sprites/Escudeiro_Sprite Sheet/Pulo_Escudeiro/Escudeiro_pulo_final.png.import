@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnnhmhphk6xaj"
-path="res://.godot/imported/Fornalha-Sheet.png-dc3fe894ebccff37af99b9e6fe79e542.ctex"
+uid="uid://8ojnptxgq3iq"
+path="res://.godot/imported/Escudeiro_pulo_final.png-d297d3498240283d8d6823f28c2be3d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Mobília-Estrutura/Fornalha/Fornalha-Sheet.png"
-dest_files=["res://.godot/imported/Fornalha-Sheet.png-dc3fe894ebccff37af99b9e6fe79e542.ctex"]
+source_file="res://assets/sprites/Escudeiro_Sprite Sheet/Pulo_Escudeiro/Escudeiro_pulo_final.png"
+dest_files=["res://.godot/imported/Escudeiro_pulo_final.png-d297d3498240283d8d6823f28c2be3d3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsa8cbrrsj3th"
-path="res://.godot/imported/Piso_textura_caverna.png-8360dc86965b462c717f48fe00f26472.ctex"
+uid="uid://1ifnvcfwfyci"
+path="res://.godot/imported/Piso_caverna.png-0d6ddfd9797a85d2189b98d20351af35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Piso_textura_caverna.png"
-dest_files=["res://.godot/imported/Piso_textura_caverna.png-8360dc86965b462c717f48fe00f26472.ctex"]
+source_file="res://assets/sprites/Caverna/Piso_caverna.png"
+dest_files=["res://.godot/imported/Piso_caverna.png-0d6ddfd9797a85d2189b98d20351af35.ctex"]
 
 [params]
 
