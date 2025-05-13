@@ -1,8 +1,8 @@
 extends Node2D
+class_name Caverna
+
+@export_category("Variables")
+@export var scene_path: String
 
 func _ready() -> void:
-	$AudioStreamPlayer2D.play()
-
-
-func _on_audio_stream_player_2d_finished() -> void:
-	$AudioStreamPlayer2D.play()
+	Global.current_scene_path = scene_path

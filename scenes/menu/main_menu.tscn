@@ -1,0 +1,216 @@
+[gd_scene load_steps=15 format=3 uid="uid://cb5wpaviugbwo"]
+
+[ext_resource type="Script" uid="uid://btfndw4q2qtc7" path="res://scripts/menu/main_menu.gd" id="1_hj162"]
+[ext_resource type="Texture2D" uid="uid://ps786nki7wx7" path="res://assets/Concept Art.png" id="2_hj162"]
+[ext_resource type="FontFile" uid="uid://mq4ne2d73g1l" path="res://assets/fonts/old_style/njo_11.ttf" id="3_isoef"]
+[ext_resource type="FontFile" uid="uid://c25pho1qu8uej" path="res://assets/fonts/scrawl/njs_9.ttf" id="4_qgo02"]
+[ext_resource type="AudioStream" uid="uid://rg0vlpnycahs" path="res://assets/audio/RPG Game.mp3" id="5_vovv2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_arq0v"]
+font = ExtResource("3_isoef")
+font_size = 35
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Animation" id="Animation_fpmvl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameTitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(121, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonsContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_arq0v"]
+resource_name = "start_animation"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameTitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.17),
+"transitions": PackedFloat32Array(2.07053, 3.13834),
+"update": 0,
+"values": [Vector2(19, -39), Vector2(19, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonsContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.170269, 0.399218),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d6kjb"]
+_data = {
+&"RESET": SubResource("Animation_fpmvl"),
+&"start_animation": SubResource("Animation_arq0v")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6kjb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vw0ho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urfvk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7p1e7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d6kjb"]
+font = ExtResource("4_qgo02")
+font_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hj162")
+metadata/_edit_vertical_guides_ = [-2396.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -164.0
+offset_right = 1800.0
+offset_bottom = 1636.0
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_hj162")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 484.0
+offset_bottom = 267.0
+color = Color(0, 0, 0, 0.290196)
+
+[node name="GameTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 12.0
+offset_right = 378.0
+offset_bottom = 61.0
+text = "ESCUDEIRO"
+label_settings = SubResource("LabelSettings_arq0v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d6kjb")
+}
+autoplay = "start_animation"
+playback_auto_capture_transition_type = 9
+playback_auto_capture_ease_type = 2
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191209
+anchor_top = 0.488281
+anchor_right = 0.430769
+anchor_bottom = 1.48828
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NewGame" type="Button" parent="ButtonsContainer" groups=["menu_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0.821789, 0.821789, 0.821789, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_fonts/font = ExtResource("4_qgo02")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d6kjb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vw0ho")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_urfvk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7p1e7")
+text = "Novo Jogo"
+flat = true
+alignment = 2
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/NewGame"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -15.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Novo Jogo"
+label_settings = SubResource("LabelSettings_d6kjb")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="ButtonsContainer" groups=["menu_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0.821789, 0.821789, 0.821789, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_fonts/font = ExtResource("4_qgo02")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d6kjb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vw0ho")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_urfvk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7p1e7")
+text = "Sair"
+flat = true
+alignment = 2
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/Exit"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -15.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Sair"
+label_settings = SubResource("LabelSettings_d6kjb")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vovv2")
+volume_db = -29.714
+autoplay = true

@@ -11,11 +11,13 @@ config_version=5
 [application]
 
 config/name="Escudeiro"
+run/main_scene="uid://cb5wpaviugbwo"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
 Global="*res://scripts/global.gd"
+transition_screen="*res://scenes/transicao/transition_screen.tscn"
 
 [display]
 
@@ -28,6 +30,10 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Escudeiro"
+
+[global_group]
+
+menu_button=""
 
 [input]
 
