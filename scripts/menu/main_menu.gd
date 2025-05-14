@@ -1,6 +1,7 @@
 extends Control
 class_name MainMenu
 
+
 var is_button_pressed: bool = false
 
 func _ready() -> void:
