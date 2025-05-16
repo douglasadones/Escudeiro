@@ -1,0 +1,216 @@
+[gd_scene load_steps=31 format=4 uid="uid://cf2l4kmm1ox5k"]
+
+[ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_6ljmw"]
+[ext_resource type="Texture2D" uid="uid://baictlnkpfv44" path="res://assets/sprites/Caverna/Fundo_adega.png" id="2_plytg"]
+[ext_resource type="Texture2D" uid="uid://dqr1j4a6ecy2r" path="res://assets/sprites/Caverna/Itens e estruturas/Escada.png" id="3_plytg"]
+[ext_resource type="Texture2D" uid="uid://ci04h08in4upr" path="res://assets/sprites/Caverna/Itens e estruturas/Lanterna_acesa.png" id="4_fe7pd"]
+[ext_resource type="Texture2D" uid="uid://crpkgg2nchono" path="res://assets/sprites/Caverna/Itens e estruturas/Lanterna_apagada.png" id="5_bghny"]
+[ext_resource type="Texture2D" uid="uid://b27w2hes2ahd7" path="res://assets/sprites/Bêbado_na _mesa/Bêbado_SpriteSheet.png" id="6_m8wj7"]
+[ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="7_bghny"]
+[ext_resource type="PackedScene" uid="uid://cufekshnpeql0" path="res://scenes/menu/pause_menu.tscn" id="8_m8wj7"]
+[ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="9_0n514"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ljmw"]
+texture = ExtResource("1_6ljmw")
+texture_region_size = Vector2i(16, 27)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -13.5, 8, -13.5, 8, 13.5, -8, 13.5)
+
+[sub_resource type="TileSet" id="TileSet_glav3"]
+tile_size = Vector2i(16, 27)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_6ljmw")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4ql5"]
+texture = ExtResource("3_plytg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1vafg"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_f4ql5")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0n514"]
+texture = ExtResource("4_fe7pd")
+texture_region_size = Vector2i(17, 21)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lrwb"]
+texture = ExtResource("5_bghny")
+texture_region_size = Vector2i(17, 21)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fe7pd"]
+tile_size = Vector2i(17, 21)
+sources/0 = SubResource("TileSetAtlasSource_0n514")
+sources/1 = SubResource("TileSetAtlasSource_2lrwb")
+
+[sub_resource type="Gradient" id="Gradient_bghny"]
+offsets = PackedFloat32Array(0.38961, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m8wj7"]
+gradient = SubResource("Gradient_bghny")
+fill = 1
+fill_from = Vector2(0.518349, 0.5)
+fill_to = Vector2(1, 0.270642)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bghny"]
+size = Vector2(20, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pigdo"]
+atlas = ExtResource("6_m8wj7")
+region = Rect2(0, 0, 128, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fc05"]
+atlas = ExtResource("6_m8wj7")
+region = Rect2(128, 0, 128, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqo8a"]
+atlas = ExtResource("6_m8wj7")
+region = Rect2(256, 0, 128, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64vnq"]
+atlas = ExtResource("6_m8wj7")
+region = Rect2(384, 0, 128, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pbqy"]
+atlas = ExtResource("6_m8wj7")
+region = Rect2(512, 0, 128, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnpyr"]
+atlas = ExtResource("6_m8wj7")
+region = Rect2(640, 0, 128, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ty7q"]
+atlas = ExtResource("6_m8wj7")
+region = Rect2(768, 0, 128, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xoofo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pigdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fc05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqo8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64vnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pbqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnpyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ty7q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_bghny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Lanterna/PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.737255, 0.380392, 0.941176)]
+}
+
+[sub_resource type="Animation" id="Animation_0n514"]
+resource_name = "start_animation"
+length = 5.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Lanterna/PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 3.3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.737255, 0.380392, 0.941176), Color(1, 0.737255, 0.380392, 1), Color(1, 0.737255, 0.380392, 0.662745), Color(1, 0.737255, 0.380392, 0.913725)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lrwb"]
+_data = {
+&"RESET": SubResource("Animation_bghny"),
+&"start_animation": SubResource("Animation_0n514")
+}
+
+[node name="Adega" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -1.0
+offset_top = -20.0
+offset_right = 460.0
+offset_bottom = 275.0
+texture = ExtResource("2_plytg")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Piso" type="TileMapLayer" parent="Node2D"]
+position = Vector2(0, -5)
+tile_map_data = PackedByteArray("AAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAYAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAaAAkAAAAAAAAAAAAbAAkAAAAAAAAAAAAcAAkAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_glav3")
+
+[node name="Escada" type="TileMapLayer" parent="Node2D"]
+position = Vector2(0, 15)
+tile_map_data = PackedByteArray("AAABAAYAAAAAAAAAAAABAAUAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_1vafg")
+
+[node name="Lanterna" type="TileMapLayer" parent="Node2D"]
+tile_map_data = PackedByteArray("AAAJAAUAAQAAAAAAAAAUAAUAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_fe7pd")
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D/Lanterna"]
+position = Vector2(349, 123)
+scale = Vector2(3.20312, 3.83411)
+color = Color(1, 0.737255, 0.380392, 0.941176)
+texture = SubResource("GradientTexture2D_m8wj7")
+
+[node name="Escudeiro" parent="." instance=ExtResource("9_0n514")]
+position = Vector2(55, 40)
+
+[node name="Barreira" type="StaticBody2D" parent="."]
+
+[node name="Collision2" type="CollisionShape2D" parent="Barreira"]
+position = Vector2(-7, 133)
+shape = SubResource("RectangleShape2D_bghny")
+
+[node name="Collision" type="CollisionShape2D" parent="Barreira"]
+position = Vector2(464, 133)
+shape = SubResource("RectangleShape2D_bghny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(373, 187.5)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_xoofo")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Mask" parent="." instance=ExtResource("7_bghny")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2lrwb")
+}
+autoplay = "start_animation"
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_m8wj7")]
