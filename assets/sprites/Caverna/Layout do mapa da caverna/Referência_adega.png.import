@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b463w3h0g30xk"
-path="res://.godot/imported/Poste_caverna.png-e62a1fa65cd6eb40edef9c4b20fc3400.ctex"
+uid="uid://c553h4iaqcdj1"
+path="res://.godot/imported/Referência_adega.png-a368383e854679a14ff33a21b3149abf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Poste_caverna.png"
-dest_files=["res://.godot/imported/Poste_caverna.png-e62a1fa65cd6eb40edef9c4b20fc3400.ctex"]
+source_file="res://assets/sprites/Caverna/Layout do mapa da caverna/Referência_adega.png"
+dest_files=["res://.godot/imported/Referência_adega.png-a368383e854679a14ff33a21b3149abf.ctex"]
 
 [params]
 

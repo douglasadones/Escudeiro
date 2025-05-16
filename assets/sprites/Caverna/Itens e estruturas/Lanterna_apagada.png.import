@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc74lvjveiufa"
-path="res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"
+uid="uid://crpkgg2nchono"
+path="res://.godot/imported/Lanterna_apagada.png-b19f90b2d21473b172f4cc23379b6505.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/BG3_caverna.png"
-dest_files=["res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"]
+source_file="res://assets/sprites/Caverna/Itens e estruturas/Lanterna_apagada.png"
+dest_files=["res://.godot/imported/Lanterna_apagada.png-b19f90b2d21473b172f4cc23379b6505.ctex"]
 
 [params]
 

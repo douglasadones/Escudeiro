@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc74lvjveiufa"
-path="res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"
+uid="uid://b27w2hes2ahd7"
+path="res://.godot/imported/Bêbado_SpriteSheet.png-3935a1be878374f1f11df88a510b3921.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/BG3_caverna.png"
-dest_files=["res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"]
+source_file="res://assets/sprites/Bêbado_na _mesa/Bêbado_SpriteSheet.png"
+dest_files=["res://.godot/imported/Bêbado_SpriteSheet.png-3935a1be878374f1f11df88a510b3921.ctex"]
 
 [params]
 

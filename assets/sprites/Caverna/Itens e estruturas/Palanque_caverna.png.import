@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc74lvjveiufa"
-path="res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"
+uid="uid://dc7q2a64fnw8e"
+path="res://.godot/imported/Palanque_caverna.png-ed0a8355a0122df5672c5d82bd9b0ff0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/BG3_caverna.png"
-dest_files=["res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"]
+source_file="res://assets/sprites/Caverna/Itens e estruturas/Palanque_caverna.png"
+dest_files=["res://.godot/imported/Palanque_caverna.png-ed0a8355a0122df5672c5d82bd9b0ff0.ctex"]
 
 [params]
 

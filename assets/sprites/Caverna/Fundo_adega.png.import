@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvm3vse5d3s8"
-path="res://.godot/imported/Barris_caverna.png-5ad8e4d5c12759db999bb9f188fdf8c6.ctex"
+uid="uid://baictlnkpfv44"
+path="res://.godot/imported/Fundo_adega.png-329cfefab844ef21edb6a2589c64ac57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Barris_caverna.png"
-dest_files=["res://.godot/imported/Barris_caverna.png-5ad8e4d5c12759db999bb9f188fdf8c6.ctex"]
+source_file="res://assets/sprites/Caverna/Fundo_adega.png"
+dest_files=["res://.godot/imported/Fundo_adega.png-329cfefab844ef21edb6a2589c64ac57.ctex"]
 
 [params]
 

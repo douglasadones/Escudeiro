@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc74lvjveiufa"
-path="res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"
+uid="uid://hjsoy6sho7n"
+path="res://.godot/imported/Poste_caverna.png-5e2baf7cbfae27a1fb83ec85b8ef57e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/BG3_caverna.png"
-dest_files=["res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"]
+source_file="res://assets/sprites/Caverna/Itens e estruturas/Poste_caverna.png"
+dest_files=["res://.godot/imported/Poste_caverna.png-5e2baf7cbfae27a1fb83ec85b8ef57e7.ctex"]
 
 [params]
 

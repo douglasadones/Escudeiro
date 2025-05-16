@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjj8hiq4e5bf"
-path="res://.godot/imported/Poste_luz_caverna.png-0dc052ae33a5207c17a6960a86ff542b.ctex"
+uid="uid://ci04h08in4upr"
+path="res://.godot/imported/Lanterna_acesa.png-0d87f1e07928af9c5be7d4d1e8546ef7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Poste_luz_caverna.png"
-dest_files=["res://.godot/imported/Poste_luz_caverna.png-0dc052ae33a5207c17a6960a86ff542b.ctex"]
+source_file="res://assets/sprites/Caverna/Itens e estruturas/Lanterna_acesa.png"
+dest_files=["res://.godot/imported/Lanterna_acesa.png-0d87f1e07928af9c5be7d4d1e8546ef7.ctex"]
 
 [params]
 

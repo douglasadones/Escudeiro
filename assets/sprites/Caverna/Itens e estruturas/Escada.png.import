@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc74lvjveiufa"
-path="res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"
+uid="uid://dqr1j4a6ecy2r"
+path="res://.godot/imported/Escada.png-e661ce8b55edf072518bcda010ad97cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/BG3_caverna.png"
-dest_files=["res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"]
+source_file="res://assets/sprites/Caverna/Itens e estruturas/Escada.png"
+dest_files=["res://.godot/imported/Escada.png-e661ce8b55edf072518bcda010ad97cc.ctex"]
 
 [params]
 

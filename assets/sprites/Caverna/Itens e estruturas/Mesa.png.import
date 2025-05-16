@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc74lvjveiufa"
-path="res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"
+uid="uid://cwobift28w5m5"
+path="res://.godot/imported/Mesa.png-d4173b43a3318bd3482d20d41dc67e64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/BG3_caverna.png"
-dest_files=["res://.godot/imported/BG3_caverna.png-3100a22579ee381206ab90a93d908dff.ctex"]
+source_file="res://assets/sprites/Caverna/Itens e estruturas/Mesa.png"
+dest_files=["res://.godot/imported/Mesa.png-d4173b43a3318bd3482d20d41dc67e64.ctex"]
 
 [params]
 

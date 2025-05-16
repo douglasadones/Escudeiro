@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boxngmygry4as"
-path="res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"
+uid="uid://bnvcdctdssma5"
+path="res://.godot/imported/Textura_parede_adega.png-84945acadf84a1f5bc8167de91bbc29d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Caverna/Palanque_caverna.png"
-dest_files=["res://.godot/imported/Palanque_caverna.png-1e987e3544f19a869651c1cfd5f1eef3.ctex"]
+source_file="res://assets/sprites/Caverna/Textura_parede_adega.png"
+dest_files=["res://.godot/imported/Textura_parede_adega.png-84945acadf84a1f5bc8167de91bbc29d.ctex"]
 
 [params]
 
