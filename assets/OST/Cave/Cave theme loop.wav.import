@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dyvc3uswmwkqd"
+path="res://.godot/imported/Cave theme loop.wav-a40cc8125a6130e635df1e0458f803dc.sample"
+
+[deps]
+
+source_file="res://assets/OST/Cave/Cave theme loop.wav"
+dest_files=["res://.godot/imported/Cave theme loop.wav-a40cc8125a6130e635df1e0458f803dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

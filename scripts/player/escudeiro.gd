@@ -5,6 +5,9 @@ class_name Escudeiro
 @export var SPEED: float = 220.0
 @export var JUMP_VELOCITY: float = -510.0
 
+@onready var audio_effect: AudioStreamPlayer2D = $AudioEffect
+
+
 #Status
 var max_health = 100
 var min_health = 0
@@ -14,6 +17,7 @@ var is_idle: bool
 var is_crouch: bool
 var attack_type: String
 var _on_floor: bool = true
+var frame_counter := 0
 
 @onready var current_attack: bool = false
 @onready var is_running: bool = false
@@ -50,11 +54,20 @@ func horizontal_move():
 	
 	if direction:
 		if !Input.is_action_pressed("correr"):
-			velocity.x = direction * SPEED/2
-			
-		if Input.is_action_pressed("correr"):
+			velocity.x = direction * SPEED / 2
+			if audio_effect.stream != preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav"):
+				audio_effect.stream = preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav")
+			if !audio_effect.playing:
+				audio_effect.pitch_scale = 1.0
+				audio_effect.play()
+		else:
 			velocity.x = direction * SPEED
-
+			if audio_effect.stream != preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav"):
+				audio_effect.stream = preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav")
+			if !audio_effect.playing:
+				audio_effect.pitch_scale = 1.2
+				audio_effect.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-#
+		if audio_effect.playing:
+			audio_effect.stop()

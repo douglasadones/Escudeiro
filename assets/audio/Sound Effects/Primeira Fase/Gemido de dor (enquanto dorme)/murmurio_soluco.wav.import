@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dudtiqho16b5v"
+path="res://.godot/imported/murmurio_soluco.wav-610240200ac21d7ed208be90fd0ee4a8.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Primeira Fase/Gemido de dor (enquanto dorme)/murmurio_soluco.wav"
+dest_files=["res://.godot/imported/murmurio_soluco.wav-610240200ac21d7ed208be90fd0ee4a8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -226,5 +226,8 @@ autoplay = "start_animation"
 position = Vector2(48, 211)
 shape = SubResource("RectangleShape2D_h5nvn")
 
+[node name="AudioEffect" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(293, 200)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

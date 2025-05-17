@@ -4,6 +4,11 @@ class_name Caverna
 const DIALOG_SYSTEM: PackedScene = preload("res://scenes/ui/dialog_box.tscn")
 @onready var place_holder: Area2D = $PlaceHolder
 
+@onready var musica: AudioStreamPlayer2D = $Musica
+@onready var musica_pausado: AudioStreamPlayer2D = $MusicaPausado
+
+
+
 @export_category("Variables")
 @export var scene_path: String
 
@@ -24,6 +29,8 @@ func _process(delta: float) -> void:
 		print("Clicou")
 		spawn_dialog(dialogo_inicial)
 		place_holder.queue_free()
+		
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
@@ -49,3 +56,10 @@ func _on_troca_cena_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
 		Global.current_scene_path = "res://scenes/levels/Floresta/floresta.tscn"
 		transition_screen.fade_in()
+		
+
+func _on_musica_finished() -> void:
+	musica.play()
+
+func _on_musica_pausado_finished() -> void:
+	musica_pausado.play()
