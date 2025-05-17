@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://du1u8gkq7fhm0"]
+[gd_scene load_steps=54 format=4 uid="uid://du1u8gkq7fhm0"]
 
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_u41vv"]
@@ -183,6 +183,68 @@ gradient = SubResource("Gradient_oonj5")
 fill = 1
 fill_from = Vector2(0.463303, 0.440367)
 
+[sub_resource type="Animation" id="Animation_6617i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.52549, 0.270588, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D2:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.52549, 0.270588, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oonj5"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.52549, 0.270588, 1), Color(1, 0.52549, 0.270588, 0.694118), Color(1, 0.52549, 0.270588, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D2:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.52549, 0.270588, 1), Color(1, 0.52549, 0.270588, 0.862745), Color(1, 0.52549, 0.270588, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6617i"]
+_data = {
+&"RESET": SubResource("Animation_6617i"),
+&"idle": SubResource("Animation_oonj5")
+}
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o70gn"]
 texture = ExtResource("8_wt1po")
 texture_region_size = Vector2i(32, 32)
@@ -194,6 +256,9 @@ sources/0 = SubResource("TileSetAtlasSource_o70gn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y6au"]
 size = Vector2(21, 271.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oonj5"]
+size = Vector2(33, 240)
 
 [node name="Caverna" type="Node2D"]
 script = ExtResource("1_y087k")
@@ -281,6 +346,12 @@ scale = Vector2(3.10683, 3.37065)
 color = Color(1, 0.52549, 0.270588, 1)
 texture = SubResource("GradientTexture2D_6617i")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LevelDesign/Poste"]
+libraries = {
+&"": SubResource("AnimationLibrary_6617i")
+}
+autoplay = "idle"
+
 [node name="Escada" type="TileMapLayer" parent="LevelDesign"]
 position = Vector2(0, -7)
 tile_map_data = PackedByteArray("AAAdAAcAAAAAAAAAAAA=")
@@ -301,4 +372,14 @@ shape = SubResource("RectangleShape2D_1y6au")
 
 [node name="Mask" parent="." instance=ExtResource("12_0v003")]
 
+[node name="TrocaCena" type="Area2D" parent="."]
+position = Vector2(-250, -6)
+
+[node name="Collision" type="CollisionShape2D" parent="TrocaCena"]
+position = Vector2(1626.5, 118)
+shape = SubResource("RectangleShape2D_oonj5")
+
+[connection signal="body_entered" from="PlaceHolder" to="." method="_on_place_holder_body_entered"]
+[connection signal="body_exited" from="PlaceHolder" to="." method="_on_place_holder_body_exited"]
 [connection signal="body_entered" from="LevelDesign/Area2D" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="TrocaCena" to="." method="_on_troca_cena_body_entered"]

@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://di16v7puf7y6q"]
+[gd_scene load_steps=11 format=3 uid="uid://di16v7puf7y6q"]
 
 [ext_resource type="Script" uid="uid://dbqplrhsdk25k" path="res://scripts/menu/dialog_system.gd" id="1_4kdou"]
 [ext_resource type="Texture2D" uid="uid://dbhfoe3bn7d18" path="res://assets/dialog/dialog.png" id="1_bxnj3"]
 [ext_resource type="FontFile" uid="uid://mq4ne2d73g1l" path="res://assets/fonts/old_style/njo_11.ttf" id="2_4kdou"]
 [ext_resource type="FontFile" uid="uid://c25pho1qu8uej" path="res://assets/fonts/scrawl/njs_9.ttf" id="3_bu1pb"]
+[ext_resource type="AudioStream" uid="uid://ck1o0vh3tin7l" path="res://assets/audio/character-dialog-audio.mp3" id="5_bu1pb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oqhds"]
+line_spacing = 1.0
 font = ExtResource("2_4kdou")
 font_size = 11
 shadow_color = Color(0, 0, 0, 1)
@@ -54,6 +56,7 @@ _data = {
 }
 
 [node name="DialogSystem" type="Control"]
+top_level = true
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -110,3 +113,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_014m5")
 }
 autoplay = "RESET"
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bu1pb")

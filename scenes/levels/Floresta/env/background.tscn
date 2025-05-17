@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca57kmnku8pmw"]
+
+[ext_resource type="Texture2D" uid="uid://dk4v1g5cpxgld" path="res://assets/sprites/Fase 1 - Floresta/Cenário-Background_floresta/BG_floresta.png" id="1_4fojv"]
+[ext_resource type="Texture2D" uid="uid://cosc4firve7c3" path="res://assets/sprites/Fase 1 - Floresta/Cenário-Background_floresta/BG3_floresta.png" id="2_tx4ru"]
+[ext_resource type="Texture2D" uid="uid://cvm68r3gxfjv7" path="res://assets/sprites/Fase 1 - Floresta/Cenário-Background_floresta/BG2_floresta.png" id="3_s36xe"]
+[ext_resource type="Texture2D" uid="uid://bjxw0n6hlyhl4" path="res://assets/sprites/Fase 1 - Floresta/Cenário-Background_floresta/BG1_floresta.png" id="4_mctou"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="Layer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_4fojv")
+
+[node name="Layer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer2"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_tx4ru")
+
+[node name="Layer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer3"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_s36xe")
+
+[node name="Layer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Texture" type="TextureRect" parent="Layer4"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_mctou")

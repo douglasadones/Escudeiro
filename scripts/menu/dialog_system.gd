@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	skip.visible = is_finished
-	if Input.is_action_just_pressed("pular") and is_finished:
+	if Input.is_action_just_pressed("interagir") and is_finished:
 		dialog_index += 1
 		if dialog_data.has(dialog_index):
 			load_dialog()
