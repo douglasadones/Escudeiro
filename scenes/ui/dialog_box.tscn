@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://k5gueedomi8d"]
+
+[ext_resource type="Script" uid="uid://dcdjxe0reumvn" path="res://scripts/ui/dialog_box.gd" id="1_i22jp"]
+[ext_resource type="PackedScene" uid="uid://di16v7puf7y6q" path="res://scenes/menu/dialog_system.tscn" id="1_svbij"]
+
+[node name="DialogBox" type="CanvasLayer"]
+script = ExtResource("1_i22jp")
+
+[node name="DialogSystem" parent="." instance=ExtResource("1_svbij")]
+script = null
+
+[node name="VBoxContainer" parent="DialogSystem" index="1"]
+offset_left = -138.5
+offset_top = 6.0
+offset_right = 139.5
+offset_bottom = 57.0
+
+[editable path="DialogSystem"]

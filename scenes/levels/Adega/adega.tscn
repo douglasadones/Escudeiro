@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=4 uid="uid://cf2l4kmm1ox5k"]
+[gd_scene load_steps=33 format=4 uid="uid://cf2l4kmm1ox5k"]
 
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_6ljmw"]
+[ext_resource type="Script" uid="uid://52v3m8750af2" path="res://scripts/levels/adega.gd" id="1_neh6q"]
 [ext_resource type="Texture2D" uid="uid://baictlnkpfv44" path="res://assets/sprites/Caverna/Fundo_adega.png" id="2_plytg"]
 [ext_resource type="Texture2D" uid="uid://dqr1j4a6ecy2r" path="res://assets/sprites/Caverna/Itens e estruturas/Escada.png" id="3_plytg"]
 [ext_resource type="Texture2D" uid="uid://ci04h08in4upr" path="res://assets/sprites/Caverna/Itens e estruturas/Lanterna_acesa.png" id="4_fe7pd"]
@@ -154,7 +155,11 @@ _data = {
 &"start_animation": SubResource("Animation_0n514")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5nvn"]
+size = Vector2(75.125, 59.5)
+
 [node name="Adega" type="Node2D"]
+script = ExtResource("1_neh6q")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -1.0
@@ -186,7 +191,7 @@ color = Color(1, 0.737255, 0.380392, 0.941176)
 texture = SubResource("GradientTexture2D_m8wj7")
 
 [node name="Escudeiro" parent="." instance=ExtResource("9_0n514")]
-position = Vector2(55, 40)
+position = Vector2(74, 43)
 
 [node name="Barreira" type="StaticBody2D" parent="."]
 
@@ -214,3 +219,12 @@ libraries = {
 autoplay = "start_animation"
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_m8wj7")]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(48, 211)
+shape = SubResource("RectangleShape2D_h5nvn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
