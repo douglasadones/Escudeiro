@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://df51influkmj3"
+path="res://.godot/imported/rope_tightening.wav-c932f4dc90f706676f76832ca5e08bff.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Primeira Fase/corda apertando/rope_tightening.wav"
+dest_files=["res://.godot/imported/rope_tightening.wav-c932f4dc90f706676f76832ca5e08bff.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

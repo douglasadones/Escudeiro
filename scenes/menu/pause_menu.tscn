@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cufekshnpeql0"]
+[gd_scene load_steps=8 format=3 uid="uid://cufekshnpeql0"]
 
 [ext_resource type="FontFile" uid="uid://c25pho1qu8uej" path="res://assets/fonts/scrawl/njs_9.ttf" id="1_n54lc"]
 [ext_resource type="Script" uid="uid://c3d03oyfqde2x" path="res://scripts/menu/pause_menu.gd" id="1_ux7g8"]
-[ext_resource type="AudioStream" uid="uid://kjb4j4eg2edd" path="res://assets/audio/audio_teste_pausa.mp3" id="3_xtxec"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ux7g8"]
 
@@ -107,10 +106,6 @@ text = "Sair"
 label_settings = SubResource("LabelSettings_mb26x")
 horizontal_alignment = 2
 vertical_alignment = 1
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_xtxec")
-volume_db = -20.8
 
 [connection signal="pressed" from="ButtonsContainer/Resume" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://babj3dbsuu6bs"
+path="res://.godot/imported/respiracao_golpe.wav-e8010f93a0d06ad9d3fe8b3e49d95da7.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/viburno/respiracao_golpe.wav"
+dest_files=["res://.godot/imported/respiracao_golpe.wav-e8010f93a0d06ad9d3fe8b3e49d95da7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br13bfy08js6m"
+path="res://.godot/imported/run_step.wav-8561f29952f522875666cb6deab39869.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Primeira Fase/passos/run_step.wav"
+dest_files=["res://.godot/imported/run_step.wav-8561f29952f522875666cb6deab39869.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

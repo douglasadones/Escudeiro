@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bqs0r8inqwsdq"
+path="res://.godot/imported/choro_no_sono.wav-c8f01f88404adcd33f835314e466b3f5.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Primeira Fase/Gemido de dor (enquanto dorme)/choro_no_sono.wav"
+dest_files=["res://.godot/imported/choro_no_sono.wav-c8f01f88404adcd33f835314e466b3f5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

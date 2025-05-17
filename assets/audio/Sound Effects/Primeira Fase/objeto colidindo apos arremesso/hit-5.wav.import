@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmvpp3i2oxedm"
+path="res://.godot/imported/hit-5.wav-a5b8b4ef6bf7a3296edb83b16c43149e.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Primeira Fase/objeto colidindo apos arremesso/hit-5.wav"
+dest_files=["res://.godot/imported/hit-5.wav-a5b8b4ef6bf7a3296edb83b16c43149e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

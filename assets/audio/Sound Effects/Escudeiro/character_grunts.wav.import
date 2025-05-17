@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://g4fehbmcfg7e"
+path="res://.godot/imported/character_grunts.wav-576d815ea691e485154e49d20e49c2be.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Escudeiro/character_grunts.wav"
+dest_files=["res://.godot/imported/character_grunts.wav-576d815ea691e485154e49d20e49c2be.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

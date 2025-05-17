@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccxxluux52u2y"
+path="res://.godot/imported/wake_up.wav-6d2a7c95106795059491f0e58a7abf01.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Primeira Fase/acordar do sono/wake_up.wav"
+dest_files=["res://.godot/imported/wake_up.wav-6d2a7c95106795059491f0e58a7abf01.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
