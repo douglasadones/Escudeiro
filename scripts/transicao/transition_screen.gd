@@ -16,3 +16,7 @@ func _on_animation_finished(anim_name: String) -> void:
 			animation.play("fade_out")
 		"fade_out":
 			pass
+		"fade":
+			get_tree().change_scene_to_file(scene_path)
+			animation.play("fade")
+		

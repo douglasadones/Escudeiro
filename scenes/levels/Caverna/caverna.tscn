@@ -365,6 +365,16 @@ tile_set = SubResource("TileSet_grfif")
 [node name="Escudeiro" parent="." instance=ExtResource("1_kchbl")]
 position = Vector2(77, 147)
 
+[node name="Camera" type="Camera2D" parent="Escudeiro"]
+position = Vector2(17, -78)
+zoom = Vector2(1.1, 1.1)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+position_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+editor_draw_drag_margin = true
+
 [node name="WorldBorder" type="StaticBody2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="WorldBorder"]

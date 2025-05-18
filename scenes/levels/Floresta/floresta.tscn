@@ -1,6 +1,7 @@
-[gd_scene load_steps=61 format=4 uid="uid://cpqscvsef3cle"]
+[gd_scene load_steps=65 format=4 uid="uid://cpqscvsef3cle"]
 
 [ext_resource type="PackedScene" uid="uid://ca57kmnku8pmw" path="res://scenes/levels/Floresta/env/background.tscn" id="1_lemqm"]
+[ext_resource type="Script" uid="uid://ch7w3hc3v6pk0" path="res://scripts/levels/floresta.gd" id="1_nkx6a"]
 [ext_resource type="Texture2D" uid="uid://c6goyys83fcdo" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Poste_floresta.png" id="2_5s5ur"]
 [ext_resource type="Texture2D" uid="uid://ch5v7ofs5gqn7" path="res://assets/sprites/Fase 1 - Floresta/Textura/Textura_piso_floresta.png" id="2_a42qg"]
 [ext_resource type="Texture2D" uid="uid://dcygpgl7mnaao" path="res://assets/sprites/Fase 1 - Floresta/Textura/textura_piso_casa_Viburno.png" id="3_5s5ur"]
@@ -22,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://cbaxdfoi38t0k" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca5.png" id="18_4eler"]
 [ext_resource type="Texture2D" uid="uid://lt8e6vouj00g" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Casa_Viburno.png" id="19_gdvw3"]
 [ext_resource type="Texture2D" uid="uid://db5rjh11nsl1r" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Porta_viburno.png" id="20_nkx6a"]
+[ext_resource type="AudioStream" uid="uid://bievlqa4fu2ra" path="res://assets/audio/Sound Effects/Primeira Fase/floresta/forest_ambient_loop.wav" id="24_4eler"]
+[ext_resource type="AudioStream" uid="uid://vowsc6eqi518" path="res://assets/audio/Sound Effects/Primeira Fase/Corvo/corvo_audio-1.wav" id="25_77gap"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogkwy"]
 texture = ExtResource("2_5s5ur")
@@ -214,7 +217,11 @@ sources/0 = SubResource("TileSetAtlasSource_nntgd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lemqm"]
 size = Vector2(21, 271.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdvw3"]
+size = Vector2(138, 109.5)
+
 [node name="Floresta" type="Node2D"]
+script = ExtResource("1_nkx6a")
 
 [node name="Mask" parent="." instance=ExtResource("7_5s5ur")]
 color = Color(0.918278, 0.706105, 0.587532, 1)
@@ -331,7 +338,16 @@ tile_map_data = PackedByteArray("AACZAAEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_0eag3")
 
 [node name="Escudeiro" parent="." instance=ExtResource("4_ogkwy")]
-position = Vector2(42, 176)
+position = Vector2(41, 197)
+
+[node name="Camera" type="Camera2D" parent="Escudeiro"]
+position = Vector2(8, -125)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+position_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+editor_draw_drag_margin = true
 
 [node name="WorldBorder" type="StaticBody2D" parent="."]
 
@@ -340,3 +356,20 @@ position = Vector2(-8.5, 112.25)
 shape = SubResource("RectangleShape2D_lemqm")
 
 [node name="PauseMenu" parent="." instance=ExtResource("15_3f0qy")]
+
+[node name="Npc" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Npc"]
+position = Vector2(915, 188.75)
+shape = SubResource("RectangleShape2D_gdvw3")
+
+[node name="Floresta" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_4eler")
+autoplay = true
+
+[node name="Corvo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_77gap")
+volume_db = -10.0
+
+[connection signal="body_entered" from="Npc" to="." method="_on_npc_body_entered"]
+[connection signal="finished" from="Floresta" to="." method="_on_floresta_finished"]

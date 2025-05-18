@@ -389,11 +389,6 @@ _character = NodePath("..")
 position = Vector2(-2, 2)
 shape = SubResource("CapsuleShape2D_b6mvr")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1, -26)
-zoom = Vector2(1.1, 1.1)
-limit_left = 0
-
 [node name="healthBar" parent="." instance=ExtResource("5_shct2")]
 visible = false
 offset_left = -127.0

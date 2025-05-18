@@ -1,0 +1,230 @@
+[gd_scene load_steps=18 format=3 uid="uid://dp6qlltqcer8v"]
+
+[ext_resource type="Script" uid="uid://dqu7kme4xfb41" path="res://scripts/transicao/die_screen.gd" id="1_237cx"]
+[ext_resource type="FontFile" uid="uid://durtnc0bh7ls6" path="res://assets/fonts/old_style/njo_14.ttf" id="1_obds7"]
+[ext_resource type="Texture2D" uid="uid://dm1oq0yeq1eu8" path="res://assets/sprites/Escudeiro_Sprite Sheet/Morrer_Escudeiro/Morrer_Escudeiro_NoArma-Sheet.png" id="2_jg141"]
+[ext_resource type="AudioStream" uid="uid://48l3hqo854at" path="res://assets/audio/Sound Effects/Escudeiro/die.wav" id="3_ph5tr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jg141"]
+font = ExtResource("1_obds7")
+font_size = 14
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ph5tr"]
+resource_name = "die"
+length = 6.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.366667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_oho1j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yl4nb"]
+_data = {
+&"RESET": SubResource("Animation_oho1j"),
+&"die": SubResource("Animation_ph5tr")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph5tr"]
+atlas = ExtResource("2_jg141")
+region = Rect2(0, 0, 112, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oho1j"]
+atlas = ExtResource("2_jg141")
+region = Rect2(112, 0, 112, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl4nb"]
+atlas = ExtResource("2_jg141")
+region = Rect2(224, 0, 112, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_howue"]
+atlas = ExtResource("2_jg141")
+region = Rect2(336, 0, 112, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7anxw"]
+atlas = ExtResource("2_jg141")
+region = Rect2(448, 0, 112, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppfrv"]
+atlas = ExtResource("2_jg141")
+region = Rect2(560, 0, 112, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acr6e"]
+atlas = ExtResource("2_jg141")
+region = Rect2(672, 0, 112, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lywdm"]
+atlas = ExtResource("2_jg141")
+region = Rect2(784, 0, 112, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thpmb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph5tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oho1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl4nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_howue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7anxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppfrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acr6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lywdm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DieScreen" type="CanvasLayer"]
+script = ExtResource("1_237cx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -58.0
+offset_right = 48.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Voce Morreu"
+label_settings = SubResource("LabelSettings_jg141")
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yl4nb")
+}
+autoplay = "die"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(220, 133)
+sprite_frames = SubResource("SpriteFrames_thpmb")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ph5tr")
