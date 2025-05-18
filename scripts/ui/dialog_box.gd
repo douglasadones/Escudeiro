@@ -1,7 +1,10 @@
 extends CanvasLayer
 class_name DialogBox
 
+signal dialog_finished
+
 var is_finished: bool = false
+var automatico: bool = true
 var dialog_index: int = 0
 var dialog_data: Dictionary = {
 	0: {
@@ -24,10 +27,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	skip.visible = is_finished
 	if Input.is_action_just_pressed("interagir") and is_finished:
-		dialog_index += 1
-		if dialog_data.has(dialog_index):
+		if not automatico:
 			load_dialog()
-			return
+			queue_free()
+		else:
+			dialog_index += 1
+			if dialog_data.has(dialog_index):
+				load_dialog()
+				return
 		queue_free()
 		if player:
 			player.set_physics_process(true)
@@ -55,3 +62,6 @@ func load_dialog() -> void:
 			time_passed = 0.0
 	audio.stop()
 	is_finished = true
+	
+func is_dialog_finished() -> bool:
+	return dialog_index >= dialog_data.size()

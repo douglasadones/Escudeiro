@@ -40,9 +40,9 @@ func vertical_move(delta: float):
 			_on_floor = true
 	
 	if not is_on_floor():
-		$Camera2D.drag_vertical_enabled = true
-		$Camera2D.drag_top_margin = 0.4
-		$Camera2D.drag_bottom_margin = 0.4
+		#$Camera2D.drag_vertical_enabled = true
+		#$Camera2D.drag_top_margin = 0.4
+		#$Camera2D.drag_bottom_margin = 0.4
 		_on_floor = false
 		velocity += (get_gravity() * 1.5 ) * delta
 

@@ -2,11 +2,11 @@ extends Node2D
 class_name Caverna
 
 const DIALOG_SYSTEM: PackedScene = preload("res://scenes/ui/dialog_box.tscn")
+
 @onready var place_holder: Area2D = $PlaceHolder
 
 @onready var musica: AudioStreamPlayer2D = $Musica
 @onready var musica_pausado: AudioStreamPlayer2D = $MusicaPausado
-
 
 
 @export_category("Variables")
@@ -16,8 +16,9 @@ var pode_interagir: bool = false
 
 var dialogo_inicial: Dictionary = {
 		0: {
-		"title": "",
-		"dialog": "Um brilho discreto chamou sua atenção sobre a mesa... é um item!",
+		"title": "Garrafa de Vinho Forte​",
+		"dialog": "Vinho adulterado, mais alcoólico do que deveria. Use-o para evitar
+ser tomado pelo terror.",
 	},
 }
 
@@ -30,8 +31,6 @@ func _process(delta: float) -> void:
 		spawn_dialog(dialogo_inicial)
 		place_holder.queue_free()
 		
-
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
 		Global.current_scene_path = "res://scenes/levels/Adega/adega.tscn"
