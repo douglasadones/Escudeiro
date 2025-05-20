@@ -17,11 +17,12 @@ func animate(_velocity: Vector2):
 		return
 		
 	if _velocity.y:
-		if _velocity.y > 0:
-			play("fall")
-			
-		if _velocity.y < 0:
+		if sign(_velocity.y) == -1:
 			play("jump")
+		if sign(_velocity.y) == 0:
+			play("fall")
+		if sign(_velocity.y) == 1:
+			play("land")
 		
 		return
 		

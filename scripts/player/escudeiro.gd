@@ -32,17 +32,8 @@ func _physics_process(delta: float) -> void:
 	texture.animate(velocity)
 
 func vertical_move(delta: float):
-	if is_on_floor():
-		if _on_floor == false:
-			texture.action_animation("land")
-			texture.position.y = -18
-			set_physics_process(false)
-			_on_floor = true
 	
 	if not is_on_floor():
-		#$Camera2D.drag_vertical_enabled = true
-		#$Camera2D.drag_top_margin = 0.4
-		#$Camera2D.drag_bottom_margin = 0.4
 		_on_floor = false
 		velocity += (get_gravity() * 1.5 ) * delta
 
@@ -54,6 +45,7 @@ func horizontal_move():
 	
 	if direction:
 		if !Input.is_action_pressed("correr"):
+			is_running = false
 			velocity.x = direction * SPEED / 2
 			if audio_effect.stream != preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav"):
 				audio_effect.stream = preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav")
@@ -61,7 +53,8 @@ func horizontal_move():
 				audio_effect.pitch_scale = 1.0
 				audio_effect.play()
 		else:
-			velocity.x = direction * SPEED
+			is_running = true
+			velocity.x = direction * SPEED*1.2
 			if audio_effect.stream != preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav"):
 				audio_effect.stream = preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav")
 			if !audio_effect.playing:
