@@ -18,6 +18,9 @@ ser tomado pelo terror.",
 	},
 }
 
+
+
+
 func _ready() -> void:
 	Global.current_scene_path = scene_path
 	var escudeiro = get_node("Escudeiro")
@@ -28,6 +31,7 @@ func _ready() -> void:
 	if Global.foi_pra_floresta:
 		Music.set_music("res://assets/OST/Cave/Cave theme loop.wav", "res://assets/OST/Cave/cave theme pause loop.wav")
 		Global.foi_pra_floresta = false
+		escudeiro.texture.flip_h = true
 	if !Music.tocando:
 		Music.play()
 	Pausa.enable_pause_menu()

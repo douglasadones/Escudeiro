@@ -7,7 +7,6 @@ class_name Escudeiro
 
 @onready var audio_effect: AudioStreamPlayer2D = $AudioEffect
 
-
 #Status
 var max_health = 100
 var min_health = 0
@@ -23,6 +22,9 @@ var frame_counter := 0
 @onready var is_running: bool = false
 @onready var is_rolling: bool = false
 @onready var texture: AnimatedSprite2D = $Texture
+
+var walk_step_sound := preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav")
+var walk_effect_path := "res://scenes/effects/walk_effect.tscn"
 
 
 func _physics_process(delta: float) -> void:
@@ -47,20 +49,39 @@ func horizontal_move():
 		if !Input.is_action_pressed("correr"):
 			is_running = false
 			velocity.x = direction * SPEED / 2
-			if audio_effect.stream != preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav"):
-				audio_effect.stream = preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav")
-			if !audio_effect.playing:
-				audio_effect.pitch_scale = 1.0
-				audio_effect.play()
+
 		else:
 			is_running = true
 			velocity.x = direction * SPEED*1.2
-			if audio_effect.stream != preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav"):
-				audio_effect.stream = preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav")
-			if !audio_effect.playing:
-				audio_effect.pitch_scale = 1.2
-				audio_effect.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if audio_effect.playing:
 			audio_effect.stop()
+			
+	
+
+
+func _on_texture_frame_changed() -> void:
+	match texture.animation:
+		"run":
+			if texture.frame == 2 or texture.frame == 6:
+				spawn_walk_effect()
+				play_step_sound(1.5)
+		"walk":
+			if texture.frame in [3, 8]:
+				play_step_sound(1.0)
+
+func spawn_walk_effect():
+	var offset: Vector2
+	if texture.flip_h:
+		offset = Vector2(30, 2)
+	else:
+		offset = Vector2(-30, 2)
+
+	Global.spawn_effect(walk_effect_path, offset, global_position, !texture.flip_h)
+
+func play_step_sound(pitch: float):
+	audio_effect.stream = walk_step_sound
+	audio_effect.pitch_scale = pitch
+	audio_effect.stop()
+	audio_effect.play()

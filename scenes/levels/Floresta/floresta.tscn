@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://cpqscvsef3cle"]
+[gd_scene load_steps=65 format=4 uid="uid://cpqscvsef3cle"]
 
 [ext_resource type="PackedScene" uid="uid://ca57kmnku8pmw" path="res://scenes/levels/Floresta/env/background.tscn" id="1_lemqm"]
 [ext_resource type="Script" uid="uid://ch7w3hc3v6pk0" path="res://scripts/levels/floresta.gd" id="1_nkx6a"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://drhkirydcu2gb" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Plataforma_colisão_floresta.png" id="11_c8llg"]
 [ext_resource type="Texture2D" uid="uid://b8wddon53eqkd" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Plataforma2_colisão_floresta.png" id="12_aq2qn"]
 [ext_resource type="Texture2D" uid="uid://dbew1jqojsmtw" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Banheiro.png" id="14_r2odj"]
-[ext_resource type="PackedScene" uid="uid://cufekshnpeql0" path="res://scenes/menu/pause_menu.tscn" id="15_3f0qy"]
 [ext_resource type="Texture2D" uid="uid://ceif552an6ct2" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca2.png" id="15_xf6bv"]
 [ext_resource type="Texture2D" uid="uid://dlrc71n0bk2v7" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca3.png" id="16_gdvw3"]
 [ext_resource type="Texture2D" uid="uid://x4q4q21jy1na" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca4.png" id="17_nkx6a"]
@@ -209,6 +208,7 @@ sources/0 = SubResource("TileSetAtlasSource_4eler")
 texture = ExtResource("20_nkx6a")
 texture_region_size = Vector2i(20, 115)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.00547, -57.5, 5.2231, -57.5, 4.73996, 57.5, -5.26662, 57.5)
 
 [sub_resource type="TileSet" id="TileSet_0eag3"]
 tile_size = Vector2i(20, 115)
@@ -358,8 +358,6 @@ editor_draw_drag_margin = true
 [node name="Collision" type="CollisionShape2D" parent="WorldBorder"]
 position = Vector2(-8.5, 112.25)
 shape = SubResource("RectangleShape2D_lemqm")
-
-[node name="PauseMenu" parent="." instance=ExtResource("15_3f0qy")]
 
 [node name="Npc" type="Area2D" parent="."]
 
