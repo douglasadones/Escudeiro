@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://drkveh2cww57f" path="res://assets/sprites/Escudeiro_Sprite Sheet/Pulo_Escudeiro/Escudeiro_pulo_começo.png" id="6_ytnuj"]
 [ext_resource type="Texture2D" uid="uid://8ojnptxgq3iq" path="res://assets/sprites/Escudeiro_Sprite Sheet/Pulo_Escudeiro/Escudeiro_pulo_final.png" id="7_qrivr"]
 [ext_resource type="Texture2D" uid="uid://cfj38otc4qm5j" path="res://assets/sprites/Escudeiro_Sprite Sheet/Correndo_Escudeiro/Correndo_Escudeiro_SpriteSheet.png" id="8_ujhfn"]
-[ext_resource type="Script" path="res://scripts/player/texture.gd" id="9_2c1an"]
+[ext_resource type="Script" uid="uid://ygucwys01rhy" path="res://scripts/player/texture.gd" id="9_2c1an"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn3j7"]
 atlas = ExtResource("2_2kvc7")
@@ -397,5 +397,6 @@ offset_right = 126.0
 offset_bottom = -217.0
 
 [node name="AudioEffect" type="AudioStreamPlayer2D" parent="."]
+volume_db = 12.114
 
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
