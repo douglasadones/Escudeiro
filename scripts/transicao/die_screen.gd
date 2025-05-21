@@ -2,5 +2,5 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-	#get_tree().paused = true
-	pass
+	Music.stop()
+	Pausa.disable_pause_menu()

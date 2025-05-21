@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://du1u8gkq7fhm0"]
+[gd_scene load_steps=72 format=4 uid="uid://du1u8gkq7fhm0"]
 
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_u41vv"]
@@ -8,11 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://cf4ps6bnk48ly" path="res://assets/sprites/Caverna/Entrada_escada.png" id="2_bwl4t"]
 [ext_resource type="PackedScene" uid="uid://c7ni6wpm5nbkc" path="res://scenes/levels/Caverna/env/background.tscn" id="2_u41vv"]
 [ext_resource type="Texture2D" uid="uid://dc7q2a64fnw8e" path="res://assets/sprites/Caverna/Itens e estruturas/Palanque_caverna.png" id="3_85lxd"]
-[ext_resource type="Texture2D" uid="uid://cme3tk0860pcc" path="res://assets/sprites/Caverna/Itens e estruturas/Poste_luz_caverna.png" id="3_4765i"]
+[ext_resource type="Texture2D" uid="uid://d0u4iw6ve534s" path="res://assets/sprites/Caverna/Itens e estruturas/Poste_luz_caverna.png" id="3_4765i"]
 [ext_resource type="Texture2D" uid="uid://cwobift28w5m5" path="res://assets/sprites/Caverna/Itens e estruturas/Mesa.png" id="5_0v003"]
 [ext_resource type="Texture2D" uid="uid://b7krbbli7l3o" path="res://assets/sprites/Caverna/Itens e estruturas/Mesa_com_item.png" id="6_oonj5"]
 [ext_resource type="Texture2D" uid="uid://dqr1j4a6ecy2r" path="res://assets/sprites/Caverna/Itens e estruturas/Escada.png" id="8_wt1po"]
 [ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="12_0v003"]
+[ext_resource type="Texture2D" uid="uid://bmgxqfdabb33v" path="res://assets/sprites/Caverna/Itens e estruturas/Balde.png" id="12_6617i"]
+[ext_resource type="Texture2D" uid="uid://b1he77nhafhjb" path="res://assets/sprites/Caverna/Itens e estruturas/Gota_caverna-Sheet.png" id="13_o70gn"]
 [ext_resource type="Texture2D" uid="uid://b23vu8eqmjojd" path="res://assets/sprites/Caverna/Itens e estruturas/Placeholder_item.png" id="15_oonj5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6617i"]
@@ -166,11 +168,11 @@ texture_region_size = Vector2i(46, 125)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwl4t"]
 texture = ExtResource("3_4765i")
-texture_region_size = Vector2i(46, 125)
+texture_region_size = Vector2i(49, 125)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_wt1po"]
-tile_size = Vector2i(46, 125)
+tile_size = Vector2i(49, 125)
 sources/0 = SubResource("TileSetAtlasSource_3tfkw")
 sources/1 = SubResource("TileSetAtlasSource_bwl4t")
 
@@ -253,6 +255,126 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_o70gn")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf84c"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mdu8"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 48, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbl6p"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 96, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu57e"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 144, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2dl4"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 192, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86a1p"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 240, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfsod"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 288, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdb6f"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 336, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8shg"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 384, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwsta"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 432, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t00q7"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 480, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu1if"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 528, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsh3n"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 576, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uucmc"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 624, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2772"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 672, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p7m4"]
+atlas = ExtResource("13_o70gn")
+region = Rect2(0, 720, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixm4h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf84c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mdu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbl6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu57e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2dl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86a1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfsod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdb6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8shg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwsta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t00q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu1if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsh3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uucmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2772")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p7m4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y6au"]
 size = Vector2(21, 271.5)
 
@@ -334,13 +456,13 @@ tile_map_data = PackedByteArray("AAAEAAEAAQAAAAAAAAAMAAEAAAAAAAAAAAAVAAEAAQAAAAA
 tile_set = SubResource("TileSet_wt1po")
 
 [node name="PointLight2D" type="PointLight2D" parent="LevelDesign/Poste"]
-position = Vector2(186, 155)
+position = Vector2(202, 154)
 scale = Vector2(4.57812, 4.57812)
 color = Color(1, 0.52549, 0.270588, 1)
 texture = SubResource("GradientTexture2D_6617i")
 
 [node name="PointLight2D2" type="PointLight2D" parent="LevelDesign/Poste"]
-position = Vector2(969, 154)
+position = Vector2(1035, 153)
 scale = Vector2(3.10683, 3.37065)
 color = Color(1, 0.52549, 0.270588, 1)
 texture = SubResource("GradientTexture2D_6617i")
@@ -355,6 +477,19 @@ autoplay = "idle"
 position = Vector2(0, -7)
 tile_map_data = PackedByteArray("AAAdAAcAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_grfif")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(687, 65)
+texture = ExtResource("12_6617i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LevelDesign"]
+visible = false
+position = Vector2(687, 34)
+scale = Vector2(1, 1.4)
+sprite_frames = SubResource("SpriteFrames_ixm4h")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.843986
 
 [node name="Background" parent="." instance=ExtResource("2_u41vv")]
 
@@ -383,7 +518,7 @@ shape = SubResource("RectangleShape2D_1y6au")
 position = Vector2(-250, -6)
 
 [node name="Collision" type="CollisionShape2D" parent="TrocaCena"]
-position = Vector2(1626.5, 118)
+position = Vector2(1874, 115)
 shape = SubResource("RectangleShape2D_oonj5")
 
 [connection signal="body_entered" from="PlaceHolder" to="." method="_on_place_holder_body_entered"]

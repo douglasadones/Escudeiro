@@ -45,6 +45,8 @@ var dialogo_homem: Dictionary = {
 
 func _ready() -> void:
 	Global.current_scene_path = scene_path
+	if !Music.tocando:
+		Music.play()
 
 func _process(delta: float) -> void:
 	# Interação com escada

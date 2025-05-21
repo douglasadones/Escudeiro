@@ -25,6 +25,17 @@ func resume() -> void:
 	musica.volume_db = 0
 	musica_pausado.volume_db = -80
 
+func set_music(main_path: String, pause_path: String) -> void:
+	var main_stream = load(main_path) as AudioStream
+	var pause_stream = load(pause_path) as AudioStream
+	
+	musica.stream = main_stream
+	musica_pausado.stream = pause_stream
+	
+	if tocando:
+		play()
+
+
 func _on_musica_pausado_finished() -> void:
 	musica_pausado.play()
 	

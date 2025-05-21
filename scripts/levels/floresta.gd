@@ -7,6 +7,9 @@ const DIE_SCREEN: PackedScene = preload("res://scenes/transicao/die_screen.tscn"
 
 func _ready() -> void:
 	_corvo_loop()
+	Music.set_music("res://assets/OST/City/RPG City Theme.wav", "res://assets/OST/City/RPG City Pause Theme.wav")
+	if !Music.tocando:
+		Music.play()
 
 func _on_npc_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
