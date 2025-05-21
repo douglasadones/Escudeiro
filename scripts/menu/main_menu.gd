@@ -7,6 +7,8 @@ var is_button_pressed: bool = false
 func _ready() -> void:
 	for _button in get_tree().get_nodes_in_group("menu_button"):
 		_button.pressed.connect(_on_button_pressed.bind(_button))
+	Music.stop()
+	Pausa.disable_pause_menu()
 
 
 func _on_button_pressed(_button_pressed: Button) -> void:

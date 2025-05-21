@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://du1u8gkq7fhm0"]
+[gd_scene load_steps=53 format=4 uid="uid://du1u8gkq7fhm0"]
 
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_u41vv"]
@@ -11,13 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cme3tk0860pcc" path="res://assets/sprites/Caverna/Itens e estruturas/Poste_luz_caverna.png" id="3_4765i"]
 [ext_resource type="Texture2D" uid="uid://cwobift28w5m5" path="res://assets/sprites/Caverna/Itens e estruturas/Mesa.png" id="5_0v003"]
 [ext_resource type="Texture2D" uid="uid://b7krbbli7l3o" path="res://assets/sprites/Caverna/Itens e estruturas/Mesa_com_item.png" id="6_oonj5"]
-[ext_resource type="PackedScene" uid="uid://cufekshnpeql0" path="res://scenes/menu/pause_menu.tscn" id="7_1y6au"]
 [ext_resource type="Texture2D" uid="uid://dqr1j4a6ecy2r" path="res://assets/sprites/Caverna/Itens e estruturas/Escada.png" id="8_wt1po"]
 [ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="12_0v003"]
-[ext_resource type="Script" uid="uid://dsyhc51mud1yg" path="res://scripts/menu/pause_menu_caverna.gd" id="15_grfif"]
 [ext_resource type="Texture2D" uid="uid://b23vu8eqmjojd" path="res://assets/sprites/Caverna/Itens e estruturas/Placeholder_item.png" id="15_oonj5"]
-[ext_resource type="AudioStream" uid="uid://dyvc3uswmwkqd" path="res://assets/OST/Cave/Cave theme loop.wav" id="16_6617i"]
-[ext_resource type="AudioStream" uid="uid://cnvbecypgr5l7" path="res://assets/OST/Cave/Cave theme pause loop.wav" id="17_o70gn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6617i"]
 atlas = ExtResource("15_oonj5")
@@ -381,9 +377,6 @@ editor_draw_drag_margin = true
 position = Vector2(-8.5, 112.25)
 shape = SubResource("RectangleShape2D_1y6au")
 
-[node name="PauseMenu" parent="." instance=ExtResource("7_1y6au")]
-script = ExtResource("15_grfif")
-
 [node name="Mask" parent="." instance=ExtResource("12_0v003")]
 
 [node name="TrocaCena" type="Area2D" parent="."]
@@ -393,22 +386,7 @@ position = Vector2(-250, -6)
 position = Vector2(1626.5, 118)
 shape = SubResource("RectangleShape2D_oonj5")
 
-[node name="Musica" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = ExtResource("16_6617i")
-autoplay = true
-max_distance = 1e+06
-
-[node name="MusicaPausado" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = ExtResource("17_o70gn")
-volume_db = -80.0
-autoplay = true
-max_distance = 1e+06
-
 [connection signal="body_entered" from="PlaceHolder" to="." method="_on_place_holder_body_entered"]
 [connection signal="body_exited" from="PlaceHolder" to="." method="_on_place_holder_body_exited"]
 [connection signal="body_entered" from="LevelDesign/Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="TrocaCena" to="." method="_on_troca_cena_body_entered"]
-[connection signal="finished" from="Musica" to="." method="_on_musica_finished"]
-[connection signal="finished" from="MusicaPausado" to="." method="_on_musica_pausado_finished"]
