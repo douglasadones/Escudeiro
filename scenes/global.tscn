@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bye4wjhg2eska"]
+
+[ext_resource type="Script" uid="uid://vwpli3hgt0md" path="res://scripts/global.gd" id="1_nmxvb"]
+[ext_resource type="PackedScene" uid="uid://du1u8gkq7fhm0" path="res://scenes/levels/Caverna/caverna.tscn" id="2_opebo"]
+[ext_resource type="PackedScene" uid="uid://matwowh6hya4" path="res://scenes/musica.tscn" id="4_m3l3d"]
+[ext_resource type="PackedScene" uid="uid://cufekshnpeql0" path="res://scenes/menu/pause_menu.tscn" id="5_nelfd"]
+
+[node name="Global" type="Node"]
+process_mode = 3
+script = ExtResource("1_nmxvb")
+
+[node name="Caverna" parent="." instance=ExtResource("2_opebo")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_nelfd")]
+
+[node name="Musica" parent="." instance=ExtResource("4_m3l3d")]

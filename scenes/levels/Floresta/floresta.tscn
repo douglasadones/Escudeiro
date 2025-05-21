@@ -212,6 +212,7 @@ texture_region_size = Vector2i(20, 115)
 
 [sub_resource type="TileSet" id="TileSet_0eag3"]
 tile_size = Vector2i(20, 115)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nntgd")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lemqm"]
@@ -366,10 +367,12 @@ shape = SubResource("RectangleShape2D_gdvw3")
 [node name="Floresta" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_4eler")
 autoplay = true
+max_distance = 1e+16
 
 [node name="Corvo" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_77gap")
 volume_db = -10.0
+max_distance = 1e+17
 
 [connection signal="body_entered" from="Npc" to="." method="_on_npc_body_entered"]
 [connection signal="finished" from="Floresta" to="." method="_on_floresta_finished"]

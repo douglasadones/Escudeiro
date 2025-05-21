@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://cf2l4kmm1ox5k"]
+[gd_scene load_steps=33 format=4 uid="uid://cf2l4kmm1ox5k"]
 
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_6ljmw"]
 [ext_resource type="Script" uid="uid://52v3m8750af2" path="res://scripts/levels/adega.gd" id="1_neh6q"]
@@ -8,11 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://crpkgg2nchono" path="res://assets/sprites/Caverna/Itens e estruturas/Lanterna_apagada.png" id="5_bghny"]
 [ext_resource type="Texture2D" uid="uid://b27w2hes2ahd7" path="res://assets/sprites/Bêbado_na _mesa/Bêbado_SpriteSheet.png" id="6_m8wj7"]
 [ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="7_bghny"]
-[ext_resource type="PackedScene" uid="uid://cufekshnpeql0" path="res://scenes/menu/pause_menu.tscn" id="8_m8wj7"]
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="9_0n514"]
-[ext_resource type="AudioStream" uid="uid://dyvc3uswmwkqd" path="res://assets/OST/Cave/Cave theme loop.wav" id="11_5k3af"]
-[ext_resource type="Script" uid="uid://b07ed42yrg6qt" path="res://scripts/menu/pause_menu_adega.gd" id="11_nin8w"]
-[ext_resource type="AudioStream" uid="uid://cnvbecypgr5l7" path="res://assets/OST/Cave/Cave theme pause loop.wav" id="12_nin8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ljmw"]
 texture = ExtResource("1_6ljmw")
@@ -224,9 +220,6 @@ libraries = {
 }
 autoplay = "start_animation"
 
-[node name="PauseMenu" parent="." instance=ExtResource("8_m8wj7")]
-script = ExtResource("11_nin8w")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -242,22 +235,7 @@ position = Vector2(293, 200)
 position = Vector2(348.5, 192)
 shape = SubResource("RectangleShape2D_neh6q")
 
-[node name="Musica" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = ExtResource("11_5k3af")
-autoplay = true
-max_distance = 1e+06
-
-[node name="MusicaPausado" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = ExtResource("12_nin8w")
-volume_db = -80.0
-autoplay = true
-max_distance = 1e+06
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Homem" to="." method="_on_homem_body_entered"]
 [connection signal="body_exited" from="Homem" to="." method="_on_homem_body_exited"]
-[connection signal="finished" from="Musica" to="." method="_on_musica_finished"]
-[connection signal="finished" from="MusicaPausado" to="." method="_on_musica_pausado_finished"]

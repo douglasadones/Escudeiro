@@ -6,8 +6,6 @@ const DIALOG_SYSTEM: PackedScene = preload("res://scenes/ui/dialog_box.tscn")
 const DIE_SCREEN: PackedScene = preload("res://scenes/transicao/die_screen.tscn")
 
 # Referências a nós da cena
-@onready var musica: AudioStreamPlayer2D = $Musica
-@onready var musica_pausado: AudioStreamPlayer2D = $MusicaPausado
 @onready var audio_effect: AudioStreamPlayer2D = $AudioEffect
 @onready var player: Node2D = get_tree().get_current_scene().get_node("Escudeiro")
 @onready var animated_sprite: AnimatedSprite2D = player.get_node("Texture")
@@ -47,6 +45,8 @@ var dialogo_homem: Dictionary = {
 
 func _ready() -> void:
 	Global.current_scene_path = scene_path
+	if !Music.tocando:
+		Music.play()
 
 func _process(delta: float) -> void:
 	# Interação com escada
@@ -122,13 +122,6 @@ func spawn_dialog(dialog_info: Dictionary, auto: bool = true) -> void:
 	add_child(ds)
 	print(ds.dialog_index)
 	ds.connect("dialog_finished", Callable(self, "_on_dialog_finished"))
-
-# Repetição da música
-func _on_musica_finished() -> void:
-	musica.play()
-
-func _on_musica_pausado_finished() -> void:
-	musica_pausado.play()
 
 func die() -> void:
 	var ds = DIE_SCREEN.instantiate()

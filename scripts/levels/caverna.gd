@@ -5,10 +5,6 @@ const DIALOG_SYSTEM: PackedScene = preload("res://scenes/ui/dialog_box.tscn")
 
 @onready var place_holder: Area2D = $PlaceHolder
 
-@onready var musica: AudioStreamPlayer2D = $Musica
-@onready var musica_pausado: AudioStreamPlayer2D = $MusicaPausado
-
-
 @export_category("Variables")
 @export var scene_path: String
 
@@ -24,6 +20,9 @@ ser tomado pelo terror.",
 
 func _ready() -> void:
 	Global.current_scene_path = scene_path
+	if !Music.tocando:
+		Music.play()
+	Pausa.enable_pause_menu()
 
 func _process(delta: float) -> void:
 	if pode_interagir and Input.is_action_just_pressed("interagir"):
@@ -35,7 +34,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
 		Global.current_scene_path = "res://scenes/levels/Adega/adega.tscn"
 		transition_screen.fade_in()
-
 
 func _on_place_holder_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
@@ -56,9 +54,3 @@ func _on_troca_cena_body_entered(body: Node2D) -> void:
 		Global.current_scene_path = "res://scenes/levels/Floresta/floresta.tscn"
 		transition_screen.fade_in()
 		
-
-func _on_musica_finished() -> void:
-	musica.play()
-
-func _on_musica_pausado_finished() -> void:
-	musica_pausado.play()

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://65m25s5tt20i"
+path="res://.godot/imported/Generic Battle.wav-a2eb9b0cc553d794ec0ff9446fc7ed99.sample"
+
+[deps]
+
+source_file="res://assets/OST/Battle/Generic Battle.wav"
+dest_files=["res://.godot/imported/Generic Battle.wav-a2eb9b0cc553d794ec0ff9446fc7ed99.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -18,6 +18,8 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 Global="*res://scripts/global.gd"
 transition_screen="*res://scenes/transicao/transition_screen.tscn"
+Music="*res://scenes/musica.tscn"
+Pausa="*res://scenes/menu/pause_menu.tscn"
 
 [display]
 
