@@ -74,9 +74,9 @@ func _on_texture_frame_changed() -> void:
 func spawn_walk_effect():
 	var offset: Vector2
 	if texture.flip_h:
-		offset = Vector2(30, 2)
+		offset = Vector2(30, 17)
 	else:
-		offset = Vector2(-30, 2)
+		offset = Vector2(-30, 17)
 
 	Global.spawn_effect(walk_effect_path, offset, global_position, !texture.flip_h)
 

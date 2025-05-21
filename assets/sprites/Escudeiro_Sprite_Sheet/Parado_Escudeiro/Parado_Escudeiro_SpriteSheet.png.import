@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b26sac1e3krfg"
-path="res://.godot/imported/Parado_Escudeiro_SpriteSheet.png-c8a510ab0e6646a909fa4888a939dfd4.ctex"
+uid="uid://coaoc6ppjaj7t"
+path="res://.godot/imported/Parado_Escudeiro_SpriteSheet.png-acad43dc4ddd5ad60d8a96485860f174.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Escudeiro_Sprite Sheet/Parado_Escudeiro/Parado_Escudeiro_SpriteSheet.png"
-dest_files=["res://.godot/imported/Parado_Escudeiro_SpriteSheet.png-c8a510ab0e6646a909fa4888a939dfd4.ctex"]
+source_file="res://assets/sprites/Escudeiro_Sprite_Sheet/Parado_Escudeiro/Parado_Escudeiro_SpriteSheet.png"
+dest_files=["res://.godot/imported/Parado_Escudeiro_SpriteSheet.png-acad43dc4ddd5ad60d8a96485860f174.ctex"]
 
 [params]
 
