@@ -4,16 +4,17 @@
 [ext_resource type="Script" uid="uid://btdv6xe74xgn0" path="res://scripts/musica.gd" id="1_wtq27"]
 [ext_resource type="AudioStream" uid="uid://c1qco6ch7ddr6" path="res://assets/OST/Cave/cave theme pause loop.wav" id="3_wtq27"]
 
-[node name="Musica" type="Node2D"]
+[node name="Musica" type="Control"]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_wtq27")
-
-[node name="Musica" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-position = Vector2(223, 127)
-stream = ExtResource("1_8c2qo")
-autoplay = true
-max_distance = 9.22337e+18
 
 [node name="MusicaPausado" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
@@ -23,5 +24,12 @@ volume_db = -80.0
 autoplay = true
 max_distance = 1e+06
 
-[connection signal="finished" from="Musica" to="." method="_on_musica_finished"]
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+position = Vector2(223, 127)
+stream = ExtResource("1_8c2qo")
+autoplay = true
+max_distance = 9.22337e+18
+
 [connection signal="finished" from="MusicaPausado" to="." method="_on_musica_pausado_finished"]
+[connection signal="finished" from="Musica" to="." method="_on_musica_finished"]

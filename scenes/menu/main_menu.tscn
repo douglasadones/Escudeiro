@@ -148,6 +148,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_hover_color = Color(0.821789, 0.821789, 0.821789, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.332881, 0.332881, 0.332881, 1)
 theme_override_colors/font_pressed_color = Color(0.695503, 0.695503, 0.695503, 1)
 theme_override_fonts/font = ExtResource("4_qgo02")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d6kjb")
@@ -182,6 +183,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_hover_color = Color(0.821789, 0.821789, 0.821789, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.259294, 0.259294, 0.259294, 1)
 theme_override_colors/font_pressed_color = Color(0.695503, 0.695503, 0.695503, 1)
 theme_override_fonts/font = ExtResource("4_qgo02")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d6kjb")
@@ -212,5 +214,5 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_vovv2")
-volume_db = -12.876
+volume_db = 9.811
 autoplay = true

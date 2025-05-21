@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name Musica
 
 @onready var musica_pausado: AudioStreamPlayer2D = $MusicaPausado

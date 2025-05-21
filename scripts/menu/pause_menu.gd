@@ -4,7 +4,7 @@ class_name PauseMenu
 @onready var resume: Button = $ButtonsContainer/Resume
 
 var pausado: bool = false
-var pause_enabled: bool = true  # controla se o menu pode pausar ou não
+var pause_enabled: bool = true  
 
 func _ready() -> void:
 	visible = false
@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not pause_enabled:
-		return  # ignora o pause quando desativado
+		return 
 
 	if event.is_action_pressed("ui_cancel"):
 		if visible:

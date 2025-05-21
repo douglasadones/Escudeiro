@@ -378,10 +378,8 @@ script = ExtResource("1_cq4o1")
 
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_character")]
 sprite_frames = SubResource("SpriteFrames_jn3j7")
-animation = &"land"
+animation = &"walk"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 script = ExtResource("9_2c1an")
 _character = NodePath("..")
 
@@ -400,3 +398,4 @@ offset_bottom = -217.0
 volume_db = 12.114
 
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
+[connection signal="frame_changed" from="Texture" to="." method="_on_texture_frame_changed"]
