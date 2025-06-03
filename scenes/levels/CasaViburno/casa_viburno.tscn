@@ -1,0 +1,424 @@
+[gd_scene load_steps=74 format=4 uid="uid://dyogq1sal8bdh"]
+
+[ext_resource type="Texture2D" uid="uid://cnwg1cfsamuac" path="res://assets/sprites/Fase 1 - BossFight/Texturas/Piso_interno_casa_Viburno.png" id="1_6uhgb"]
+[ext_resource type="Texture2D" uid="uid://btow3wsg7kptb" path="res://assets/sprites/Fase 1 - BossFight/Cenário-background/BG_casa_Viburnot.png" id="1_ww6ya"]
+[ext_resource type="Texture2D" uid="uid://ieq08ajyhq65" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Plataforma_casa_Viburno.png" id="2_ggv3k"]
+[ext_resource type="Texture2D" uid="uid://cr5qv3cyo0nf6" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Plataforma_borda_casa_Viburno.png" id="3_xud5w"]
+[ext_resource type="Texture2D" uid="uid://clvjhi71y4lop" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Quadro_balde_casa_Viburno.png" id="5_i1eo5"]
+[ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="5_xud5w"]
+[ext_resource type="Texture2D" uid="uid://cps4ia6nm0jkd" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Quadro_tarça_casa_Viburno.png" id="6_m7ses"]
+[ext_resource type="Texture2D" uid="uid://dbeuhhlwp1ddc" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Janela_casa_Viburno.png" id="7_2yjvl"]
+[ext_resource type="Texture2D" uid="uid://duhc8yeg6lbx7" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Mesa_casa_Viburno.png" id="8_ucfrw"]
+[ext_resource type="Texture2D" uid="uid://bk7nm23cwkcwh" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Banco_casa_Viburno.png" id="9_2p3cy"]
+[ext_resource type="Texture2D" uid="uid://cq0q1d6hvk62r" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /RodadeFiar_casa_Viburno.png" id="10_gmh1j"]
+[ext_resource type="Texture2D" uid="uid://np4gl2qfpffq" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Prateleira_casa_Viburno.png" id="11_n7abr"]
+[ext_resource type="Texture2D" uid="uid://bvudtl1bkksiq" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Porta_interna_casa_Viburno.png" id="12_voved"]
+[ext_resource type="Texture2D" uid="uid://8afjnyte30tx" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Frasco2_casa_Viburno.png" id="13_34yt1"]
+[ext_resource type="Texture2D" uid="uid://cpyut4mfbqden" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Frasco3_casa_Viburno.png" id="14_cta15"]
+[ext_resource type="Texture2D" uid="uid://bcc1kovwgjisv" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Frasco1_casa_Viburno.png" id="15_7j8ek"]
+[ext_resource type="Texture2D" uid="uid://bkd3ws4jxj7rg" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Vela1_casa_Viburno.png" id="16_kqeid"]
+[ext_resource type="Texture2D" uid="uid://brj8scovj042s" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Vela2_casa_Viburno.png" id="17_6bicg"]
+[ext_resource type="Texture2D" uid="uid://cfq2hm5ti2dy7" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Vela3_casa_Viburno.png" id="18_eq5vd"]
+[ext_resource type="Texture2D" uid="uid://c7v3ypx1bgr2q" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Caveira1_casa_Viburno.png" id="19_bjwqp"]
+[ext_resource type="Texture2D" uid="uid://m0u6dueir5et" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Caveira2_casa_Viburno.png" id="20_2a5ch"]
+[ext_resource type="Texture2D" uid="uid://c25vst7ixtf7w" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Fornalha_casa_Viburno-Sheet.png" id="21_im6gi"]
+[ext_resource type="Texture2D" uid="uid://dh2krh2gwqrkh" path="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Painel_ferramentas_CasaViburno.png" id="22_swbfv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34yt1"]
+size = Vector2(1031.5, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7abr"]
+size = Vector2(20, 228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_voved"]
+size = Vector2(20, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xud5w"]
+size = Vector2(20, 267)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx5t1"]
+texture = ExtResource("1_6uhgb")
+texture_region_size = Vector2i(16, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -12, 8, -12, 8, 12, -8, 12)
+
+[sub_resource type="TileSet" id="TileSet_ggv3k"]
+tile_size = Vector2i(16, 24)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_kx5t1")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl7es"]
+texture = ExtResource("2_ggv3k")
+texture_region_size = Vector2i(16, 7)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.5, 8, -3.5, 8, 3.5, -8, 3.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2nt5"]
+texture = ExtResource("3_xud5w")
+texture_region_size = Vector2i(16, 7)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.5, 8, -3.5, 8, 3.5, -8, 3.5)
+
+[sub_resource type="TileSet" id="TileSet_lj37p"]
+tile_size = Vector2i(16, 7)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_a2nt5")
+sources/0 = SubResource("TileSetAtlasSource_cl7es")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_go84v"]
+texture = ExtResource("5_i1eo5")
+texture_region_size = Vector2i(38, 45)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pefb"]
+texture = ExtResource("6_m7ses")
+texture_region_size = Vector2i(38, 45)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_icy2j"]
+tile_size = Vector2i(38, 45)
+sources/0 = SubResource("TileSetAtlasSource_go84v")
+sources/1 = SubResource("TileSetAtlasSource_5pefb")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4g3kn"]
+texture = ExtResource("7_2yjvl")
+texture_region_size = Vector2i(96, 83)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8ub4g"]
+tile_size = Vector2i(96, 83)
+sources/0 = SubResource("TileSetAtlasSource_4g3kn")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7jvx"]
+texture = ExtResource("8_ucfrw")
+texture_region_size = Vector2i(41, 34)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_n7abr"]
+tile_size = Vector2i(41, 34)
+sources/0 = SubResource("TileSetAtlasSource_m7jvx")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_voved"]
+texture = ExtResource("9_2p3cy")
+texture_region_size = Vector2i(29, 21)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_34yt1"]
+tile_size = Vector2i(35, 21)
+sources/0 = SubResource("TileSetAtlasSource_voved")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cta15"]
+texture = ExtResource("10_gmh1j")
+texture_region_size = Vector2i(72, 50)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7j8ek"]
+tile_size = Vector2i(72, 50)
+sources/0 = SubResource("TileSetAtlasSource_cta15")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r0p6"]
+texture = ExtResource("11_n7abr")
+texture_region_size = Vector2i(59, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6gbib"]
+tile_size = Vector2i(59, 8)
+sources/0 = SubResource("TileSetAtlasSource_7r0p6")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wwre"]
+texture = ExtResource("12_voved")
+texture_region_size = Vector2i(24, 122)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -61, 12, -61, 12, 61, 3.18631, 61, 2.54905, -51.9368, -12, -52.5741)
+
+[sub_resource type="TileSet" id="TileSet_qx6eg"]
+tile_size = Vector2i(24, 122)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_3wwre")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18nrp"]
+texture = ExtResource("13_34yt1")
+texture_region_size = Vector2i(8, 18)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ae0p"]
+texture = ExtResource("14_cta15")
+texture_region_size = Vector2i(8, 18)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h3k3c"]
+tile_size = Vector2i(12, 18)
+sources/0 = SubResource("TileSetAtlasSource_18nrp")
+sources/1 = SubResource("TileSetAtlasSource_4ae0p")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3aeg6"]
+texture = ExtResource("15_7j8ek")
+texture_region_size = Vector2i(11, 20)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vbkxi"]
+tile_size = Vector2i(11, 20)
+sources/0 = SubResource("TileSetAtlasSource_3aeg6")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5qhq"]
+texture = ExtResource("16_kqeid")
+texture_region_size = Vector2i(23, 16)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2w3hy"]
+tile_size = Vector2i(23, 16)
+sources/0 = SubResource("TileSetAtlasSource_c5qhq")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5geau"]
+texture = ExtResource("17_6bicg")
+texture_region_size = Vector2i(11, 36)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oya7p"]
+tile_size = Vector2i(11, 36)
+sources/0 = SubResource("TileSetAtlasSource_5geau")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drpv5"]
+texture = ExtResource("18_eq5vd")
+texture_region_size = Vector2i(9, 16)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0bmse"]
+tile_size = Vector2i(9, 16)
+sources/0 = SubResource("TileSetAtlasSource_drpv5")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tev0t"]
+texture = ExtResource("19_bjwqp")
+texture_region_size = Vector2i(12, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nch5"]
+texture = ExtResource("20_2a5ch")
+texture_region_size = Vector2i(12, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_06s76"]
+tile_size = Vector2i(16, 13)
+sources/0 = SubResource("TileSetAtlasSource_tev0t")
+sources/1 = SubResource("TileSetAtlasSource_7nch5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbk6o"]
+atlas = ExtResource("21_im6gi")
+region = Rect2(0, 0, 96, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj8gv"]
+atlas = ExtResource("21_im6gi")
+region = Rect2(96, 0, 96, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pp3g"]
+atlas = ExtResource("21_im6gi")
+region = Rect2(192, 0, 96, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s2p3"]
+atlas = ExtResource("21_im6gi")
+region = Rect2(288, 0, 96, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1y46"]
+atlas = ExtResource("21_im6gi")
+region = Rect2(384, 0, 96, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk5js"]
+atlas = ExtResource("21_im6gi")
+region = Rect2(480, 0, 96, 81)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lff3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbk6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj8gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pp3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s2p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1y46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk5js")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jh31s"]
+texture = ExtResource("22_swbfv")
+texture_region_size = Vector2i(96, 65)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7lax6"]
+tile_size = Vector2i(96, 65)
+sources/0 = SubResource("TileSetAtlasSource_jh31s")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7abr"]
+texture = ExtResource("2_ggv3k")
+texture_region_size = Vector2i(16, 7)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.5, 8, -3.5, 8, 3.5, -8, 3.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34yt1"]
+texture = ExtResource("3_xud5w")
+texture_region_size = Vector2i(16, 7)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.5, 8, -3.5, 8, 3.5, -8, 3.5)
+
+[sub_resource type="TileSet" id="TileSet_cta15"]
+tile_size = Vector2i(16, 7)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_34yt1")
+sources/0 = SubResource("TileSetAtlasSource_n7abr")
+
+[node name="CasaViburno" type="Node2D"]
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(511, -58)
+shape = SubResource("RectangleShape2D_34yt1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(6, 114)
+shape = SubResource("RectangleShape2D_n7abr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1014, 55)
+shape = SubResource("RectangleShape2D_voved")
+
+[node name="LevelDesign" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="LevelDesign"]
+offset_right = 1024.0
+offset_bottom = 256.0
+texture = ExtResource("1_ww6ya")
+
+[node name="Area2D" type="Area2D" parent="LevelDesign/TextureRect"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelDesign/TextureRect/Area2D"]
+position = Vector2(1014, 126)
+shape = SubResource("RectangleShape2D_xud5w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelDesign/TextureRect/Area2D"]
+visible = false
+position = Vector2(6, 130)
+shape = SubResource("RectangleShape2D_xud5w")
+
+[node name="Piso" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-1, -9)
+tile_map_data = PackedByteArray("AAAAAAoAAQAAAAAAAAABAAoAAQAAAAAAAAACAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoAAQAAAAAAAAAFAAoAAQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAIAAoAAQAAAAAAAAAJAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAALAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAANAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoAAQAAAAAAAAARAAoAAQAAAAAAAAASAAoAAQAAAAAAAAATAAoAAQAAAAAAAAAUAAoAAQAAAAAAAAAVAAoAAQAAAAAAAAAWAAoAAQAAAAAAAAAXAAoAAQAAAAAAAAAYAAoAAQAAAAAAAAAZAAoAAQAAAAAAAAAaAAoAAQAAAAAAAAAbAAoAAQAAAAAAAAAcAAoAAQAAAAAAAAAdAAoAAQAAAAAAAAAeAAoAAQAAAAAAAAAfAAoAAQAAAAAAAAAgAAoAAQAAAAAAAAAhAAoAAQAAAAAAAAAiAAoAAQAAAAAAAAAjAAoAAQAAAAAAAAAkAAoAAQAAAAAAAAAlAAoAAQAAAAAAAAAmAAoAAQAAAAAAAAAnAAoAAQAAAAAAAAAoAAoAAQAAAAAAAAApAAoAAQAAAAAAAAAqAAoAAQAAAAAAAAArAAoAAQAAAAAAAAAsAAoAAQAAAAAAAAAtAAoAAQAAAAAAAAAuAAoAAQAAAAAAAAAvAAoAAQAAAAAAAAAwAAoAAQAAAAAAAAAxAAoAAQAAAAAAAAAyAAoAAQAAAAAAAAAzAAoAAQAAAAAAAAA0AAoAAQAAAAAAAAA1AAoAAQAAAAAAAAA2AAoAAQAAAAAAAAA3AAoAAQAAAAAAAAA4AAoAAQAAAAAAAAA5AAoAAQAAAAAAAAA6AAoAAQAAAAAAAAA7AAoAAQAAAAAAAAA8AAoAAQAAAAAAAAA9AAoAAQAAAAAAAAA+AAoAAQAAAAAAAAA/AAoAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_ggv3k")
+
+[node name="Plataforma" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(1, 1)
+tile_map_data = PackedByteArray("AAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAVAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAZAAsAAAAAAAAAAAAaAAsAAAAAAAAAAAAbAAsAAAAAAAAAAAAcAAsAAAAAAAAAAAAdAAsAAAAAAAAAAAAeAAsAAAAAAAAAAAAfAAsAAAAAAAAAAAAgAAsAAAAAAAAAAAAhAAsAAAAAAAAAAAAiAAsAAAAAAAAAAAAjAAsAAAAAAAAAAAAkAAsAAAAAAAAAAAAlAAsAAAAAAAAAAAAmAAsAAAAAAAAAAAAnAAsAAAAAAAAAAAAoAAsAAAAAAAAAAAApAAsAAAAAAAAAAAAqAAsAAAAAAAAAAAArAAsAAAAAAAAAAAAsAAsAAAAAAAAAAAAtAAsAAAAAAAAAAAAuAAsAAAAAAAAAAAAvAAsAAAAAAAAAAAAwAAsAAAAAAAAAAAAxAAsAAAAAAAAAAAAyAAsAAAAAAAAAAAAzAAsAAAAAAAAAAAA0AAsAAAAAAAAAAAA1AAsAAAAAAAAAAAA2AAsAAAAAAAAAAAA3AAsAAAAAAAAAAAA4AAsAAAAAAAAAAAA5AAsAAAAAAAAAAAA6AAsAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lj37p")
+
+[node name="plataforma" type="Sprite2D" parent="LevelDesign/Plataforma"]
+position = Vector2(938, 80.5)
+texture = ExtResource("3_xud5w")
+flip_h = true
+
+[node name="Quadros" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-8, -18)
+tile_map_data = PackedByteArray("AAACAAMAAQAAAAAAAAAPAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_icy2j")
+
+[node name="Moldura" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-21, 9)
+tile_map_data = PackedByteArray("AAACAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_8ub4g")
+
+[node name="Mesa" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-6, -7)
+tile_map_data = PackedByteArray("AAAFAAYAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_n7abr")
+
+[node name="Banco" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-81, 0)
+tile_map_data = PackedByteArray("AAAJAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_34yt1")
+
+[node name="Rodade" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(11, -19)
+tile_map_data = PackedByteArray("AAAFAAQAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_7j8ek")
+
+[node name="Prateleira" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(5, 1)
+tile_map_data = PackedByteArray("AAAFABAAAAAAAAAAAAAGABMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_6gbib")
+
+[node name="Porta" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-9, -13)
+tile_map_data = PackedByteArray("AAAqAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_qx6eg")
+
+[node name="Frasco1" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-184, 3)
+tile_map_data = PackedByteArray("AAAsAAYAAQAAAAAAAAArAAYAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_h3k3c")
+
+[node name="Frasco2" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-16, -11)
+tile_map_data = PackedByteArray("AAAdAAYAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_vbkxi")
+
+[node name="Velas1" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(3, 5)
+tile_map_data = PackedByteArray("AAAJAAsAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_2w3hy")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelDesign/Velas1"]
+position = Vector2(636, 219)
+texture = ExtResource("16_kqeid")
+flip_h = true
+
+[node name="Velas2" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-2, -5)
+tile_map_data = PackedByteArray("AAAdAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_oya7p")
+
+[node name="Velas3" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-3, -7)
+tile_map_data = PackedByteArray("AAAtAAkAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_0bmse")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-130, -3)
+tile_map_data = PackedByteArray("AAAfAAsAAAAAAAAAAAAgAAsAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_06s76")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LevelDesign"]
+position = Vector2(825, 190)
+sprite_frames = SubResource("SpriteFrames_1lff3")
+autoplay = "default"
+
+[node name="Ferramentas" type="TileMapLayer" parent="LevelDesign"]
+tile_map_data = PackedByteArray("AAAHAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_7lax6")
+
+[node name="Plataforma2" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-4, 1)
+tile_map_data = PackedByteArray("AAA+AAsAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_cta15")
+
+[node name="Escudeiro" parent="." instance=ExtResource("5_xud5w")]
+position = Vector2(38, 39)
+
+[node name="Camera2D" type="Camera2D" parent="Escudeiro"]
+limit_left = 0
+limit_top = 0
+limit_right = 1023
+limit_bottom = 0
+limit_smoothed = true

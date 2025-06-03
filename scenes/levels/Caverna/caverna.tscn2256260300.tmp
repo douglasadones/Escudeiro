@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://du1u8gkq7fhm0"]
+[gd_scene load_steps=57 format=4 uid="uid://du1u8gkq7fhm0"]
 
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_u41vv"]
@@ -8,13 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://cf4ps6bnk48ly" path="res://assets/sprites/Caverna/Entrada_escada.png" id="2_bwl4t"]
 [ext_resource type="PackedScene" uid="uid://c7ni6wpm5nbkc" path="res://scenes/levels/Caverna/env/background.tscn" id="2_u41vv"]
 [ext_resource type="Texture2D" uid="uid://dc7q2a64fnw8e" path="res://assets/sprites/Caverna/Itens e estruturas/Palanque_caverna.png" id="3_85lxd"]
-[ext_resource type="Texture2D" uid="uid://d0u4iw6ve534s" path="res://assets/sprites/Caverna/Itens e estruturas/Poste_luz_caverna.png" id="3_4765i"]
+[ext_resource type="Texture2D" uid="uid://cme3tk0860pcc" path="res://assets/sprites/Caverna/Itens e estruturas/Poste_luz_caverna.png" id="3_4765i"]
 [ext_resource type="Texture2D" uid="uid://cwobift28w5m5" path="res://assets/sprites/Caverna/Itens e estruturas/Mesa.png" id="5_0v003"]
 [ext_resource type="Texture2D" uid="uid://b7krbbli7l3o" path="res://assets/sprites/Caverna/Itens e estruturas/Mesa_com_item.png" id="6_oonj5"]
+[ext_resource type="PackedScene" uid="uid://cufekshnpeql0" path="res://scenes/menu/pause_menu.tscn" id="7_1y6au"]
 [ext_resource type="Texture2D" uid="uid://dqr1j4a6ecy2r" path="res://assets/sprites/Caverna/Itens e estruturas/Escada.png" id="8_wt1po"]
 [ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="12_0v003"]
-[ext_resource type="Texture2D" uid="uid://bmgxqfdabb33v" path="res://assets/sprites/Caverna/Itens e estruturas/Balde.png" id="12_6617i"]
+[ext_resource type="Script" uid="uid://dsyhc51mud1yg" path="res://scripts/menu/pause_menu_caverna.gd" id="15_grfif"]
 [ext_resource type="Texture2D" uid="uid://b23vu8eqmjojd" path="res://assets/sprites/Caverna/Itens e estruturas/Placeholder_item.png" id="15_oonj5"]
+[ext_resource type="AudioStream" uid="uid://dyvc3uswmwkqd" path="res://assets/OST/Cave/Cave theme loop.wav" id="16_6617i"]
+[ext_resource type="AudioStream" uid="uid://cnvbecypgr5l7" path="res://assets/OST/Cave/Cave theme pause loop.wav" id="17_o70gn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6617i"]
 atlas = ExtResource("15_oonj5")
@@ -167,11 +170,11 @@ texture_region_size = Vector2i(46, 125)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwl4t"]
 texture = ExtResource("3_4765i")
-texture_region_size = Vector2i(49, 125)
+texture_region_size = Vector2i(46, 125)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_wt1po"]
-tile_size = Vector2i(49, 125)
+tile_size = Vector2i(46, 125)
 sources/0 = SubResource("TileSetAtlasSource_3tfkw")
 sources/1 = SubResource("TileSetAtlasSource_bwl4t")
 
@@ -335,13 +338,13 @@ tile_map_data = PackedByteArray("AAAEAAEAAQAAAAAAAAAMAAEAAAAAAAAAAAAVAAEAAQAAAAA
 tile_set = SubResource("TileSet_wt1po")
 
 [node name="PointLight2D" type="PointLight2D" parent="LevelDesign/Poste"]
-position = Vector2(202, 154)
+position = Vector2(186, 155)
 scale = Vector2(4.57812, 4.57812)
 color = Color(1, 0.52549, 0.270588, 1)
 texture = SubResource("GradientTexture2D_6617i")
 
 [node name="PointLight2D2" type="PointLight2D" parent="LevelDesign/Poste"]
-position = Vector2(1035, 153)
+position = Vector2(969, 154)
 scale = Vector2(3.10683, 3.37065)
 color = Color(1, 0.52549, 0.270588, 1)
 texture = SubResource("GradientTexture2D_6617i")
@@ -357,21 +360,16 @@ position = Vector2(0, -7)
 tile_map_data = PackedByteArray("AAAdAAcAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_grfif")
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelDesign"]
-position = Vector2(687, 65)
-texture = ExtResource("12_6617i")
-
 [node name="Background" parent="." instance=ExtResource("2_u41vv")]
 
 [node name="Escudeiro" parent="." instance=ExtResource("1_kchbl")]
-position = Vector2(62, 180)
+position = Vector2(77, 147)
 
 [node name="Camera" type="Camera2D" parent="Escudeiro"]
 position = Vector2(17, -78)
 zoom = Vector2(1.1, 1.1)
 limit_left = 0
 limit_top = 0
-limit_bottom = 1
 limit_smoothed = true
 position_smoothing_speed = 1.0
 drag_horizontal_enabled = true
@@ -383,16 +381,34 @@ editor_draw_drag_margin = true
 position = Vector2(-8.5, 112.25)
 shape = SubResource("RectangleShape2D_1y6au")
 
+[node name="PauseMenu" parent="." instance=ExtResource("7_1y6au")]
+script = ExtResource("15_grfif")
+
 [node name="Mask" parent="." instance=ExtResource("12_0v003")]
 
 [node name="TrocaCena" type="Area2D" parent="."]
 position = Vector2(-250, -6)
 
 [node name="Collision" type="CollisionShape2D" parent="TrocaCena"]
-position = Vector2(1874, 115)
+position = Vector2(1626.5, 118)
 shape = SubResource("RectangleShape2D_oonj5")
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("16_6617i")
+autoplay = true
+max_distance = 1e+06
+
+[node name="MusicaPausado" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("17_o70gn")
+volume_db = -80.0
+autoplay = true
+max_distance = 1e+06
 
 [connection signal="body_entered" from="PlaceHolder" to="." method="_on_place_holder_body_entered"]
 [connection signal="body_exited" from="PlaceHolder" to="." method="_on_place_holder_body_exited"]
 [connection signal="body_entered" from="LevelDesign/Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="TrocaCena" to="." method="_on_troca_cena_body_entered"]
+[connection signal="finished" from="Musica" to="." method="_on_musica_finished"]
+[connection signal="finished" from="MusicaPausado" to="." method="_on_musica_pausado_finished"]

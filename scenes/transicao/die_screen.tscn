@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqu7kme4xfb41" path="res://scripts/transicao/die_screen.gd" id="1_237cx"]
 [ext_resource type="FontFile" uid="uid://durtnc0bh7ls6" path="res://assets/fonts/old_style/njo_14.ttf" id="1_obds7"]
-[ext_resource type="Texture2D" uid="uid://dm1oq0yeq1eu8" path="res://assets/sprites/Escudeiro_Sprite Sheet/Morrer_Escudeiro/Morrer_Escudeiro_NoArma-Sheet.png" id="2_jg141"]
+[ext_resource type="Texture2D" uid="uid://co8owkptw5y0l" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Morrer_Escudeiro/Morrer_Escudeiro_NoArma-Sheet.png" id="2_jg141"]
 [ext_resource type="AudioStream" uid="uid://d13vi8dayvvmh" path="res://assets/sprites/Caverna/Game Over.wav" id="4_237cx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jg141"]
