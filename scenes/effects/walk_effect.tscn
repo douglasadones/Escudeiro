@@ -1,77 +1,78 @@
 [gd_scene load_steps=20 format=3 uid="uid://dpy05aofqadau"]
 
-[ext_resource type="PackedScene" path="res://scenes/ui/base_effect.tscn" id="1_cctwu"]
+[ext_resource type="PackedScene" uid="uid://bareuf4y85kf4" path="res://scenes/ui/base_effect.tscn" id="1_cctwu"]
+[ext_resource type="Texture2D" uid="uid://bfgvfivf65kpf" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Efeitos para escudeiro/Rastro_impulso_Escudeiro.png" id="2_cctwu"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uysvu"]
-load_path = "res://.godot/imported/Rastro_impulso_Escudeiro.png-1a52acf938d5695751e6fe33c54ddf0a.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0jsvd"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5n4a"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(0, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fubar"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jsvd"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(96, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8xjid"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fubar"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(192, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pxh2i"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xjid"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(288, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a8b1a"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxh2i"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(384, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3qnv5"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8b1a"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(480, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ucj0j"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qnv5"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(576, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3c8ux"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucj0j"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(672, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m0s6q"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c8ux"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(768, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxcj0"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0s6q"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(864, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_04mqv"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxcj0"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(960, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xtnqd"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_04mqv"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(1056, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8tcna"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtnqd"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(1152, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pe4y1"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tcna"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(1248, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pc4xj"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe4y1"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(1344, 0, 96, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y34k5"]
-atlas = SubResource("CompressedTexture2D_uysvu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc4xj"]
+atlas = ExtResource("2_cctwu")
 region = Rect2(1440, 0, 96, 60)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3iwdm"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5n4a")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0jsvd")
 }, {
@@ -116,9 +117,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pc4xj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y34k5")
 }],
 "loop": false,
 "name": &"default",
@@ -128,5 +126,4 @@ animations = [{
 [node name="WalkEffect" instance=ExtResource("1_cctwu")]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3iwdm")
-frame = 6
 flip_h = true

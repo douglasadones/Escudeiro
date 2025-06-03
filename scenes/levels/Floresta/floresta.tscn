@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dlrc71n0bk2v7" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca3.png" id="16_gdvw3"]
 [ext_resource type="Texture2D" uid="uid://x4q4q21jy1na" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca4.png" id="17_nkx6a"]
 [ext_resource type="Texture2D" uid="uid://cbaxdfoi38t0k" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca5.png" id="18_4eler"]
-[ext_resource type="Texture2D" uid="uid://lt8e6vouj00g" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Casa_Viburno.png" id="19_gdvw3"]
+[ext_resource type="Texture2D" uid="uid://xw3sg3h4l73v" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Casa_externa_Viburno.png" id="20_4eler"]
 [ext_resource type="Texture2D" uid="uid://db5rjh11nsl1r" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Porta_viburno.png" id="20_nkx6a"]
 [ext_resource type="AudioStream" uid="uid://bievlqa4fu2ra" path="res://assets/audio/Sound Effects/Primeira Fase/floresta/forest_ambient_loop.wav" id="24_4eler"]
 [ext_resource type="AudioStream" uid="uid://vowsc6eqi518" path="res://assets/audio/Sound Effects/Primeira Fase/Corvo/corvo_audio-1.wav" id="25_77gap"]
@@ -196,12 +196,14 @@ tile_size = Vector2i(212, 79)
 sources/0 = SubResource("TileSetAtlasSource_kejkc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4eler"]
-texture = ExtResource("19_gdvw3")
-texture_region_size = Vector2i(662, 140)
+texture = ExtResource("20_4eler")
+texture_region_size = Vector2i(683, 235)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-340.378, -23.1434, -197, -20, -195, -106, -173, -109, -176, -7, -341.507, -6.20921)
 
 [sub_resource type="TileSet" id="TileSet_77gap"]
 tile_size = Vector2i(662, 140)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4eler")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nntgd"]
@@ -332,12 +334,12 @@ tile_map_data = PackedByteArray("AAASAAIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_uf2wa")
 
 [node name="CasaViburno" type="TileMapLayer" parent="LevelDesign"]
-position = Vector2(-258, -37)
+position = Vector2(-273, -82)
 tile_map_data = PackedByteArray("AAAFAAEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_77gap")
 
 [node name="Porta" type="TileMapLayer" parent="LevelDesign"]
-position = Vector2(0, 12)
+position = Vector2(-3, 12)
 tile_map_data = PackedByteArray("AACZAAEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_0eag3")
 

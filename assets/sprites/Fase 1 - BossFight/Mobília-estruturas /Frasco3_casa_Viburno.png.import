@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lt8e6vouj00g"
-path="res://.godot/imported/Casa_Viburno.png-dec31f73f3a2f7766e860288a5ef20e2.ctex"
+uid="uid://cpyut4mfbqden"
+path="res://.godot/imported/Frasco3_casa_Viburno.png-bcc8b73347a13eb049ff31b84972c983.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Casa_Viburno.png"
-dest_files=["res://.godot/imported/Casa_Viburno.png-dec31f73f3a2f7766e860288a5ef20e2.ctex"]
+source_file="res://assets/sprites/Fase 1 - BossFight/Mobília-estruturas /Frasco3_casa_Viburno.png"
+dest_files=["res://.godot/imported/Frasco3_casa_Viburno.png-bcc8b73347a13eb049ff31b84972c983.ctex"]
 
 [params]
 
