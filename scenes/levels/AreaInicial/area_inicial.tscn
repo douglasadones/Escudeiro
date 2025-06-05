@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=4 uid="uid://1bdgnkhw34aa"]
+
+[ext_resource type="Texture2D" uid="uid://ch5v7ofs5gqn7" path="res://assets/sprites/Fase 1 - Floresta/Textura/Textura_piso_floresta.png" id="1_y0554"]
+[ext_resource type="Texture2D" uid="uid://bkwxi8486ywm2" path="res://assets/sprites/Fase1_área_inicial /Cenário-Background/BG_area_inicial.png" id="2_0wn05"]
+[ext_resource type="Texture2D" uid="uid://cv52iowmtlmtl" path="res://assets/sprites/Fase1_área_inicial /Mobília-estruturas/Placa_floresta.png" id="2_05wfe"]
+[ext_resource type="Texture2D" uid="uid://jjvyqs28gp5i" path="res://assets/sprites/Fase1_área_inicial /Cenário-Background/BG3_area_inicial.png" id="3_05wfe"]
+[ext_resource type="Texture2D" uid="uid://cltiwnyia4tlw" path="res://assets/sprites/Fase1_área_inicial /Mobília-estruturas/Entrada_caverna.png" id="3_dcjah"]
+[ext_resource type="Texture2D" uid="uid://boumnslu7g0ut" path="res://assets/sprites/Fase1_área_inicial /Cenário-Background/BG2_area_inicial.png" id="4_dcjah"]
+[ext_resource type="Texture2D" uid="uid://ddxj7fxh5bn8s" path="res://assets/sprites/Fase1_área_inicial /Cenário-Background/BG1_area_inicial.png" id="5_w843i"]
+[ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="8_dcjah"]
+[ext_resource type="AudioStream" uid="uid://bievlqa4fu2ra" path="res://assets/audio/Sound Effects/Primeira Fase/floresta/forest_ambient_loop.wav" id="9_cv6yp"]
+[ext_resource type="AudioStream" uid="uid://vowsc6eqi518" path="res://assets/audio/Sound Effects/Primeira Fase/Corvo/corvo_audio-1.wav" id="10_oq1lg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv6yp"]
+texture = ExtResource("1_y0554")
+texture_region_size = Vector2i(16, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -16, 8, -16, 8, 16, -8, 16)
+
+[sub_resource type="TileSet" id="TileSet_oq1lg"]
+tile_size = Vector2i(16, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_cv6yp")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dcjah"]
+texture = ExtResource("2_05wfe")
+texture_region_size = Vector2i(33, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w843i"]
+tile_size = Vector2i(33, 40)
+sources/0 = SubResource("TileSetAtlasSource_dcjah")
+
+[node name="AreaInicial" type="Node2D"]
+
+[node name="Mask" parent="." instance=ExtResource("8_dcjah")]
+color = Color(0.918278, 0.706105, 0.587532, 1)
+
+[node name="LevelDesign" type="Node2D" parent="."]
+
+[node name="Piso" type="TileMapLayer" parent="LevelDesign"]
+tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAAAAAAAAAAUAAcAAAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAcAAAAAAAAAAAAaAAcAAAAAAAAAAAAbAAcAAAAAAAAAAAAcAAcAAAAAAAAAAAAdAAcAAAAAAAAAAAAeAAcAAAAAAAAAAAAfAAcAAAAAAAAAAAAgAAcAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_oq1lg")
+
+[node name="Placa" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(26, -8)
+tile_map_data = PackedByteArray("AAAJAAUAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_w843i")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(477, 151)
+texture = ExtResource("3_dcjah")
+flip_h = true
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0wn05")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer2"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_05wfe")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer3"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_dcjah")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxLayer4"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_w843i")
+
+[node name="Floresta" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_cv6yp")
+autoplay = true
+max_distance = 1e+16
+
+[node name="Corvo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_oq1lg")
+volume_db = -10.0
+max_distance = 1e+17

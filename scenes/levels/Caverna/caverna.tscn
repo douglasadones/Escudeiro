@@ -1,59 +1,47 @@
-[gd_scene load_steps=54 format=4 uid="uid://du1u8gkq7fhm0"]
+[gd_scene load_steps=52 format=4 uid="uid://du1u8gkq7fhm0"]
 
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_u41vv"]
 [ext_resource type="Script" uid="uid://cfp5d06ra7ciy" path="res://scripts/levels/caverna.gd" id="1_y087k"]
-[ext_resource type="Texture2D" uid="uid://krry6alg52bs" path="res://assets/sprites/Caverna/Itens e estruturas/Barris_caverna.png" id="2_1y6au"]
-[ext_resource type="Texture2D" uid="uid://hjsoy6sho7n" path="res://assets/sprites/Caverna/Itens e estruturas/Poste_caverna.png" id="2_5e8sv"]
 [ext_resource type="Texture2D" uid="uid://cf4ps6bnk48ly" path="res://assets/sprites/Caverna/Entrada_escada.png" id="2_bwl4t"]
 [ext_resource type="PackedScene" uid="uid://c7ni6wpm5nbkc" path="res://scenes/levels/Caverna/env/background.tscn" id="2_u41vv"]
-[ext_resource type="Texture2D" uid="uid://dc7q2a64fnw8e" path="res://assets/sprites/Caverna/Itens e estruturas/Palanque_caverna.png" id="3_85lxd"]
-[ext_resource type="Texture2D" uid="uid://d0u4iw6ve534s" path="res://assets/sprites/Caverna/Itens e estruturas/Poste_luz_caverna.png" id="3_4765i"]
-[ext_resource type="Texture2D" uid="uid://cwobift28w5m5" path="res://assets/sprites/Caverna/Itens e estruturas/Mesa.png" id="5_0v003"]
-[ext_resource type="Texture2D" uid="uid://b7krbbli7l3o" path="res://assets/sprites/Caverna/Itens e estruturas/Mesa_com_item.png" id="6_oonj5"]
-[ext_resource type="Texture2D" uid="uid://dqr1j4a6ecy2r" path="res://assets/sprites/Caverna/Itens e estruturas/Escada.png" id="8_wt1po"]
+[ext_resource type="Texture2D" uid="uid://krry6alg52bs" path="res://assets/sprites/Caverna/Itens_e_estruturas/Barris_caverna.png" id="3_wt1po"]
+[ext_resource type="Texture2D" uid="uid://dc7q2a64fnw8e" path="res://assets/sprites/Caverna/Itens_e_estruturas/Palanque_caverna.png" id="4_0v003"]
+[ext_resource type="Texture2D" uid="uid://cwobift28w5m5" path="res://assets/sprites/Caverna/Itens_e_estruturas/Mesa.png" id="6_oonj5"]
+[ext_resource type="Texture2D" uid="uid://b7krbbli7l3o" path="res://assets/sprites/Caverna/Itens_e_estruturas/Mesa_com_item.png" id="7_6617i"]
+[ext_resource type="Texture2D" uid="uid://hjsoy6sho7n" path="res://assets/sprites/Caverna/Itens_e_estruturas/Poste_caverna.png" id="8_o70gn"]
+[ext_resource type="Texture2D" uid="uid://d0u4iw6ve534s" path="res://assets/sprites/Caverna/Itens_e_estruturas/Poste_luz_caverna.png" id="9_grfif"]
+[ext_resource type="Texture2D" uid="uid://dqr1j4a6ecy2r" path="res://assets/sprites/Caverna/Itens_e_estruturas/Escada.png" id="10_5fvbp"]
 [ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="12_0v003"]
-[ext_resource type="Texture2D" uid="uid://bmgxqfdabb33v" path="res://assets/sprites/Caverna/Itens e estruturas/Balde.png" id="12_6617i"]
-[ext_resource type="Texture2D" uid="uid://b23vu8eqmjojd" path="res://assets/sprites/Caverna/Itens e estruturas/Placeholder_item.png" id="15_oonj5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6617i"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o70gn"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grfif"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5fvbp"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w8aki"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dfgmu"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rq2a4"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_adlan"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(112, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fqx4"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(128, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fe543"]
-atlas = ExtResource("15_oonj5")
 region = Rect2(144, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xf84c"]
@@ -113,7 +101,7 @@ tile_size = Vector2i(64, 27)
 sources/0 = SubResource("TileSetAtlasSource_wt1po")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4h06"]
-texture = ExtResource("2_1y6au")
+texture = ExtResource("3_wt1po")
 texture_region_size = Vector2i(72, 52)
 0:0/0 = 0
 
@@ -122,13 +110,16 @@ tile_size = Vector2i(72, 52)
 sources/2 = SubResource("TileSetAtlasSource_t4h06")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y087k"]
-texture = ExtResource("3_85lxd")
+texture = ExtResource("4_0v003")
 texture_region_size = Vector2i(106, 66)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-53, -30.2163, -45.5043, -33, 53, -33, 53, 33, -47.4158, 33, -48.0223, -24.4608, -53, -24.6406)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-46.8513, -33, 47.4158, -33, 47.9803, 33, -46.2869, 33)
 
 [sub_resource type="TileSet" id="TileSet_1y6au"]
 tile_size = Vector2i(106, 66)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_y087k")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y6au"]
@@ -143,7 +134,7 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_1y6au")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6617i"]
-texture = ExtResource("5_0v003")
+texture = ExtResource("6_oonj5")
 texture_region_size = Vector2i(106, 43)
 0:0/0 = 0
 
@@ -152,7 +143,7 @@ tile_size = Vector2i(106, 43)
 sources/0 = SubResource("TileSetAtlasSource_6617i")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_grfif"]
-texture = ExtResource("6_oonj5")
+texture = ExtResource("7_6617i")
 texture_region_size = Vector2i(106, 46)
 0:0/0 = 0
 
@@ -161,12 +152,12 @@ tile_size = Vector2i(106, 46)
 sources/0 = SubResource("TileSetAtlasSource_grfif")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3tfkw"]
-texture = ExtResource("2_5e8sv")
+texture = ExtResource("8_o70gn")
 texture_region_size = Vector2i(46, 125)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwl4t"]
-texture = ExtResource("3_4765i")
+texture = ExtResource("9_grfif")
 texture_region_size = Vector2i(49, 125)
 0:0/0 = 0
 
@@ -246,7 +237,7 @@ _data = {
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o70gn"]
-texture = ExtResource("8_wt1po")
+texture = ExtResource("10_5fvbp")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -331,7 +322,7 @@ tile_set = SubResource("TileSet_5fvbp")
 
 [node name="Poste" type="TileMapLayer" parent="LevelDesign"]
 position = Vector2(0, -33)
-tile_map_data = PackedByteArray("AAAEAAEAAQAAAAAAAAAMAAEAAAAAAAAAAAAVAAEAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAEAAQAAAAAAAAAMAAEAAAAAAAAAAAATAAEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_wt1po")
 
 [node name="PointLight2D" type="PointLight2D" parent="LevelDesign/Poste"]
@@ -341,7 +332,7 @@ color = Color(1, 0.52549, 0.270588, 1)
 texture = SubResource("GradientTexture2D_6617i")
 
 [node name="PointLight2D2" type="PointLight2D" parent="LevelDesign/Poste"]
-position = Vector2(1035, 153)
+position = Vector2(934, 153)
 scale = Vector2(3.10683, 3.37065)
 color = Color(1, 0.52549, 0.270588, 1)
 texture = SubResource("GradientTexture2D_6617i")
@@ -359,7 +350,6 @@ tile_set = SubResource("TileSet_grfif")
 
 [node name="Sprite2D" type="Sprite2D" parent="LevelDesign"]
 position = Vector2(687, 65)
-texture = ExtResource("12_6617i")
 
 [node name="Background" parent="." instance=ExtResource("2_u41vv")]
 

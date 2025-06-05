@@ -1,0 +1,309 @@
+[gd_scene load_steps=16 format=3 uid="uid://dg18arxi4gisy"]
+
+[ext_resource type="Script" uid="uid://bivpahch7fjkb" path="res://scripts/levels/caverna/nevoa_01.gd" id="1_al1u6"]
+[ext_resource type="Texture2D" uid="uid://b05k4mwq4hm02" path="res://assets/sprites/Caverna/Névoa/Plataforma_nevoa-Sheet.png" id="2_010cl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf84c"]
+atlas = ExtResource("2_010cl")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mdu8"]
+atlas = ExtResource("2_010cl")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbl6p"]
+atlas = ExtResource("2_010cl")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu57e"]
+atlas = ExtResource("2_010cl")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2dl4"]
+atlas = ExtResource("2_010cl")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86a1p"]
+atlas = ExtResource("2_010cl")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tfsod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf84c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mdu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbl6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu57e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2dl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86a1p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdb6f"]
+size = Vector2(33, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6617i"]
+size = Vector2(302, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o70gn"]
+size = Vector2(11, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fvbp"]
+size = Vector2(3, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grfif"]
+size = Vector2(233.25, 8.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8aki"]
+size = Vector2(233.25, 3)
+
+[node name="Nevoa01" type="Node2D"]
+script = ExtResource("1_al1u6")
+
+[node name="Nevoa" type="StaticBody2D" parent="."]
+position = Vector2(-36, -6)
+
+[node name="Nevoa" type="AnimatedSprite2D" parent="Nevoa"]
+position = Vector2(556, 182)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nevoa"]
+position = Vector2(556.5, 182)
+shape = SubResource("RectangleShape2D_tdb6f")
+one_way_collision = true
+
+[node name="Nevoa2" type="StaticBody2D" parent="."]
+position = Vector2(38, -49)
+
+[node name="Nevoa" type="AnimatedSprite2D" parent="Nevoa2"]
+position = Vector2(556, 182)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nevoa2"]
+position = Vector2(556.5, 182)
+shape = SubResource("RectangleShape2D_tdb6f")
+one_way_collision = true
+
+[node name="Nevoa3" type="StaticBody2D" parent="."]
+position = Vector2(209, -91)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nevoa3"]
+visible = false
+position = Vector2(691, 182)
+shape = SubResource("RectangleShape2D_6617i")
+one_way_collision = true
+
+[node name="Nevoa" type="AnimatedSprite2D" parent="Nevoa3"]
+position = Vector2(556, 182)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa2" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(33, 0)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa3" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(69, 1)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa4" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(102, 1)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa5" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(135, 1)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa6" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(168, 1)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa7" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(204, 2)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa8" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(237, 2)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa9" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(270, 2)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa11" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa12" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(33, 0)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa13" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(69, 1)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa14" type="AnimatedSprite2D" parent="Nevoa3/Nevoa"]
+position = Vector2(102, 1)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa10" type="AnimatedSprite2D" parent="Nevoa3"]
+modulate = Color(0.568627, 0.568627, 0.568627, 1)
+position = Vector2(840, 204)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa15" type="AnimatedSprite2D" parent="Nevoa3/Nevoa10"]
+position = Vector2(35, 0)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa16" type="AnimatedSprite2D" parent="Nevoa3/Nevoa10"]
+position = Vector2(69, 0)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa16" type="AnimatedSprite2D" parent="Nevoa3/Nevoa10/Nevoa16"]
+position = Vector2(21, 2.09815e-06)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Nevoa3"]
+
+[node name="Area2D" type="Area2D" parent="Nevoa3/StaticBody2D"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Nevoa3/StaticBody2D/Area2D"]
+position = Vector2(839.5, 248)
+shape = SubResource("RectangleShape2D_o70gn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Nevoa3/StaticBody2D"]
+position = Vector2(835.5, 248)
+shape = SubResource("RectangleShape2D_5fvbp")
+
+[node name="Nevoa11" type="AnimatedSprite2D" parent="Nevoa3"]
+modulate = Color(0.568627, 0.568627, 0.568627, 1)
+position = Vector2(946, 185)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa15" type="AnimatedSprite2D" parent="Nevoa3/Nevoa11"]
+position = Vector2(36, -4.37114e-08)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame_progress = 0.0835988
+
+[node name="Nevoa16" type="AnimatedSprite2D" parent="Nevoa3/Nevoa11"]
+position = Vector2(72, -1.31134e-07)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa17" type="AnimatedSprite2D" parent="Nevoa3/Nevoa11"]
+position = Vector2(108, -7.86805e-07)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa18" type="AnimatedSprite2D" parent="Nevoa3/Nevoa11"]
+position = Vector2(-108, 6.29823e-06)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa19" type="AnimatedSprite2D" parent="Nevoa3/Nevoa11"]
+position = Vector2(-72, 6.21081e-06)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="Nevoa20" type="AnimatedSprite2D" parent="Nevoa3/Nevoa11"]
+position = Vector2(-36, 5.55514e-06)
+sprite_frames = SubResource("SpriteFrames_tfsod")
+autoplay = "default"
+frame = 2
+frame_progress = 0.715273
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Nevoa3/Nevoa11"]
+
+[node name="Area2D" type="Area2D" parent="Nevoa3/Nevoa11/StaticBody2D"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Nevoa3/Nevoa11/StaticBody2D/Area2D"]
+visible = false
+position = Vector2(10.625, 0.25)
+shape = SubResource("RectangleShape2D_grfif")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Nevoa3/Nevoa11/StaticBody2D"]
+position = Vector2(10.625, -2.5)
+shape = SubResource("RectangleShape2D_w8aki")

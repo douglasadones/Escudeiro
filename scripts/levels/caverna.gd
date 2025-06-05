@@ -2,7 +2,7 @@ extends Node2D
 class_name Caverna
 
 const DIALOG_SYSTEM: PackedScene = preload("res://scenes/ui/dialog_box.tscn")
-
+const NEVOA01: PackedScene = preload("res://scenes/levels/Caverna/nevoa/nevoa_01.tscn")
 @onready var place_holder: Area2D = $PlaceHolder
 
 @export_category("Variables")
@@ -19,8 +19,6 @@ ser tomado pelo terror.",
 }
 
 
-
-
 func _ready() -> void:
 	Global.current_scene_path = scene_path
 	var escudeiro = get_node("Escudeiro")
@@ -35,6 +33,10 @@ func _ready() -> void:
 	if !Music.tocando:
 		Music.play()
 	Pausa.enable_pause_menu()
+	
+	var nevoa01 = NEVOA01.instantiate()
+	await get_tree().create_timer(10.0).timeout
+	add_child(nevoa01)
 
 func _process(delta: float) -> void:
 	if pode_interagir and Input.is_action_just_pressed("interagir"):
@@ -64,3 +66,4 @@ func _on_troca_cena_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
 		Global.current_scene_path = "res://scenes/levels/Floresta/floresta.tscn"
 		transition_screen.fade_in()
+		
