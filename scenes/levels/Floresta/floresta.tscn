@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://cpqscvsef3cle"]
+[gd_scene load_steps=66 format=4 uid="uid://cpqscvsef3cle"]
 
 [ext_resource type="PackedScene" uid="uid://ca57kmnku8pmw" path="res://scenes/levels/Floresta/env/background.tscn" id="1_lemqm"]
 [ext_resource type="Script" uid="uid://ch7w3hc3v6pk0" path="res://scripts/levels/floresta.gd" id="1_nkx6a"]
@@ -199,7 +199,7 @@ sources/0 = SubResource("TileSetAtlasSource_kejkc")
 texture = ExtResource("20_4eler")
 texture_region_size = Vector2i(683, 235)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-340.378, -23.1434, -197, -20, -195, -106, -173, -109, -176, -7, -341.507, -6.20921)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-340.378, -23.1434, -177, -20, -177, -7, -341.507, -6.20921)
 
 [sub_resource type="TileSet" id="TileSet_77gap"]
 tile_size = Vector2i(662, 140)
@@ -225,6 +225,9 @@ size = Vector2(138, 109.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77gap"]
 size = Vector2(33, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4eler"]
+size = Vector2(20.5, 70)
 
 [node name="Floresta" type="Node2D"]
 script = ExtResource("1_nkx6a")
@@ -270,7 +273,7 @@ tile_set = SubResource("TileSet_c8llg")
 
 [node name="Fornalha" type="TileMapLayer" parent="LevelDesign"]
 position = Vector2(31, 13)
-tile_map_data = PackedByteArray("AAAEAAIAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAEAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_awjvj")
 
 [node name="CasaFundo" type="TileMapLayer" parent="LevelDesign"]
@@ -384,6 +387,14 @@ position = Vector2(-1876, 19)
 position = Vector2(1874, 115)
 shape = SubResource("RectangleShape2D_77gap")
 
+[node name="TrocaCena2" type="Area2D" parent="."]
+position = Vector2(-1877, 20)
+
+[node name="Collision" type="CollisionShape2D" parent="TrocaCena2"]
+position = Vector2(5054, 49)
+shape = SubResource("RectangleShape2D_4eler")
+
 [connection signal="body_entered" from="Npc" to="." method="_on_npc_body_entered"]
 [connection signal="finished" from="Floresta" to="." method="_on_floresta_finished"]
 [connection signal="body_entered" from="TrocaCena" to="." method="_on_troca_cena_body_entered"]
+[connection signal="body_entered" from="TrocaCena2" to="." method="_on_troca_cena_2_body_entered"]

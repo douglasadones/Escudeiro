@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca88w7rxfrom5"]
+[gd_scene load_steps=15 format=3 uid="uid://ca88w7rxfrom5"]
 
 [ext_resource type="Script" uid="uid://d3414itk3i3mj" path="res://scripts/transicao/transition_screen.gd" id="1_tcda8"]
+[ext_resource type="Texture2D" uid="uid://dnosibwpxfitm" path="res://assets/sprites/Componentes do Jogo/Loading_game.png" id="2_35det"]
 
 [sub_resource type="Animation" id="Animation_qe5t7"]
 length = 0.001
@@ -28,11 +29,35 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 128)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_d5iai"]
 resource_name = "fade_in"
-length = 0.5
-step = 0.05
+length = 3.0
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -56,6 +81,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(-2, -0.5),
 "update": 0,
 "values": [Vector2(0, 256), Vector2(0, 128)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.51, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_yhc84"]
@@ -94,6 +143,63 @@ _data = {
 &"fade_out": SubResource("Animation_yhc84")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b7ua"]
+atlas = ExtResource("2_35det")
+region = Rect2(0, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xa6l"]
+atlas = ExtResource("2_35det")
+region = Rect2(80, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr0yv"]
+atlas = ExtResource("2_35det")
+region = Rect2(160, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jonq"]
+atlas = ExtResource("2_35det")
+region = Rect2(240, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85fis"]
+atlas = ExtResource("2_35det")
+region = Rect2(320, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4sfp"]
+atlas = ExtResource("2_35det")
+region = Rect2(400, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkqye"]
+atlas = ExtResource("2_35det")
+region = Rect2(480, 0, 80, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vc4cj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b7ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xa6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr0yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jonq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85fis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4sfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkqye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="TransitionScreen" type="CanvasLayer"]
 layer = 10
 script = ExtResource("1_tcda8")
@@ -125,5 +231,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_qe5t7")
 }
 autoplay = "fade_out"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(408, 204)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_vc4cj")
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]
