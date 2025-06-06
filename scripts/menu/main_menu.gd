@@ -21,8 +21,10 @@ func _ready() -> void:
 	if buttons.size() > 0:
 		buttons[current_index].grab_focus()
 
-	Music.stop()
+	Music.set_music("res://assets/OST/Menu/Menu song.wav", "")
+	Music.play()
 	Pausa.disable_pause_menu()
+	
 
 func _process(delta: float) -> void:
 	if is_button_pressed or buttons.size() == 0:
@@ -56,7 +58,7 @@ func _on_button_pressed(_button_pressed: Button) -> void:
 
 	match _button_pressed.name:
 		"NewGame":
-			Global.current_scene_path = "res://scenes/levels/Caverna/caverna.tscn"
+			Global.current_scene_path = "res://scenes/cutscene/cut_scene.tscn"
 			transition_screen.fade_in()
 		"Exit":
 			get_tree().quit()
