@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cb5wpaviugbwo"]
+[gd_scene load_steps=14 format=3 uid="uid://cb5wpaviugbwo"]
 
 [ext_resource type="Script" uid="uid://btfndw4q2qtc7" path="res://scripts/menu/main_menu.gd" id="1_hj162"]
 [ext_resource type="Texture2D" uid="uid://ps786nki7wx7" path="res://assets/Concept Art.png" id="2_hj162"]
 [ext_resource type="FontFile" uid="uid://mq4ne2d73g1l" path="res://assets/fonts/old_style/njo_11.ttf" id="3_isoef"]
 [ext_resource type="FontFile" uid="uid://c25pho1qu8uej" path="res://assets/fonts/scrawl/njs_9.ttf" id="4_qgo02"]
-[ext_resource type="AudioStream" uid="uid://rg0vlpnycahs" path="res://assets/audio/RPG Game.mp3" id="5_vovv2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_arq0v"]
 font = ExtResource("3_isoef")
@@ -211,8 +210,3 @@ text = "Sair"
 label_settings = SubResource("LabelSettings_d6kjb")
 horizontal_alignment = 2
 vertical_alignment = 1
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_vovv2")
-volume_db = 9.811
-autoplay = true

@@ -8,6 +8,13 @@ var scene_path: String
 func fade_in() -> void:
 	scene_path = Global.current_scene_path
 	animation.play("fade_in")
+	
+func cap01() -> void:
+	scene_path = Global.current_scene_path
+	animation.play("cap01")
+
+func fade() -> void:
+	animation.play("fade_in2")
 
 func _on_animation_finished(anim_name: String) -> void:
 	match anim_name:
@@ -19,4 +26,11 @@ func _on_animation_finished(anim_name: String) -> void:
 		"fade":
 			get_tree().change_scene_to_file(scene_path)
 			animation.play("fade")
+		"cap01":
+			get_tree().change_scene_to_file(scene_path)
+			animation.play("fade_out")
+			Music.stop()
+		"fade_in2":
+			animation.play("fade_out")
+
 		

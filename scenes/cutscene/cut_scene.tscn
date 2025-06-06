@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwv2oayfy61mt"]
+
+[ext_resource type="Script" uid="uid://beecgj7e3sv41" path="res://scripts/cutscene/cut_scene.gd" id="1_8fxn1"]
+[ext_resource type="FontFile" uid="uid://mq4ne2d73g1l" path="res://assets/fonts/old_style/njo_11.ttf" id="3_0e3j3"]
+[ext_resource type="FontFile" uid="uid://c25pho1qu8uej" path="res://assets/fonts/scrawl/njs_9.ttf" id="4_w385l"]
+[ext_resource type="AudioStream" uid="uid://ck1o0vh3tin7l" path="res://assets/audio/character-dialog-audio.mp3" id="5_jv21o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oqhds"]
+line_spacing = 1.0
+font = ExtResource("3_0e3j3")
+font_size = 11
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_014m5"]
+font = ExtResource("4_w385l")
+font_size = 9
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_oqhds"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(132.5, 210), Vector2(132.5, 208), Vector2(132.5, 210)]
+}
+
+[sub_resource type="Animation" id="Animation_vk7pd"]
+resource_name = "moving"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(273.5, 46), Vector2(273.5, 43), Vector2(273.5, 46)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_014m5"]
+_data = {
+&"RESET": SubResource("Animation_oqhds"),
+&"moving": SubResource("Animation_vk7pd")
+}
+
+[node name="CutScene" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+script = ExtResource("1_8fxn1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -230.0
+offset_top = -24.0
+offset_right = 234.0
+offset_bottom = 241.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -140.5
+offset_top = 173.0
+offset_right = 137.5
+offset_bottom = 224.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Escudeiro"
+label_settings = SubResource("LabelSettings_oqhds")
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(256, 36)
+layout_mode = 2
+text = "Hello World!
+"
+label_settings = SubResource("LabelSettings_014m5")
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Skip" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(132.5, 210)
+scale = Vector2(0.642857, 0.642857)
+polygon = PackedVector2Array(-4, 0, 4, 0, 0, 8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skip"]
+libraries = {
+&"": SubResource("AnimationLibrary_014m5")
+}
+autoplay = "RESET"
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jv21o")

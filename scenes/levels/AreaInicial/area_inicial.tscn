@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://1bdgnkhw34aa"]
+[gd_scene load_steps=32 format=4 uid="uid://1bdgnkhw34aa"]
 
+[ext_resource type="Script" uid="uid://dlpe0h6hog5hv" path="res://scripts/levels/area_inicial.gd" id="1_aq8lk"]
 [ext_resource type="Texture2D" uid="uid://ch5v7ofs5gqn7" path="res://assets/sprites/Fase 1 - Floresta/Textura/Textura_piso_floresta.png" id="1_y0554"]
 [ext_resource type="Texture2D" uid="uid://bkwxi8486ywm2" path="res://assets/sprites/Fase1_área_inicial /Cenário-Background/BG_area_inicial.png" id="2_0wn05"]
 [ext_resource type="Texture2D" uid="uid://cv52iowmtlmtl" path="res://assets/sprites/Fase1_área_inicial /Mobília-estruturas/Placa_floresta.png" id="2_05wfe"]
@@ -10,12 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="8_dcjah"]
 [ext_resource type="AudioStream" uid="uid://bievlqa4fu2ra" path="res://assets/audio/Sound Effects/Primeira Fase/floresta/forest_ambient_loop.wav" id="9_cv6yp"]
 [ext_resource type="AudioStream" uid="uid://vowsc6eqi518" path="res://assets/audio/Sound Effects/Primeira Fase/Corvo/corvo_audio-1.wav" id="10_oq1lg"]
+[ext_resource type="Texture2D" uid="uid://c27gvwoad70dd" path="res://assets/sprites/Fase1_área_inicial /Escudeiro-Sikiana/Escudeiro_Sheet.png" id="11_oq1lg"]
+[ext_resource type="Texture2D" uid="uid://dma36x75lgf71" path="res://assets/sprites/Fase1_área_inicial /Escudeiro-Sikiana/Sikiana-Sheet.png" id="12_5xumj"]
+[ext_resource type="Texture2D" uid="uid://c0f4k1ra66m8x" path="res://assets/sprites/Ferreiro_Viburno/Parado_Ferreiro/Ferreiro_Parado_SpriteSheet.png" id="13_o6ugw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv6yp"]
 texture = ExtResource("1_y0554")
 texture_region_size = Vector2i(16, 32)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -16, 8, -16, 8, 16, -8, 16)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8.10783, 8, -8.10783, 8, 16, -8, 16)
 
 [sub_resource type="TileSet" id="TileSet_oq1lg"]
 tile_size = Vector2i(16, 32)
@@ -31,7 +35,94 @@ texture_region_size = Vector2i(33, 40)
 tile_size = Vector2i(33, 40)
 sources/0 = SubResource("TileSetAtlasSource_dcjah")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xumj"]
+atlas = ExtResource("11_oq1lg")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6ugw"]
+atlas = ExtResource("11_oq1lg")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aq8lk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xumj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6ugw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq8lk"]
+atlas = ExtResource("12_5xumj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sucl3"]
+atlas = ExtResource("12_5xumj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsm2a"]
+atlas = ExtResource("12_5xumj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v21fi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq8lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sucl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsm2a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v21fi"]
+atlas = ExtResource("13_o6ugw")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5vns"]
+atlas = ExtResource("13_o6ugw")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48d00"]
+atlas = ExtResource("13_o6ugw")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fp6e1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v21fi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5vns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48d00")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq8lk"]
+size = Vector2(20, 255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sucl3"]
+size = Vector2(47, 136)
+
 [node name="AreaInicial" type="Node2D"]
+script = ExtResource("1_aq8lk")
 
 [node name="Mask" parent="." instance=ExtResource("8_dcjah")]
 color = Color(0.918278, 0.706105, 0.587532, 1)
@@ -94,3 +185,43 @@ max_distance = 1e+16
 stream = ExtResource("10_oq1lg")
 volume_db = -10.0
 max_distance = 1e+17
+
+[node name="Escudeiro" type="AnimatedSprite2D" parent="."]
+position = Vector2(209, 198)
+sprite_frames = SubResource("SpriteFrames_aq8lk")
+autoplay = "default"
+
+[node name="Sikiana" type="AnimatedSprite2D" parent="."]
+position = Vector2(261, 200)
+sprite_frames = SubResource("SpriteFrames_v21fi")
+autoplay = "default"
+
+[node name="Viburno" type="AnimatedSprite2D" parent="."]
+position = Vector2(305, 192)
+sprite_frames = SubResource("SpriteFrames_fp6e1")
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(304, 127)
+limit_left = 0
+limit_top = 0
+limit_right = 520
+limit_bottom = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(60, 118)
+shape = SubResource("RectangleShape2D_aq8lk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(530, 120)
+shape = SubResource("RectangleShape2D_aq8lk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(527, 172)
+shape = SubResource("RectangleShape2D_sucl3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
