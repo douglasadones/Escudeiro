@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyfqvcsldv0oe"
-path="res://.godot/imported/Escudeiro_Sikiana-Sheet.png-28558f43ee26d092d7de6979151d8e76.ctex"
+uid="uid://qk7uf0ky1w0r"
+path="res://.godot/imported/Girando_arremesso_martelo.png-d7c507c1e5dbe1201aff3ff922a042d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fase1_área_inicial /Escudeiro-Sikiana/Escudeiro_Sikiana-Sheet.png"
-dest_files=["res://.godot/imported/Escudeiro_Sikiana-Sheet.png-28558f43ee26d092d7de6979151d8e76.ctex"]
+source_file="res://assets/sprites/Ferreiro_Viburno/Projeteis_lançados/Girando_arremesso_martelo.png"
+dest_files=["res://.godot/imported/Girando_arremesso_martelo.png-d7c507c1e5dbe1201aff3ff922a042d3.ctex"]
 
 [params]
 

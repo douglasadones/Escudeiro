@@ -105,4 +105,4 @@ func _on_dialog_finished() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == novo_escudeiro:
 		Global.current_scene_path = "res://scenes/levels/Caverna/caverna.tscn"
-		transition_screen.fade_in()
+		transition_screen.cap02()

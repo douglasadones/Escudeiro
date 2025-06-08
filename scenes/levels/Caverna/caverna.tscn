@@ -1,8 +1,9 @@
-[gd_scene load_steps=52 format=4 uid="uid://du1u8gkq7fhm0"]
+[gd_scene load_steps=54 format=4 uid="uid://du1u8gkq7fhm0"]
 
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_u41vv"]
 [ext_resource type="Script" uid="uid://cfp5d06ra7ciy" path="res://scripts/levels/caverna.gd" id="1_y087k"]
+[ext_resource type="Texture2D" uid="uid://b23vu8eqmjojd" path="res://assets/sprites/Caverna/Itens_e_estruturas/Placeholder_item.png" id="2_0v003"]
 [ext_resource type="Texture2D" uid="uid://cf4ps6bnk48ly" path="res://assets/sprites/Caverna/Entrada_escada.png" id="2_bwl4t"]
 [ext_resource type="PackedScene" uid="uid://c7ni6wpm5nbkc" path="res://scenes/levels/Caverna/env/background.tscn" id="2_u41vv"]
 [ext_resource type="Texture2D" uid="uid://krry6alg52bs" path="res://assets/sprites/Caverna/Itens_e_estruturas/Barris_caverna.png" id="3_wt1po"]
@@ -14,39 +15,52 @@
 [ext_resource type="Texture2D" uid="uid://dqr1j4a6ecy2r" path="res://assets/sprites/Caverna/Itens_e_estruturas/Escada.png" id="10_5fvbp"]
 [ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="12_0v003"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6617i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oonj5"]
+atlas = ExtResource("2_0v003")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o70gn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6617i"]
+atlas = ExtResource("2_0v003")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_grfif"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o70gn"]
+atlas = ExtResource("2_0v003")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5fvbp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_grfif"]
+atlas = ExtResource("2_0v003")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w8aki"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fvbp"]
+atlas = ExtResource("2_0v003")
 region = Rect2(64, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dfgmu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8aki"]
+atlas = ExtResource("2_0v003")
 region = Rect2(80, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rq2a4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfgmu"]
+atlas = ExtResource("2_0v003")
 region = Rect2(96, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_adlan"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq2a4"]
+atlas = ExtResource("2_0v003")
 region = Rect2(112, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2fqx4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_adlan"]
+atlas = ExtResource("2_0v003")
 region = Rect2(128, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fe543"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fqx4"]
+atlas = ExtResource("2_0v003")
 region = Rect2(144, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xf84c"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oonj5")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6617i")
 }, {
@@ -73,9 +87,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2fqx4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fe543")
 }],
 "loop": true,
 "name": &"default",
@@ -146,9 +157,11 @@ sources/0 = SubResource("TileSetAtlasSource_6617i")
 texture = ExtResource("7_6617i")
 texture_region_size = Vector2i(106, 46)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-53, -17.1165, -42.133, -20.0132, 50.5596, -19.7498, 53, -15.5365, 53, 23, -53, 23)
 
 [sub_resource type="TileSet" id="TileSet_5fvbp"]
 tile_size = Vector2i(106, 46)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_grfif")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3tfkw"]
@@ -250,6 +263,9 @@ size = Vector2(21, 271.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oonj5"]
 size = Vector2(33, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v003"]
+size = Vector2(107, 26)
 
 [node name="Caverna" type="Node2D"]
 script = ExtResource("1_y087k")
@@ -382,7 +398,25 @@ position = Vector2(-250, -6)
 position = Vector2(1874, 115)
 shape = SubResource("RectangleShape2D_oonj5")
 
+[node name="VibrarControle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VibrarControle"]
+position = Vector2(461, 217)
+shape = SubResource("RectangleShape2D_0v003")
+
+[node name="VibrarControle2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VibrarControle2"]
+position = Vector2(1103.5, 182)
+shape = SubResource("RectangleShape2D_0v003")
+
 [connection signal="body_entered" from="PlaceHolder" to="." method="_on_place_holder_body_entered"]
 [connection signal="body_exited" from="PlaceHolder" to="." method="_on_place_holder_body_exited"]
 [connection signal="body_entered" from="LevelDesign/Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="TrocaCena" to="." method="_on_troca_cena_body_entered"]
+[connection signal="body_entered" from="VibrarControle" to="." method="_on_vibrar_controle_body_entered"]
+[connection signal="body_exited" from="VibrarControle" to="." method="_on_vibrar_controle_body_exited"]
+[connection signal="body_entered" from="VibrarControle2" to="." method="_on_vibrar_controle_2_body_entered"]
+[connection signal="body_entered" from="VibrarControle2" to="." method="_on_vibrar_controle_body_entered"]
+[connection signal="body_exited" from="VibrarControle2" to="." method="_on_vibrar_controle_2_body_exited"]
+[connection signal="body_exited" from="VibrarControle2" to="." method="_on_vibrar_controle_body_exited"]

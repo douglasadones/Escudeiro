@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://ca88w7rxfrom5"]
+[gd_scene load_steps=23 format=3 uid="uid://ca88w7rxfrom5"]
 
 [ext_resource type="Script" uid="uid://d3414itk3i3mj" path="res://scripts/transicao/transition_screen.gd" id="1_tcda8"]
 [ext_resource type="FontFile" uid="uid://durtnc0bh7ls6" path="res://assets/fonts/old_style/njo_14.ttf" id="2_5b7ua"]
-[ext_resource type="Texture2D" uid="uid://dnosibwpxfitm" path="res://assets/sprites/Componentes do Jogo/Loading_game.png" id="2_35det"]
+[ext_resource type="Texture2D" uid="uid://dnosibwpxfitm" path="res://assets/sprites/Componentes_do_Jogo/Loading_game.png" id="2_35det"]
+[ext_resource type="FontFile" uid="uid://c25pho1qu8uej" path="res://assets/fonts/scrawl/njs_9.ttf" id="3_6xa6l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6xa6l"]
 font = ExtResource("2_5b7ua")
@@ -13,6 +14,12 @@ shadow_color = Color(1, 1, 1, 0.164706)
 [sub_resource type="LabelSettings" id="LabelSettings_tr0yv"]
 font = ExtResource("2_5b7ua")
 font_size = 20
+font_color = Color(1, 0.439216, 1, 1)
+shadow_color = Color(1, 1, 1, 0.164706)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6jonq"]
+font = ExtResource("3_6xa6l")
+font_size = 7
 font_color = Color(1, 0.439216, 1, 1)
 shadow_color = Color(1, 1, 1, 0.164706)
 
@@ -114,87 +121,74 @@ tracks/7/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_d5iai"]
-resource_name = "fade_in"
-length = 3.0
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Up:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(-2, -0.5),
-"update": 0,
-"values": [Vector2(0, -128), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Down:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(-2, -0.5),
-"update": 0,
-"values": [Vector2(0, 256), Vector2(0, 128)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 3),
-"transitions": PackedFloat32Array(1, 1),
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": ["CAPÍTULO 0.3"]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.51, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Label2:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4]
+"values": ["“meu dever de…”"]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label3:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Fear's very useful. Like darkness; like shadows.
+ It's queer that daylight's not enough.
+ We need the shadows, in order to walk.
+                  - Ursula K. Le Guin
 
-[sub_resource type="Animation" id="Animation_yhc84"]
-resource_name = "fade_out"
-length = 0.5
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Up:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(-2, -0.5),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -128)]
+Tradução livre:
+   “O medo é muito útil. Tal como a escuridão; 
+tal como as sombras. É estranho que a luz do dia não seja suficiente.
+ Precisamos de sombras para caminhar”
+"]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Down:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(-2, -0.5),
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Label3:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 128), Vector2(0, 256)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_35det"]
@@ -297,6 +291,254 @@ tracks/7/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["CAPÍTULO 0.3"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Label2:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["“meu dever de…”"]
+}
+
+[sub_resource type="Animation" id="Animation_6xa6l"]
+resource_name = "cap02"
+length = 3.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Up:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-0.5),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Down:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-0.5),
+"update": 0,
+"values": [Vector2(0, 128)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.51, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Label2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["CAPÍTULO 1"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Label2:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Na Caverna
+"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label3:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Fear's very useful. Like darkness; like shadows.
+ It's queer that daylight's not enough.
+ We need the shadows, in order to walk.
+                  - Ursula K. Le Guin
+
+Tradução livre:
+   “O medo é muito útil. Tal como a escuridão; 
+tal como as sombras. É estranho que a luz do dia não seja suficiente.
+ Precisamos de sombras para caminhar”
+"]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Label3:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 1.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d5iai"]
+resource_name = "fade_in"
+length = 3.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Up:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -0.5),
+"update": 0,
+"values": [Vector2(0, -128), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Down:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -0.5),
+"update": 0,
+"values": [Vector2(0, 256), Vector2(0, 128)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.51, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4]
+}
 
 [sub_resource type="Animation" id="Animation_5b7ua"]
 resource_name = "fade_in2"
@@ -351,10 +593,40 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 0, 1, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_yhc84"]
+resource_name = "fade_out"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Up:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -128)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Down:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -0.5),
+"update": 0,
+"values": [Vector2(0, 128), Vector2(0, 256)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qe5t7"]
 _data = {
 &"RESET": SubResource("Animation_qe5t7"),
 &"cap01": SubResource("Animation_35det"),
+&"cap02": SubResource("Animation_6xa6l"),
 &"fade_in": SubResource("Animation_d5iai"),
 &"fade_in2": SubResource("Animation_5b7ua"),
 &"fade_out": SubResource("Animation_yhc84")
@@ -424,7 +696,7 @@ script = ExtResource("1_tcda8")
 [node name="Up" type="ColorRect" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = -128.0
+offset_bottom = 128.0
 grow_horizontal = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
@@ -436,8 +708,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -227.5
+offset_top = -128.0
 offset_right = 227.5
-offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
@@ -455,12 +727,37 @@ label_settings = SubResource("LabelSettings_6xa6l")
 
 [node name="Label2" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 26.0
-offset_top = 101.0
-offset_right = 286.0
-offset_bottom = 134.0
+offset_left = 27.0
+offset_top = 56.0
+offset_right = 287.0
+offset_bottom = 101.0
 text = "“meu dever de…”"
 label_settings = SubResource("LabelSettings_tr0yv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = 0.169231
+anchor_right = 0.520879
+anchor_bottom = 0.328125
+offset_left = 29.0
+offset_top = 87.0
+offset_right = 289.0
+offset_bottom = 132.0
+text = "Fear's very useful. Like darkness; like shadows.
+ It's queer that daylight's not enough.
+ We need the shadows, in order to walk.
+                  - Ursula K. Le Guin
+
+Tradução livre:
+   “O medo é muito útil. Tal como a escuridão; 
+tal como as sombras. É estranho que a luz do dia não seja suficiente.
+ Precisamos de sombras para caminhar”
+"
+label_settings = SubResource("LabelSettings_6jonq")
+metadata/_edit_use_anchors_ = true
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {

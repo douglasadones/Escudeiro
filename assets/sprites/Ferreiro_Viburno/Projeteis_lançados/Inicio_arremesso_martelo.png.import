@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvyejbnibj2hu"
-path="res://.godot/imported/Faca_arremesso.png-e39f9616505b13a28fa57e5773e4772d.ctex"
+uid="uid://7lystnf5x3g4"
+path="res://.godot/imported/Inicio_arremesso_martelo.png-71f10b2069197e4819c4f8c58b37baf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Ferreiro_Viburno/Projeteis_lançados /Faca_arremesso.png"
-dest_files=["res://.godot/imported/Faca_arremesso.png-e39f9616505b13a28fa57e5773e4772d.ctex"]
+source_file="res://assets/sprites/Ferreiro_Viburno/Projeteis_lançados/Inicio_arremesso_martelo.png"
+dest_files=["res://.godot/imported/Inicio_arremesso_martelo.png-71f10b2069197e4819c4f8c58b37baf7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddxj7fxh5bn8s"
-path="res://.godot/imported/BG1_area_inicial.png-6411691565e0d4f2200827a6cda38084.ctex"
+uid="uid://dma36x75lgf71"
+path="res://.godot/imported/Sikiana-Sheet.png-ff5a6626c423de12215f79d3ccf86d5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fase1_área_inicial /Cenário-Background/BG1_area_inicial.png"
-dest_files=["res://.godot/imported/BG1_area_inicial.png-6411691565e0d4f2200827a6cda38084.ctex"]
+source_file="res://assets/sprites/Fase1_área_inicial/Escudeiro-Sikiana/Sikiana-Sheet.png"
+dest_files=["res://.godot/imported/Sikiana-Sheet.png-ff5a6626c423de12215f79d3ccf86d5b.ctex"]
 
 [params]
 

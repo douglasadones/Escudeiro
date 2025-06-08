@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv52iowmtlmtl"
-path="res://.godot/imported/Placa_floresta.png-e8d21a1e8fb8f38188efd48133c808b1.ctex"
+uid="uid://boumnslu7g0ut"
+path="res://.godot/imported/BG2_area_inicial.png-80fef26fe464166f522ffa57d74fccd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fase1_área_inicial /Mobília-estruturas/Placa_floresta.png"
-dest_files=["res://.godot/imported/Placa_floresta.png-e8d21a1e8fb8f38188efd48133c808b1.ctex"]
+source_file="res://assets/sprites/Fase1_área_inicial/Cenário-Background/BG2_area_inicial.png"
+dest_files=["res://.godot/imported/BG2_area_inicial.png-80fef26fe464166f522ffa57d74fccd2.ctex"]
 
 [params]
 

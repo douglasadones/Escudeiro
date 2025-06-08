@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c27gvwoad70dd"
-path="res://.godot/imported/Escudeiro_Sheet.png-891fac47d278c194534f5cd86f686ab3.ctex"
+uid="uid://cyfqvcsldv0oe"
+path="res://.godot/imported/Escudeiro_Sikiana-Sheet.png-ff968afdf6304c2f3a6c879b765fc031.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fase1_área_inicial /Escudeiro-Sikiana/Escudeiro_Sheet.png"
-dest_files=["res://.godot/imported/Escudeiro_Sheet.png-891fac47d278c194534f5cd86f686ab3.ctex"]
+source_file="res://assets/sprites/Fase1_área_inicial/Escudeiro-Sikiana/Escudeiro_Sikiana-Sheet.png"
+dest_files=["res://.godot/imported/Escudeiro_Sikiana-Sheet.png-ff968afdf6304c2f3a6c879b765fc031.ctex"]
 
 [params]
 

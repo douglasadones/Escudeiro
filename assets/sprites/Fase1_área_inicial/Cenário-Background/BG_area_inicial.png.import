@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkwxi8486ywm2"
-path="res://.godot/imported/BG_area_inicial.png-5833cae8006738cbe7ec707f1d9aa83b.ctex"
+path="res://.godot/imported/BG_area_inicial.png-37b53a0dbd2f33e434175a91468abe7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fase1_área_inicial /Cenário-Background/BG_area_inicial.png"
-dest_files=["res://.godot/imported/BG_area_inicial.png-5833cae8006738cbe7ec707f1d9aa83b.ctex"]
+source_file="res://assets/sprites/Fase1_área_inicial/Cenário-Background/BG_area_inicial.png"
+dest_files=["res://.godot/imported/BG_area_inicial.png-37b53a0dbd2f33e434175a91468abe7e.ctex"]
 
 [params]
 
