@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cltiwnyia4tlw"
-path="res://.godot/imported/Entrada_caverna.png-9e73a9d86a1004f929310fed127f2497.ctex"
+uid="uid://dvyejbnibj2hu"
+path="res://.godot/imported/Faca_arremesso.png-0aa94bbc18c03e53f91dd83793999ab1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fase1_área_inicial /Mobília-estruturas/Entrada_caverna.png"
-dest_files=["res://.godot/imported/Entrada_caverna.png-9e73a9d86a1004f929310fed127f2497.ctex"]
+source_file="res://assets/sprites/Ferreiro_Viburno/Projeteis_lançados/Faca_arremesso.png"
+dest_files=["res://.godot/imported/Faca_arremesso.png-0aa94bbc18c03e53f91dd83793999ab1.ctex"]
 
 [params]
 

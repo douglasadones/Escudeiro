@@ -199,7 +199,7 @@ sources/0 = SubResource("TileSetAtlasSource_kejkc")
 texture = ExtResource("20_4eler")
 texture_region_size = Vector2i(683, 235)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-340.378, -23.1434, -177, -20, -177, -7, -341.507, -6.20921)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-340.378, -23.1434, -173.293, -22.579, -182.325, -26.5303, -180.632, -141.683, -143.941, -23.7079, -150, -4, -341.507, -6.20921)
 
 [sub_resource type="TileSet" id="TileSet_77gap"]
 tile_size = Vector2i(662, 140)

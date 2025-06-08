@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7lystnf5x3g4"
-path="res://.godot/imported/Inicio_arremesso_martelo.png-729f53e3dd342e892486de08289351d5.ctex"
+uid="uid://cltiwnyia4tlw"
+path="res://.godot/imported/Entrada_caverna.png-b9fcf34b0bc2431c37c68dc4c1d80661.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Ferreiro_Viburno/Projeteis_lançados /Inicio_arremesso_martelo.png"
-dest_files=["res://.godot/imported/Inicio_arremesso_martelo.png-729f53e3dd342e892486de08289351d5.ctex"]
+source_file="res://assets/sprites/Fase1_área_inicial/Mobília-estruturas/Entrada_caverna.png"
+dest_files=["res://.godot/imported/Entrada_caverna.png-b9fcf34b0bc2431c37c68dc4c1d80661.ctex"]
 
 [params]
 

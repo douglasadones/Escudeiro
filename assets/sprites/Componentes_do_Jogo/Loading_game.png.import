@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3xdw7awgwwj8"
-path="res://.godot/imported/Area_inicial_layout.png-cd5195cd16099aff76ae1a4b2f9ae549.ctex"
+uid="uid://dnosibwpxfitm"
+path="res://.godot/imported/Loading_game.png-37ebe20aecd0b66dbb1f7e0104c9b649.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fase1_área_inicial /Cenário-Background/Area_inicial_layout.png"
-dest_files=["res://.godot/imported/Area_inicial_layout.png-cd5195cd16099aff76ae1a4b2f9ae549.ctex"]
+source_file="res://assets/sprites/Componentes_do_Jogo/Loading_game.png"
+dest_files=["res://.godot/imported/Loading_game.png-37ebe20aecd0b66dbb1f7e0104c9b649.ctex"]
 
 [params]
 

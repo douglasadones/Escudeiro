@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qk7uf0ky1w0r"
-path="res://.godot/imported/Girando_arremesso_martelo.png-c37cbd8724878e24e8afd6e76a87f6bb.ctex"
+uid="uid://cv52iowmtlmtl"
+path="res://.godot/imported/Placa_floresta.png-fe5f5f764b1a94efae243a1d53e49c23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Ferreiro_Viburno/Projeteis_lançados /Girando_arremesso_martelo.png"
-dest_files=["res://.godot/imported/Girando_arremesso_martelo.png-c37cbd8724878e24e8afd6e76a87f6bb.ctex"]
+source_file="res://assets/sprites/Fase1_área_inicial/Mobília-estruturas/Placa_floresta.png"
+dest_files=["res://.godot/imported/Placa_floresta.png-fe5f5f764b1a94efae243a1d53e49c23.ctex"]
 
 [params]
 
