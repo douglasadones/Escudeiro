@@ -1,6 +1,7 @@
-[gd_scene load_steps=74 format=4 uid="uid://dyogq1sal8bdh"]
+[gd_scene load_steps=76 format=4 uid="uid://dyogq1sal8bdh"]
 
 [ext_resource type="Texture2D" uid="uid://cnwg1cfsamuac" path="res://assets/sprites/Fase1-BossFight/Texturas/Piso_interno_casa_Viburno.png" id="1_6uhgb"]
+[ext_resource type="Script" uid="uid://cvqc8igodacp3" path="res://scenes/levels/CasaViburno/casa_viburno.gd" id="1_34yt1"]
 [ext_resource type="Texture2D" uid="uid://btow3wsg7kptb" path="res://assets/sprites/Fase1-BossFight/Cenário-background/BG_casa_Viburnot.png" id="1_ww6ya"]
 [ext_resource type="Texture2D" uid="uid://ieq08ajyhq65" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Plataforma_casa_Viburno.png" id="2_ggv3k"]
 [ext_resource type="Texture2D" uid="uid://cr5qv3cyo0nf6" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Plataforma_borda_casa_Viburno.png" id="3_xud5w"]
@@ -23,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://m0u6dueir5et" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Caveira2_casa_Viburno.png" id="20_2a5ch"]
 [ext_resource type="Texture2D" uid="uid://c25vst7ixtf7w" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Fornalha_casa_Viburno-Sheet.png" id="21_im6gi"]
 [ext_resource type="Texture2D" uid="uid://dh2krh2gwqrkh" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Painel_ferramentas_CasaViburno.png" id="22_swbfv"]
+[ext_resource type="PackedScene" uid="uid://35emfprutep7" path="res://scenes/enemies/ferreiro_viburno.tscn" id="24_voved"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34yt1"]
 size = Vector2(1031.5, 116)
@@ -280,6 +282,7 @@ sources/1 = SubResource("TileSetAtlasSource_34yt1")
 sources/0 = SubResource("TileSetAtlasSource_n7abr")
 
 [node name="CasaViburno" type="Node2D"]
+script = ExtResource("1_34yt1")
 
 [node name="Area2D" type="StaticBody2D" parent="."]
 
@@ -422,3 +425,6 @@ limit_top = 0
 limit_right = 1023
 limit_bottom = 0
 limit_smoothed = true
+
+[node name="FerreiroViburno" parent="." instance=ExtResource("24_voved")]
+position = Vector2(52, 191)

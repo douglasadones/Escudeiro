@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwnfwewidq8lr"]
+
+[ext_resource type="Script" uid="uid://de5r7lb3xdsbd" path="res://scripts/enemies/projetil/faca.gd" id="1_d7mkm"]
+[ext_resource type="Texture2D" uid="uid://dvyejbnibj2hu" path="res://assets/sprites/Ferreiro_Viburno/Projeteis_lançados/Faca_arremesso.png" id="2_0y4os"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdige"]
+radius = 12.0416
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8piws"]
+atlas = ExtResource("2_0y4os")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7qlp"]
+atlas = ExtResource("2_0y4os")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd62u"]
+atlas = ExtResource("2_0y4os")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjgg7"]
+atlas = ExtResource("2_0y4os")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x2oq"]
+atlas = ExtResource("2_0y4os")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw4s7"]
+atlas = ExtResource("2_0y4os")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm4cs"]
+atlas = ExtResource("2_0y4os")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yjje"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8piws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7qlp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd62u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjgg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x2oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mw4s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm4cs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="faca" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 16
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("1_d7mkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_fdige")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3yjje")
+autoplay = "default"
+frame_progress = 0.921412
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.5, -1)
+scale = Vector2(1.15, 1.1)
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

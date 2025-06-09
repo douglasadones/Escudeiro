@@ -12,12 +12,13 @@ var max_health = 100
 var min_health = 0
 var health = 100
 var dead: bool
+var is_dead: bool = false
 var is_idle: bool
 var is_crouch: bool
 var attack_type: String
 var _on_floor: bool = true
 var frame_counter := 0
-
+signal player_died
 @onready var current_attack: bool = false
 @onready var is_running: bool = false
 @onready var is_rolling: bool = false
@@ -26,7 +27,8 @@ var frame_counter := 0
 var walk_step_sound := preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav")
 var walk_effect_path := "res://scenes/effects/walk_effect.tscn"
 
-
+func _ready() -> void:
+	add_to_group("Player")
 func _physics_process(delta: float) -> void:
 	vertical_move(delta)
 	horizontal_move()
@@ -85,3 +87,7 @@ func play_step_sound(pitch: float):
 	audio_effect.pitch_scale = pitch
 	audio_effect.stop()
 	audio_effect.play()
+
+func die():
+	is_dead = true
+	player_died.emit()

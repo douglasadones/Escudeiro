@@ -359,7 +359,9 @@ animations = [{
 radius = 15.0
 height = 56.0
 
-[node name="Escudeiro" type="CharacterBody2D"]
+[node name="Escudeiro" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 31
+collision_mask = 31
 script = ExtResource("1_cq4o1")
 
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_character")]
