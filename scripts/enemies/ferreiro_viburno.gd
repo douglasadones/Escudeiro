@@ -4,12 +4,14 @@ extends CharacterBody2D
 @export var speed: float = 72.0
 @export var patrol_distance: float = 9900.0
 @export var direction: int = 1 
-var andando = false
-var atirar = false
+
 # Configurações de arremesso
 @export var throw_range: float = 300.0
-@export var throw_cooldown: float = 2.0
-@export var projectile_scene = preload("res://scenes/enemies/projetil/faca.tscn")  
+@export var throw_cooldown: float = 2.1
+@export var projectiles_scenes = [
+	preload("res://scenes/enemies/projetil/faca.tscn"),
+	preload("res://scenes/enemies/projetil/martelo.tscn")
+]
 @export var throw_force: float = 900.0
 @export var throw_angle: float = 9.0  
 @export var projectile_kills_player = true  
@@ -22,13 +24,14 @@ var atirar = false
 # Referências
 @onready var sprite = $AnimatedSprite2D
 @onready var throw_timer = $Timer_tiro_delay
-@onready var throw_point = $Marker2D_cima  # Ponto de onde sairão os projéteis
+@onready var throw_point = $Marker2D_cima
 
 # Controle de estado
 var player: Node2D
 var start_position: Vector2
 var can_throw: bool = true
-var is_dead: bool = false
+var andando = false
+var atirar = false
 
 func _ready():
 	start_position = global_position
@@ -42,10 +45,6 @@ func _ready():
 	add_to_group("enemies")
 
 func _physics_process(delta):
-	if is_dead:
-		return
-	
-	
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta
 	
@@ -74,19 +73,9 @@ func patrol_movement():
 	velocity.x = direction * speed
 	
 	# Verifica se há uma parede ou buraco à frente
-	if is_on_wall() or not is_floor_ahead():
+	if is_on_wall():
 		direction *= -1
 		flip_sprite()
-
-func is_floor_ahead() -> bool:
-	# Verifica se há chão à frente para não cair
-	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(
-		global_position + Vector2(direction * 32, 0),
-		global_position + Vector2(direction * 32, 64)
-	)
-	var result = space_state.intersect_ray(query)
-	return result.size() > 0
 
 func flip_sprite():
 	# Vira o sprite baseado na direção
@@ -104,15 +93,19 @@ func check_throw_opportunity():
 		throw_projectile()
 
 func throw_projectile():
-	if not projectile_scene or not can_throw:
+	if not projectiles_scenes or not can_throw:
 		return
 	
 	can_throw = false
 	throw_timer.start()
 	
 	# Instancia o projétil
+	var index = randi() % projectiles_scenes.size()
+	var projectile_scene = projectiles_scenes[index]
 	var projectile = projectile_scene.instantiate()
 	get_tree().current_scene.add_child(projectile)
+	
+	
 	
 	# Posiciona o projétil no ponto de arremesso
 	if throw_point:
@@ -148,43 +141,6 @@ func throw_projectile():
 
 func _on_throw_timer_timeout():
 	can_throw = true
-
-func take_damage(amount: int):
-	if is_dead:
-		return
-	
-	health -= amount
-	
-	# Efeito visual de dano (opcional)
-	modulate = Color.RED
-	var tween = create_tween()
-	tween.tween_property(self, "modulate", Color.WHITE, 0.2)
-	
-	if health <= 0:
-		die()
-
-func die():
-	is_dead = true
-	velocity = Vector2.ZERO
-	
-	# Animação de morte (opcional)
-	var tween = create_tween()
-	tween.parallel().tween_property(self, "modulate:a", 0.0, 1.0)
-	tween.parallel().tween_property(self, "scale", Vector2(1.2, 0.8), 0.5)
-	tween.tween_callback(queue_free)
-
-# Função para detectar colisão com o player
-func _on_body_entered(body):
-	if body.is_in_group("Player"):
-		if body.has_method("take_damage"):
-			body.take_damage(damage)
-
-# Função para ser chamada quando o inimigo colide com algo
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("Player"):
-		if body.has_method("take_damage"):
-			body.take_damage(damage)
-
 
 func _on_timer_andar_timeout() -> void:
 	andando = true

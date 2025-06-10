@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://dyogq1sal8bdh"]
+[gd_scene load_steps=77 format=4 uid="uid://dyogq1sal8bdh"]
 
 [ext_resource type="Texture2D" uid="uid://cnwg1cfsamuac" path="res://assets/sprites/Fase1-BossFight/Texturas/Piso_interno_casa_Viburno.png" id="1_6uhgb"]
 [ext_resource type="Script" uid="uid://cvqc8igodacp3" path="res://scenes/levels/CasaViburno/casa_viburno.gd" id="1_34yt1"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://c25vst7ixtf7w" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Fornalha_casa_Viburno-Sheet.png" id="21_im6gi"]
 [ext_resource type="Texture2D" uid="uid://dh2krh2gwqrkh" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Painel_ferramentas_CasaViburno.png" id="22_swbfv"]
 [ext_resource type="PackedScene" uid="uid://35emfprutep7" path="res://scenes/enemies/ferreiro_viburno.tscn" id="24_voved"]
+[ext_resource type="PackedScene" uid="uid://b2o2mdl67abul" path="res://scenes/enemies/sikiana.tscn" id="26_cta15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34yt1"]
 size = Vector2(1031.5, 116)
@@ -417,7 +418,7 @@ tile_map_data = PackedByteArray("AAA+AAsAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_cta15")
 
 [node name="Escudeiro" parent="." instance=ExtResource("5_xud5w")]
-position = Vector2(38, 39)
+position = Vector2(38, 55)
 
 [node name="Camera2D" type="Camera2D" parent="Escudeiro"]
 limit_left = 0
@@ -428,3 +429,6 @@ limit_smoothed = true
 
 [node name="FerreiroViburno" parent="." instance=ExtResource("24_voved")]
 position = Vector2(52, 191)
+
+[node name="sikiana" parent="." instance=ExtResource("26_cta15")]
+position = Vector2(911, 199)

@@ -1,6 +1,7 @@
 [gd_scene load_steps=56 format=3 uid="uid://ca426214fppn1"]
 
 [ext_resource type="Script" uid="uid://6qevp5ufnqh6" path="res://scripts/player/escudeiro.gd" id="1_cq4o1"]
+[ext_resource type="Texture2D" uid="uid://co8owkptw5y0l" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Morrer_Escudeiro/Morrer_Escudeiro_NoArma-Sheet.png" id="2_7b8jh"]
 [ext_resource type="Texture2D" uid="uid://bng85jer7j32r" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Pulo_Escudeiro/Escudeiro_pulo_meio.png" id="3_2c1an"]
 [ext_resource type="Texture2D" uid="uid://k2nl636kwcio" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Pulo_Escudeiro/Pulo_inicio.png" id="3_n4y7p"]
 [ext_resource type="Texture2D" uid="uid://cgtc1xhpa828y" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Correndo_Escudeiro/CORRENDO_Escudeiro.png" id="5_hilbb"]
@@ -9,40 +10,37 @@
 [ext_resource type="Texture2D" uid="uid://mxvlwgmojbjr" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Pulo_Escudeiro/Escudeiro_pulo_final.png" id="7_qrivr"]
 [ext_resource type="Script" uid="uid://ygucwys01rhy" path="res://scripts/player/texture.gd" id="9_2c1an"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_epjq5"]
-load_path = "res://.godot/imported/Morrer_Escudeiro_NoArma-Sheet.png-d92064f76e241cc83bdbbe50ec263d63.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn3j7"]
-atlas = SubResource("CompressedTexture2D_epjq5")
-region = Rect2(0, 0, 112, 94)
+atlas = ExtResource("2_7b8jh")
+region = Rect2(4, 32, 110, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bidv"]
-atlas = SubResource("CompressedTexture2D_epjq5")
-region = Rect2(112, 0, 112, 94)
+atlas = ExtResource("2_7b8jh")
+region = Rect2(114, 32, 110, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yea3"]
-atlas = SubResource("CompressedTexture2D_epjq5")
-region = Rect2(224, 0, 112, 94)
+atlas = ExtResource("2_7b8jh")
+region = Rect2(224, 32, 110, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lg2do"]
-atlas = SubResource("CompressedTexture2D_epjq5")
-region = Rect2(336, 0, 112, 94)
+atlas = ExtResource("2_7b8jh")
+region = Rect2(334, 32, 110, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7drey"]
-atlas = SubResource("CompressedTexture2D_epjq5")
-region = Rect2(448, 0, 112, 94)
+atlas = ExtResource("2_7b8jh")
+region = Rect2(444, 32, 110, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_loqa3"]
-atlas = SubResource("CompressedTexture2D_epjq5")
-region = Rect2(560, 0, 112, 94)
+atlas = ExtResource("2_7b8jh")
+region = Rect2(554, 32, 110, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7gdb"]
-atlas = SubResource("CompressedTexture2D_epjq5")
-region = Rect2(672, 0, 112, 94)
+atlas = ExtResource("2_7b8jh")
+region = Rect2(664, 32, 110, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0om1"]
-atlas = SubResource("CompressedTexture2D_epjq5")
-region = Rect2(784, 0, 112, 94)
+atlas = ExtResource("2_7b8jh")
+region = Rect2(774, 32, 110, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hilbb"]
 atlas = ExtResource("3_2c1an")
@@ -365,14 +363,16 @@ collision_mask = 31
 script = ExtResource("1_cq4o1")
 
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_character")]
+scale = Vector2(0.69, 0.69)
 sprite_frames = SubResource("SpriteFrames_jn3j7")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 script = ExtResource("9_2c1an")
 _character = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2)
+scale = Vector2(0.69, 0.69)
 shape = SubResource("CapsuleShape2D_b6mvr")
 
 [node name="healthBar" parent="." instance=ExtResource("5_shct2")]

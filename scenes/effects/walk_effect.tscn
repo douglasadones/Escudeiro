@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dpy05aofqadau"]
 
-[ext_resource type="PackedScene" uid="uid://bareuf4y85kf4" path="res://scenes/ui/base_effect.tscn" id="1_cctwu"]
+[ext_resource type="PackedScene" path="res://scenes/ui/base_effect.tscn" id="1_cctwu"]
 [ext_resource type="Texture2D" uid="uid://bfgvfivf65kpf" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Efeitos para escudeiro/Rastro_impulso_Escudeiro.png" id="2_cctwu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y5n4a"]
@@ -124,6 +124,6 @@ animations = [{
 }]
 
 [node name="WalkEffect" instance=ExtResource("1_cctwu")]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.21, 0.21)
 sprite_frames = SubResource("SpriteFrames_3iwdm")
 flip_h = true

@@ -1,11 +1,11 @@
 extends Node2D
 
 # Configurações
-@export var death_screen_duration: float = 3.0
+@export var death_screen_duration: float = 9.0
 @export var die_screen_scene = preload("res://scenes/transicao/die_screen.tscn")
 
 # Referências
-@onready var player = get_node("Escudeiro")  # Ajuste o caminho conforme sua estrutura
+@onready var player = get_node("Escudeiro")
 
 # Estado do jogo
 var game_over: bool = false
@@ -43,7 +43,6 @@ func _on_player_died():
 		return
 	
 	game_over = true
-	print("Player morreu! Recarregando cena em ", death_screen_duration, " segundos...")
 	
 	# Mostra tela de morte se configurada
 	if die_screen_scene:

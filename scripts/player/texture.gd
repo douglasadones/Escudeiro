@@ -11,6 +11,10 @@ func animate(_velocity: Vector2):
 	
 	if _is_on_action:
 		return
+	if _character.is_dead:
+		_character.is_idle = true
+		play("death")
+		return
 	
 	if not _velocity:
 		play("idle")
