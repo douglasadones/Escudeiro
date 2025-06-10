@@ -272,8 +272,8 @@ tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAA
 tile_set = SubResource("TileSet_c8llg")
 
 [node name="Fornalha" type="TileMapLayer" parent="LevelDesign"]
-position = Vector2(31, 13)
-tile_map_data = PackedByteArray("AAAEAAIAAAAAAAAAAAAZAAIAAAAAAAAAAAA=")
+position = Vector2(69, 9)
+tile_map_data = PackedByteArray("AAAZAAIAAAAAAAAAAAADAAIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_awjvj")
 
 [node name="CasaFundo" type="TileMapLayer" parent="LevelDesign"]
