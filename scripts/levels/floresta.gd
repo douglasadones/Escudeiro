@@ -33,7 +33,7 @@ func _corvo_loop() -> void:
 func _on_troca_cena_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
 		Global.current_scene_path = "res://scenes/levels/Caverna/caverna.tscn"
-		Global.spawn_pos_escudeiro = Vector2(1500, 160)
+		Global.spawn_pos_escudeiro = Vector2(2850, 160)
 		transition_screen.fade_in()
 		
 

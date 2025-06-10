@@ -11,6 +11,7 @@ var primeira_vez_caverna: bool = true
 var spawn_pos_escudeiro: Vector2 = Vector2(100, 160)
 
 var foi_pra_floresta: bool = false
+var foi_para_adega: bool = false
 
 func spawn_effect(_path: String, offset: Vector2, initial_position: Vector2, is_flipped: bool) -> void:
 	var effect: BaseEffect = load(_path).instantiate()
