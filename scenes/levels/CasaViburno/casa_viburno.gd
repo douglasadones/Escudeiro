@@ -19,6 +19,10 @@ var nevoa04: Node2D
 var zona_interacao_nevoa: int = 0
 
 func _ready():
+	Music.set_music("res://assets/OST/Battle/Generic Battle.wav", "res://assets/OST/City/RPG City Pause Theme.wav")
+	#Global.foi_pra_floresta = true
+	if !Music.tocando:
+		Music.play()
 	# Adiciona o player ao grupo se não estiver
 	if player:
 		player.add_to_group("Player")
