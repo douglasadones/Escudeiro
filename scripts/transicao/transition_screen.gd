@@ -26,6 +26,16 @@ func cap02() -> void:
 	scene_path = Global.current_scene_path
 	is_skippable = true
 	animation.play("cap02")
+	
+func cap03() -> void:
+	scene_path = Global.current_scene_path
+	is_skippable = true
+	animation.play("cap03")
+
+func cap04() -> void:
+	scene_path = Global.current_scene_path
+	is_skippable = true
+	animation.play("cap04")
 
 func fade() -> void:
 	scene_path = Global.current_scene_path
@@ -62,8 +72,7 @@ func _on_animation_finished(anim_name: String) -> void:
 		"fade":
 			get_tree().change_scene_to_file(scene_path)
 			animation.play("fade")
-		"cap01", "cap02":
-			# MUDANÇA: Agora passamos o nome da animação que recebemos do sinal.
+		"cap01", "cap02", "cap03", "cap04":
 			_end_chapter_animation(anim_name)
 		"fade_in2":
 			animation.play("fade_out")
