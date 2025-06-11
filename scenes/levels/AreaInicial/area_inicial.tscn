@@ -274,7 +274,8 @@ sprite_frames = SubResource("SpriteFrames_v21fi")
 autoplay = "default"
 
 [node name="Escudeiro" type="AnimatedSprite2D" parent="."]
-position = Vector2(209, 198)
+position = Vector2(218, 208)
+scale = Vector2(0.69, 0.69)
 sprite_frames = SubResource("SpriteFrames_aq8lk")
 autoplay = "default"
 
