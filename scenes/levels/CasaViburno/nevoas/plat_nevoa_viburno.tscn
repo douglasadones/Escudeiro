@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://dsptcdjre35du"]
+
+[ext_resource type="Texture2D" uid="uid://b05k4mwq4hm02" path="res://assets/sprites/Caverna/Névoa/Plataforma_nevoa-Sheet.png" id="1_p0mw5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg8ht"]
+atlas = ExtResource("1_p0mw5")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5blwr"]
+atlas = ExtResource("1_p0mw5")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkvyj"]
+atlas = ExtResource("1_p0mw5")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv3t1"]
+atlas = ExtResource("1_p0mw5")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x65ms"]
+atlas = ExtResource("1_p0mw5")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfs4o"]
+atlas = ExtResource("1_p0mw5")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3v2rt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg8ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5blwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkvyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv3t1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x65ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfs4o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3xy7"]
+radius = 3.0
+height = 34.0
+
+[node name="platNevoaViburno" type="StaticBody2D" groups=["Nevoa"]]
+collision_layer = 255
+collision_mask = 255
+
+[node name="plataformaNevoaViburno" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3v2rt")
+autoplay = "default"
+frame_progress = 0.781653
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_x3xy7")

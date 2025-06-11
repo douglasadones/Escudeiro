@@ -1677,7 +1677,16 @@ frame_progress = 0.0853255
 position = Vector2(-105, -0.99962)
 
 [node name="Area2D" type="Area2D" parent="Labirinto/Nevoa3_5/Nevoa3/StaticBody2D"]
-
+[connection signal="body_entered" from="PlaceHolder" to="." method="_on_place_holder_body_entered"]
+[connection signal="body_exited" from="PlaceHolder" to="." method="_on_place_holder_body_exited"]
+[connection signal="body_entered" from="LevelDesign/Area2D" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="TrocaCena" to="." method="_on_troca_cena_body_entered"]
+[connection signal="body_entered" from="VibrarControle" to="." method="_on_vibrar_controle_body_entered"]
+[connection signal="body_exited" from="VibrarControle" to="." method="_on_vibrar_controle_body_exited"]
+[connection signal="body_entered" from="VibrarControle2" to="." method="_on_vibrar_controle_2_body_entered"]
+[connection signal="body_entered" from="VibrarControle2" to="." method="_on_vibrar_controle_body_entered"]
+[connection signal="body_exited" from="VibrarControle2" to="." method="_on_vibrar_controle_body_exited"]
+[connection signal="body_exited" from="VibrarControle2" to="." method="_on_vibrar_controle_2_body_exited"]
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Labirinto/Nevoa3_5/Nevoa3/StaticBody2D/Area2D"]
 position = Vector2(10.625, 0.25)
 shape = SubResource("RectangleShape2D_adlan")

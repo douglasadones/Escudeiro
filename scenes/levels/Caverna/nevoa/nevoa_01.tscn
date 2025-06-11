@@ -111,7 +111,6 @@ one_way_collision = true
 position = Vector2(209, -91)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nevoa3"]
-visible = false
 position = Vector2(691, 182)
 shape = SubResource("RectangleShape2D_6617i")
 one_way_collision = true
