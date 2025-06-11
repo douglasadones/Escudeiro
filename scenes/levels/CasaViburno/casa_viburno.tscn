@@ -466,3 +466,5 @@ shape = SubResource("CircleShape2D_7j8ek")
 [connection signal="body_exited" from="interacao2" to="." method="_on_interacao_2_body_exited"]
 [connection signal="body_entered" from="interacao3" to="." method="_on_interacao_3_body_entered"]
 [connection signal="body_exited" from="interacao3" to="." method="_on_interacao_3_body_exited"]
+[connection signal="body_entered" from="interacao4" to="." method="_on_interacao_4_body_entered"]
+[connection signal="body_exited" from="interacao4" to="." method="_on_interacao_4_body_exited"]

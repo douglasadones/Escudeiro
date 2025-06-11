@@ -50,6 +50,8 @@ func _on_player_hold_completed():
 			ativar_nevoa03()
 		3:
 			ativar_nevoa04()
+		4:
+			pass #coloca aqui a funcao de transição pra cena final
 
 func _on_player_hold_cancelled():
 	print("Porta: Player cancelou o hold!")
@@ -134,6 +136,9 @@ func _on_interacao_3_body_entered(body: Node2D) -> void:
 		
 		zona_interacao_nevoa = 3
 
+func _on_interacao_4_body_entered(body: Node2D) -> void:
+	if(body.name == "Escudeiro"):
+		zona_interacao_nevoa = 4
 
 func _on_interacao_1_body_exited(body: Node2D) -> void:
 	if(body.name == "Escudeiro"):
@@ -146,5 +151,9 @@ func _on_interacao_2_body_exited(body: Node2D) -> void:
 
 
 func _on_interacao_3_body_exited(body: Node2D) -> void:
+	if(body.name == "Escudeiro"):
+		zona_interacao_nevoa = 0
+
+func _on_interacao_4_body_exited(body: Node2D) -> void:
 	if(body.name == "Escudeiro"):
 		zona_interacao_nevoa = 0
