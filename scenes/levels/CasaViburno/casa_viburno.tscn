@@ -24,8 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://m0u6dueir5et" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Caveira2_casa_Viburno.png" id="20_2a5ch"]
 [ext_resource type="Texture2D" uid="uid://c25vst7ixtf7w" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Fornalha_casa_Viburno-Sheet.png" id="21_im6gi"]
 [ext_resource type="Texture2D" uid="uid://dh2krh2gwqrkh" path="res://assets/sprites/Fase1-BossFight/Mobília-estruturas/Painel_ferramentas_CasaViburno.png" id="22_swbfv"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/ferreiro_viburno.tscn" id="24_voved"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/sikiana.tscn" id="26_cta15"]
+[ext_resource type="PackedScene" uid="uid://35emfprutep7" path="res://scenes/enemies/ferreiro_viburno.tscn" id="24_voved"]
+[ext_resource type="PackedScene" uid="uid://b2o2mdl67abul" path="res://scenes/enemies/sikiana.tscn" id="26_cta15"]
 [ext_resource type="PackedScene" uid="uid://c2ebf4b8iowtx" path="res://scenes/levels/CasaViburno/nevoas/nevoa_01_viburno.tscn" id="27_7j8ek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34yt1"]

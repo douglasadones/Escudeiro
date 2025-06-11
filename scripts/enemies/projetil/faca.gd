@@ -70,9 +70,11 @@ func _on_body_entered(body):
 	
 	# Se colidiu com o player - suma imediatamente
 	if body.is_in_group("Player"):
+		$som_destruir.play()
 		hit_player(body)
 		return
 	if body.is_in_group("Nevoa"):
+		$som_destruir.play()
 		queue_free()
 		return
 	

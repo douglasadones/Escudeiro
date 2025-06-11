@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbr52jt771n2u"]
+[gd_scene load_steps=14 format=3 uid="uid://bbr52jt771n2u"]
 
 [ext_resource type="Texture2D" uid="uid://qk7uf0ky1w0r" path="res://assets/sprites/Ferreiro_Viburno/Projeteis_lançados/Girando_arremesso_martelo.png" id="1_1a407"]
 [ext_resource type="Script" uid="uid://b4jplc40xul3v" path="res://scripts/enemies/projetil/martelo.gd" id="1_otga0"]
+[ext_resource type="AudioStream" uid="uid://cwd3ywt0f3fu3" path="res://assets/audio/Sound Effects/Primeira Fase/arremesso/throw.wav" id="3_eeiw5"]
+[ext_resource type="AudioStream" uid="uid://bmvpp3i2oxedm" path="res://assets/audio/Sound Effects/Primeira Fase/objeto colidindo apos arremesso/hit-5.wav" id="4_2houy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otga0"]
 atlas = ExtResource("1_1a407")
@@ -81,6 +83,13 @@ scale = Vector2(2.3, 2.25)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_r362v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_eeiw5")
+autoplay = true
+
+[node name="som_destruir" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2houy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

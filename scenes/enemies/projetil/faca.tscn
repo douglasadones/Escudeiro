@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwnfwewidq8lr"]
+[gd_scene load_steps=14 format=3 uid="uid://bwnfwewidq8lr"]
 
 [ext_resource type="Script" uid="uid://de5r7lb3xdsbd" path="res://scripts/enemies/projetil/faca.gd" id="1_d7mkm"]
 [ext_resource type="Texture2D" uid="uid://dvyejbnibj2hu" path="res://assets/sprites/Ferreiro_Viburno/Projeteis_lançados/Faca_arremesso.png" id="2_0y4os"]
+[ext_resource type="AudioStream" uid="uid://cwd3ywt0f3fu3" path="res://assets/audio/Sound Effects/Primeira Fase/arremesso/throw.wav" id="3_0y4os"]
+[ext_resource type="AudioStream" uid="uid://bmvpp3i2oxedm" path="res://assets/audio/Sound Effects/Primeira Fase/objeto colidindo apos arremesso/hit-5.wav" id="4_qp6g0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fdige"]
 radius = 12.0416
@@ -84,6 +86,15 @@ position = Vector2(0.5, -1)
 scale = Vector2(1.15, 1.1)
 
 [node name="LifetimeTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0y4os")
+autoplay = true
+
+[node name="som_destruir" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qp6g0")
+volume_db = 11.886
+pitch_scale = 2.6
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

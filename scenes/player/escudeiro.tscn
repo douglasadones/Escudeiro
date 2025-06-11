@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://co8owkptw5y0l" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Morrer_Escudeiro/Morrer_Escudeiro_NoArma-Sheet.png" id="2_7b8jh"]
 [ext_resource type="Texture2D" uid="uid://bng85jer7j32r" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Pulo_Escudeiro/Escudeiro_pulo_meio.png" id="3_2c1an"]
 [ext_resource type="Texture2D" uid="uid://k2nl636kwcio" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Pulo_Escudeiro/Pulo_inicio.png" id="3_n4y7p"]
+[ext_resource type="Texture2D" uid="uid://coaoc6ppjaj7t" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Parado_Escudeiro/Parado_Escudeiro_SpriteSheet.png" id="4_c1id4"]
 [ext_resource type="Texture2D" uid="uid://cgtc1xhpa828y" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Correndo_Escudeiro/CORRENDO_Escudeiro.png" id="5_hilbb"]
 [ext_resource type="PackedScene" uid="uid://b45r4vmfeae23" path="res://scenes/ui/health_bar.tscn" id="5_shct2"]
 [ext_resource type="Texture2D" uid="uid://db8lrx243e85b" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Caminhando_Escudeiro/Caminhando_Escudeiro.png" id="6_7b8jh"]
@@ -60,7 +61,6 @@ atlas = ExtResource("3_2c1an")
 region = Rect2(192, 25, 64, 71)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n4y7p"]
-load_path = "res://.godot/imported/Recebe_dano_Escudeiro-Sheet.png-77e6a1d3e697004fd4a1e71a7f940e95.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhirs"]
 atlas = SubResource("CompressedTexture2D_n4y7p")
@@ -78,23 +78,20 @@ region = Rect2(128, 0, 64, 64)
 atlas = SubResource("CompressedTexture2D_n4y7p")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dnoi2"]
-load_path = "res://.godot/imported/Parado_Escudeiro_SpriteSheet.png-c8a510ab0e6646a909fa4888a939dfd4.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1id4"]
-atlas = SubResource("CompressedTexture2D_dnoi2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a64nx"]
+atlas = ExtResource("4_c1id4")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a64nx"]
-atlas = SubResource("CompressedTexture2D_dnoi2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl8e2"]
+atlas = ExtResource("4_c1id4")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bl8e2"]
-atlas = SubResource("CompressedTexture2D_dnoi2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymwh4"]
+atlas = ExtResource("4_c1id4")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ymwh4"]
-atlas = SubResource("CompressedTexture2D_dnoi2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlrt7"]
+atlas = ExtResource("4_c1id4")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0b35"]
@@ -276,9 +273,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c1id4")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_a64nx")
 }, {
 "duration": 1.0,
@@ -286,6 +280,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ymwh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlrt7")
 }],
 "loop": true,
 "name": &"idle",
@@ -413,9 +410,8 @@ script = ExtResource("1_cq4o1")
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_character")]
 scale = Vector2(0.69, 0.69)
 sprite_frames = SubResource("SpriteFrames_jn3j7")
-animation = &"taca_rancor"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.112206
 script = ExtResource("9_2c1an")
 _character = NodePath("..")
 
