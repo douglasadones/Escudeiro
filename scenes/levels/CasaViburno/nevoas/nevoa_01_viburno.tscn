@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=3 uid="uid://c2ebf4b8iowtx"]
+
+[ext_resource type="PackedScene" uid="uid://cpgugoo0kqcu" path="res://scenes/effects/brilho.tscn" id="5_16ufa"]
+[ext_resource type="Texture2D" uid="uid://b05k4mwq4hm02" path="res://assets/sprites/Caverna/Névoa/Plataforma_nevoa-Sheet.png" id="6_puuma"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g35k6"]
+atlas = ExtResource("6_puuma")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5utcb"]
+atlas = ExtResource("6_puuma")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16ufa"]
+atlas = ExtResource("6_puuma")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51cpx"]
+atlas = ExtResource("6_puuma")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8enun"]
+atlas = ExtResource("6_puuma")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blspv"]
+atlas = ExtResource("6_puuma")
+region = Rect2(320, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ynp81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g35k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5utcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16ufa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51cpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8enun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blspv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2jhv"]
+radius = 4.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_44v5l"]
+radius = 2.0
+height = 40.0
+
+[node name="Nevoa01Viburno" type="Node2D"]
+
+[node name="segundogruponevoas" type="StaticBody2D" parent="."]
+
+[node name="nevoapiso" type="AnimatedSprite2D" parent="segundogruponevoas"]
+position = Vector2(931, 14)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_ynp81")
+autoplay = "default"
+frame_progress = 0.254958
+
+[node name="nevoapiso2" type="AnimatedSprite2D" parent="segundogruponevoas"]
+position = Vector2(942, 42)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_ynp81")
+autoplay = "default"
+frame_progress = 0.145624
+
+[node name="nevoapiso3" type="AnimatedSprite2D" parent="segundogruponevoas"]
+position = Vector2(954, 69)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_ynp81")
+autoplay = "default"
+frame_progress = 0.521791
+
+[node name="nevoapiso4" type="AnimatedSprite2D" parent="segundogruponevoas"]
+position = Vector2(977, 78)
+sprite_frames = SubResource("SpriteFrames_ynp81")
+autoplay = "default"
+frame_progress = 0.709588
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="segundogruponevoas"]
+position = Vector2(931, 14)
+shape = SubResource("CapsuleShape2D_h2jhv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="segundogruponevoas"]
+position = Vector2(942, 42)
+shape = SubResource("CapsuleShape2D_h2jhv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="segundogruponevoas"]
+position = Vector2(954, 69)
+shape = SubResource("CapsuleShape2D_h2jhv")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="segundogruponevoas"]
+position = Vector2(977, 78)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_h2jhv")
+
+[node name="primeirogruponevoas" type="StaticBody2D" parent="."]
+
+[node name="nevoapiso5" type="AnimatedSprite2D" parent="primeirogruponevoas"]
+position = Vector2(24, 58)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_ynp81")
+autoplay = "default"
+frame_progress = 0.506879
+
+[node name="nevoapiso6" type="AnimatedSprite2D" parent="primeirogruponevoas"]
+position = Vector2(24, 17)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_ynp81")
+autoplay = "default"
+frame_progress = 0.0217687
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="primeirogruponevoas"]
+position = Vector2(24, 17)
+shape = SubResource("CapsuleShape2D_44v5l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="primeirogruponevoas"]
+position = Vector2(24, 58)
+shape = SubResource("CapsuleShape2D_44v5l")
+
+[node name="brilho2" parent="." instance=ExtResource("5_16ufa")]
+position = Vector2(879, 69)

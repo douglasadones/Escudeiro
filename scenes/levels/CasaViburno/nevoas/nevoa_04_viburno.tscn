@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dum62n1veypsj"]
+
+[ext_resource type="PackedScene" uid="uid://dsptcdjre35du" path="res://scenes/levels/CasaViburno/nevoas/plat_nevoa_viburno.tscn" id="5_xvvsm"]
+[ext_resource type="PackedScene" uid="uid://cpgugoo0kqcu" path="res://scenes/effects/brilho.tscn" id="6_nhq6v"]
+
+[node name="nevoa_04_viburno" type="Node2D"]
+
+[node name="platNevoaViburno" parent="." instance=ExtResource("5_xvvsm")]
+position = Vector2(948, 142)
+rotation = 1.5708
+
+[node name="platNevoaViburno2" parent="." instance=ExtResource("5_xvvsm")]
+position = Vector2(947, 104)
+rotation = 1.5708
+
+[node name="platNevoaViburno3" parent="." instance=ExtResource("5_xvvsm")]
+position = Vector2(949, 217)
+rotation = 1.5708
+
+[node name="platNevoaViburno4" parent="." instance=ExtResource("5_xvvsm")]
+position = Vector2(948, 179)
+rotation = 1.5708
+
+[node name="brilho" parent="." instance=ExtResource("6_nhq6v")]
+position = Vector2(1009, 223)

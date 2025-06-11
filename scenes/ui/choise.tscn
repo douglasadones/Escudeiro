@@ -1,0 +1,142 @@
+[gd_scene load_steps=13 format=3 uid="uid://b6s4wbd6vft6w"]
+
+[ext_resource type="Script" uid="uid://dgl7q080uajgm" path="res://scripts/ui/choise.gd" id="1_xp6l1"]
+[ext_resource type="Texture2D" uid="uid://cdxmfntwgbleq" path="res://assets/dialog/Moldura_texto2.png" id="2_4d1ce"]
+[ext_resource type="FontFile" uid="uid://mq4ne2d73g1l" path="res://assets/fonts/old_style/njo_11.ttf" id="3_82n48"]
+[ext_resource type="FontFile" uid="uid://c25pho1qu8uej" path="res://assets/fonts/scrawl/njs_9.ttf" id="4_v8461"]
+[ext_resource type="AudioStream" uid="uid://ck1o0vh3tin7l" path="res://assets/audio/character-dialog-audio.mp3" id="5_vupoy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vm0lq"]
+line_spacing = 1.0
+font = ExtResource("3_82n48")
+font_size = 11
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4d1ce"]
+line_spacing = 1.0
+font = ExtResource("4_v8461")
+font_size = 9
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrnfg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2gbo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vl8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bm1me"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5kdg5"]
+font = ExtResource("4_v8461")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Choise" type="CanvasLayer"]
+script = ExtResource("1_xp6l1")
+
+[node name="Backgroud" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.5
+offset_top = 19.0
+offset_right = 150.5
+offset_bottom = 101.0
+grow_horizontal = 2
+texture = ExtResource("2_4d1ce")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 89.0
+offset_top = 35.0
+offset_right = 367.0
+offset_bottom = 86.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Escolha:"
+label_settings = SubResource("LabelSettings_vm0lq")
+
+[node name="Title2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Pegar Faca?"
+label_settings = SubResource("LabelSettings_4d1ce")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vupoy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 309.0
+offset_top = 63.0
+offset_right = 386.0
+offset_bottom = 103.0
+scale = Vector2(0.7, 0.7)
+alignment = 1
+
+[node name="Sim" type="Button" parent="HBoxContainer" groups=["menu_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.823529, 0.823529, 0.823529, 1)
+theme_override_colors/font_pressed_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_fonts/font = ExtResource("4_v8461")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hrnfg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d2gbo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5vl8s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bm1me")
+text = "Sim"
+flat = true
+alignment = 2
+
+[node name="Shadow" type="Label" parent="HBoxContainer/Sim"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -15.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Sim"
+label_settings = SubResource("LabelSettings_5kdg5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Nao" type="Button" parent="HBoxContainer" groups=["menu_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.823529, 0.823529, 0.823529, 1)
+theme_override_colors/font_pressed_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_fonts/font = ExtResource("4_v8461")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hrnfg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d2gbo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5vl8s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bm1me")
+text = "Não"
+flat = true
+alignment = 2
+
+[node name="Shadow" type="Label" parent="HBoxContainer/Nao"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.71431
+offset_top = -17.1429
+offset_right = 1.71431
+offset_bottom = 1.85715
+grow_horizontal = 2
+grow_vertical = 0
+text = "Não"
+label_settings = SubResource("LabelSettings_5kdg5")
+horizontal_alignment = 2
+vertical_alignment = 1
