@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var audio: AudioStreamPlayer2D = $Audio
 
 func _ready() -> void:
 	Music.stop()

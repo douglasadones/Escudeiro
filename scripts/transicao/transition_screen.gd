@@ -87,6 +87,5 @@ func _on_animation_finished(anim_name: String) -> void:
 			animation.play("fade_out")
 		"Fim":
 			get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
-			fade_in()
 		"fade_in2":
 			animation.play("fade_out")

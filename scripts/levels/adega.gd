@@ -113,6 +113,7 @@ func _on_knife_choice_made(player_chose_yes: bool) -> void:
 	else:
 		print("Jogador escolheu NÃO (Não pegar a faca).")
 		trigger_ambient_event()
+		
 func die() -> void:
 	var ds = DIE_SCREEN.instantiate()
 	add_child(ds)
