@@ -41,4 +41,4 @@ func _on_troca_cena_2_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
 		Global.current_scene_path = "res://scenes/levels/CasaViburno/casa_viburno.tscn"
 		Global.spawn_pos_escudeiro = Vector2(1500, 160)
-		transition_screen.fade_in()
+		transition_screen.cap04()

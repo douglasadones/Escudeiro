@@ -218,7 +218,7 @@ func continuous_vibration_loop() -> void:
 func _on_troca_cena_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
 		Global.current_scene_path = "res://scenes/levels/Floresta/floresta.tscn"
-		transition_screen.fade_in()
+		transition_screen.cap03()
 
 func _on_place_holder_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
