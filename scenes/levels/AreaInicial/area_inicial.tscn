@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://1bdgnkhw34aa"]
+[gd_scene load_steps=45 format=4 uid="uid://1bdgnkhw34aa"]
 
 [ext_resource type="Script" uid="uid://dlpe0h6hog5hv" path="res://scripts/levels/area_inicial.gd" id="1_aq8lk"]
 [ext_resource type="Texture2D" uid="uid://ch5v7ofs5gqn7" path="res://assets/sprites/Fase 1 - Floresta/Textura/Textura_piso_floresta.png" id="1_y0554"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c27gvwoad70dd" path="res://assets/sprites/Fase1_área_inicial/Escudeiro-Sikiana/Escudeiro_Sheet.png" id="11_oq1lg"]
 [ext_resource type="Texture2D" uid="uid://dma36x75lgf71" path="res://assets/sprites/Fase1_área_inicial/Escudeiro-Sikiana/Sikiana-Sheet.png" id="12_5xumj"]
 [ext_resource type="Texture2D" uid="uid://c0f4k1ra66m8x" path="res://assets/sprites/Ferreiro_Viburno/Parado_Ferreiro/Ferreiro_Parado_SpriteSheet.png" id="13_o6ugw"]
+[ext_resource type="Texture2D" uid="uid://b23vu8eqmjojd" path="res://assets/sprites/Caverna/Itens_e_estruturas/Placeholder_item.png" id="15_sucl3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv6yp"]
 texture = ExtResource("1_y0554")
@@ -121,6 +122,87 @@ size = Vector2(20, 255)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sucl3"]
 size = Vector2(47, 136)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsm2a"]
+size = Vector2(52, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oonj5"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6617i"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o70gn"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grfif"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fvbp"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8aki"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfgmu"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq2a4"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adlan"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fqx4"]
+atlas = ExtResource("15_sucl3")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5vns"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oonj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6617i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o70gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grfif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fvbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8aki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfgmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq2a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adlan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fqx4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="AreaInicial" type="Node2D"]
 script = ExtResource("1_aq8lk")
 
@@ -224,4 +306,18 @@ shape = SubResource("RectangleShape2D_aq8lk")
 position = Vector2(527, 172)
 shape = SubResource("RectangleShape2D_sucl3")
 
+[node name="Item" type="Area2D" parent="."]
+position = Vector2(55, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+position = Vector2(346, 197)
+shape = SubResource("RectangleShape2D_vsm2a")
+
+[node name="Texture" type="AnimatedSprite2D" parent="Item"]
+position = Vector2(346, 213)
+sprite_frames = SubResource("SpriteFrames_v5vns")
+autoplay = "default"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Item" to="." method="_on_item_body_entered"]
+[connection signal="body_exited" from="Item" to="." method="_on_item_body_exited"]

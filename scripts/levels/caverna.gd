@@ -13,6 +13,12 @@ const DIE_SCREEN: PackedScene = preload("res://scenes/transicao/die_screen.tscn"
 @onready var nevoa04: Node2D = $Labirinto/Nevoa04
 @onready var nevoa05: Node2D = $Labirinto/Nevoa05
 @onready var nevoa_3_5: Node2D = $Labirinto/Nevoa3_5
+@onready var audio_morcego: AudioStreamPlayer2D = $Morcego/audio_morcego
+
+
+
+@onready var morcego: CharacterBody2D = $Morcego
+
 
 @export_category("Variables")
 @export var scene_path: String
@@ -67,7 +73,7 @@ func _ready() -> void:
 		Music.play()
 	
 	Pausa.enable_pause_menu()
-	
+	_audio_loop
 	# Garante que todas as névoas comecem desligadas
 	# (a menos que a lógica da adega já tenha ligado a 4)
 	if is_instance_valid(nevoa01):
@@ -337,3 +343,8 @@ func _on_area_2d_3_body_entered(body: Node2D) -> void:
 func _on_area_2d_nevoa_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
 		die()
+
+func _audio_loop() -> void:
+	while true:
+		await get_tree().create_timer(8.0).timeout
+		audio_morcego.play()

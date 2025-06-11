@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=4 uid="uid://du1u8gkq7fhm0"]
+[gd_scene load_steps=113 format=4 uid="uid://du1u8gkq7fhm0"]
 
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_u41vv"]
@@ -15,7 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://dqr1j4a6ecy2r" path="res://assets/sprites/Caverna/Itens_e_estruturas/Escada.png" id="10_5fvbp"]
 [ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="12_0v003"]
 [ext_resource type="Texture2D" uid="uid://b05k4mwq4hm02" path="res://assets/sprites/Caverna/Névoa/Plataforma_nevoa-Sheet.png" id="16_o70gn"]
+[ext_resource type="Script" uid="uid://dfiepmiduq6s7" path="res://scripts/levels/caverna/morcego.gd" id="17_5fvbp"]
+[ext_resource type="Texture2D" uid="uid://bve3kso26lvrd" path="res://assets/sprites/Caverna/Ecossistema/Morcego-SpriteSheet.png" id="17_grfif"]
 [ext_resource type="Texture2D" uid="uid://cv52iowmtlmtl" path="res://assets/sprites/Fase1_área_inicial/Mobília-estruturas/Placa_floresta.png" id="17_o70gn"]
+[ext_resource type="AudioStream" uid="uid://c57pn8cijimo5" path="res://assets/sprites/Caverna/the-sound-of-bats-in-the-cave.mp3" id="19_5fvbp"]
+[ext_resource type="Script" uid="uid://drao14l1e0r53" path="res://scripts/levels/caverna/placas.gd" id="20_w8aki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwl4t"]
 size = Vector2(55.5, 42.5)
@@ -646,6 +650,55 @@ size = Vector2(7, 89.0469)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixm4h"]
 size = Vector2(83.5, 6.76172)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe543"]
+atlas = ExtResource("17_grfif")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfsod"]
+atlas = ExtResource("17_grfif")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdb6f"]
+atlas = ExtResource("17_grfif")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8shg"]
+atlas = ExtResource("17_grfif")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwsta"]
+atlas = ExtResource("17_grfif")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t00q7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe543")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfsod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdb6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8shg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwsta")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sbvf"]
+size = Vector2(52, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u84a"]
+size = Vector2(59, 51)
+
 [node name="Caverna" type="Node2D"]
 script = ExtResource("1_y087k")
 
@@ -767,7 +820,7 @@ position = Vector2(-1164, -6)
 
 [node name="Placas" type="TileMapLayer" parent="LevelDesign/Placa"]
 position = Vector2(5, 18)
-tile_map_data = PackedByteArray("AAAFAAQAAAAAAAAAAAALAAQAAAAAAAAAAAARAAQAAAAAAAAAAAAXAAQAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAKAAQAAAAAAAAAAAASAAQAAAAAAAAAAAAbAAQAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_w8aki")
 
 [node name="Background" parent="LevelDesign" instance=ExtResource("2_u41vv")]
@@ -807,13 +860,20 @@ editor_draw_drag_margin = true
 position = Vector2(988, -1)
 
 [node name="VibrarControle" type="Area2D" parent="Labirinto"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Labirinto/VibrarControle"]
+visible = false
 position = Vector2(461, 217)
 shape = SubResource("RectangleShape2D_0v003")
 
+[node name="Texture" type="AnimatedSprite2D" parent="Labirinto/VibrarControle"]
+position = Vector2(461, 217)
+sprite_frames = SubResource("SpriteFrames_xf84c")
+autoplay = "default"
+frame_progress = 0.264837
+
 [node name="Nevoa01" type="Node2D" parent="Labirinto"]
+visible = false
 
 [node name="Nevoa" type="StaticBody2D" parent="Labirinto/Nevoa01"]
 position = Vector2(-120, -22)
@@ -1050,6 +1110,12 @@ position = Vector2(275, -6)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Labirinto/Nevoa01/VibrarControle2"]
 position = Vector2(1103.5, 182)
 shape = SubResource("RectangleShape2D_6617i")
+
+[node name="Texture" type="AnimatedSprite2D" parent="Labirinto/Nevoa01/VibrarControle2"]
+position = Vector2(1073, 182)
+sprite_frames = SubResource("SpriteFrames_xf84c")
+autoplay = "default"
+frame_progress = 0.264837
 
 [node name="Nevoa02" type="Node2D" parent="Labirinto"]
 visible = false
@@ -1288,6 +1354,12 @@ position = Vector2(-38, -115)
 position = Vector2(1107, 176)
 shape = SubResource("RectangleShape2D_6617i")
 
+[node name="Texture" type="AnimatedSprite2D" parent="Labirinto/Nevoa02/VibrarControle3"]
+position = Vector2(1105, 171)
+sprite_frames = SubResource("SpriteFrames_xf84c")
+autoplay = "default"
+frame_progress = 0.264837
+
 [node name="Nevoa03" type="Node2D" parent="Labirinto"]
 visible = false
 
@@ -1509,6 +1581,12 @@ position = Vector2(-331, -33)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Labirinto/Nevoa03/VibrarControle4"]
 position = Vector2(1107, 176)
 shape = SubResource("RectangleShape2D_6617i")
+
+[node name="Texture" type="AnimatedSprite2D" parent="Labirinto/Nevoa03/VibrarControle4"]
+position = Vector2(1107, 176)
+sprite_frames = SubResource("SpriteFrames_xf84c")
+autoplay = "default"
+frame_progress = 0.264837
 
 [node name="Nevoa3_5" type="Node2D" parent="Labirinto"]
 visible = false
@@ -1957,6 +2035,12 @@ position = Vector2(404, -71)
 position = Vector2(1107, 176)
 shape = SubResource("RectangleShape2D_6617i")
 
+[node name="Texture" type="AnimatedSprite2D" parent="Labirinto/Nevoa04/VibrarControle5"]
+position = Vector2(1106, 172)
+sprite_frames = SubResource("SpriteFrames_xf84c")
+autoplay = "default"
+frame_progress = 0.264837
+
 [node name="Area2D" type="Area2D" parent="Labirinto/Nevoa04"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Labirinto/Nevoa04/Area2D"]
@@ -1964,7 +2048,6 @@ position = Vector2(1315, 212)
 shape = SubResource("RectangleShape2D_gvemu")
 
 [node name="Nevoa05" type="Node2D" parent="Labirinto"]
-visible = false
 
 [node name="Nevoa" type="AnimatedSprite2D" parent="Labirinto/Nevoa05"]
 position = Vector2(1534, 134)
@@ -2178,6 +2261,89 @@ position = Vector2(47, -2)
 position = Vector2(1676.25, 178.381)
 shape = SubResource("RectangleShape2D_ixm4h")
 
+[node name="Texture" type="AnimatedSprite2D" parent="Labirinto/Nevoa05"]
+position = Vector2(1724, 169)
+sprite_frames = SubResource("SpriteFrames_xf84c")
+autoplay = "default"
+frame_progress = 0.264837
+
+[node name="Morcego" type="CharacterBody2D" parent="."]
+position = Vector2(-3064, -10)
+script = ExtResource("17_5fvbp")
+velocidade = 150.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Morcego"]
+position = Vector2(3081, 44)
+sprite_frames = SubResource("SpriteFrames_t00q7")
+autoplay = "default"
+
+[node name="Morcego2" type="CharacterBody2D" parent="."]
+position = Vector2(-3032, -27)
+script = ExtResource("17_5fvbp")
+velocidade = 150.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Morcego2"]
+position = Vector2(3081, 44)
+sprite_frames = SubResource("SpriteFrames_t00q7")
+autoplay = "default"
+
+[node name="Morcego3" type="CharacterBody2D" parent="."]
+position = Vector2(-3001, 8)
+script = ExtResource("17_5fvbp")
+velocidade = 150.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Morcego3"]
+position = Vector2(3081, 44)
+sprite_frames = SubResource("SpriteFrames_t00q7")
+autoplay = "default"
+
+[node name="audio_morcego" type="AudioStreamPlayer2D" parent="Morcego3"]
+position = Vector2(3000, -27)
+stream = ExtResource("19_5fvbp")
+volume_db = -10.0
+autoplay = true
+max_distance = 1000.0
+
+[node name="placas" type="Node2D" parent="."]
+script = ExtResource("20_w8aki")
+
+[node name="P1" type="Area2D" parent="placas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="placas/P1"]
+position = Vector2(346, 197)
+shape = SubResource("RectangleShape2D_5sbvf")
+
+[node name="Texture" type="AnimatedSprite2D" parent="placas/P1"]
+position = Vector2(356, 199)
+sprite_frames = SubResource("SpriteFrames_xf84c")
+autoplay = "default"
+frame_progress = 0.264837
+
+[node name="P2" type="Area2D" parent="placas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="placas/P2"]
+position = Vector2(611, 195)
+shape = SubResource("RectangleShape2D_3u84a")
+
+[node name="Texture" type="AnimatedSprite2D" parent="placas/P2"]
+position = Vector2(618, 200)
+sprite_frames = SubResource("SpriteFrames_xf84c")
+autoplay = "default"
+frame_progress = 0.264837
+
+[node name="P3" type="Area2D" parent="placas"]
+position = Vector2(296, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="placas/P3"]
+position = Vector2(611, 195)
+shape = SubResource("RectangleShape2D_3u84a")
+
+[node name="Texture" type="AnimatedSprite2D" parent="placas/P3"]
+position = Vector2(619, 197)
+sprite_frames = SubResource("SpriteFrames_xf84c")
+autoplay = "default"
+frame_progress = 0.264837
+
 [connection signal="body_entered" from="LevelDesign/Adega" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="LevelDesign/Adega" to="." method="_on_adega_body_entered"]
 [connection signal="body_entered" from="LevelDesign/PlaceHolder" to="." method="_on_place_holder_body_entered"]
@@ -2189,8 +2355,8 @@ shape = SubResource("RectangleShape2D_ixm4h")
 [connection signal="body_entered" from="Labirinto/Nevoa01/Nevoa3/Nevoa3/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa01/VibrarControle2" to="." method="_on_vibrar_controle_2_body_entered"]
 [connection signal="body_exited" from="Labirinto/Nevoa01/VibrarControle2" to="." method="_on_vibrar_controle_2_body_exited"]
-[connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa" to="." method="_on_area_2d_nevoa_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa" to="." method="_on_area_2d_nevoa_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa/Area2D" to="Labirinto/Nevoa01" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa/Area2D2" to="." method="_on_area_2d_2_body_entered"]
@@ -2198,20 +2364,20 @@ shape = SubResource("RectangleShape2D_ixm4h")
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa/Area2D3" to="." method="_on_area_2d_3_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa/Area2D3" to="Labirinto/Nevoa01" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa2/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa02/VibrarControle3" to="." method="_on_vibrar_controle_2_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/VibrarControle3" to="." method="_on_vibrar_controle_3_body_entered"]
-[connection signal="body_exited" from="Labirinto/Nevoa02/VibrarControle3" to="." method="_on_vibrar_controle_3_body_exited"]
+[connection signal="body_entered" from="Labirinto/Nevoa02/VibrarControle3" to="." method="_on_vibrar_controle_2_body_entered"]
 [connection signal="body_exited" from="Labirinto/Nevoa02/VibrarControle3" to="." method="_on_vibrar_controle_2_body_exited"]
+[connection signal="body_exited" from="Labirinto/Nevoa02/VibrarControle3" to="." method="_on_vibrar_controle_3_body_exited"]
 [connection signal="body_entered" from="Labirinto/Nevoa03/Nevoa2/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa03/Nevoa2/StaticBody2D/Area2D" to="Labirinto/Nevoa01" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa03/Nevoa3/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa03/Nevoa3/StaticBody2D/Area2D" to="Labirinto/Nevoa01" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Labirinto/Nevoa03/VibrarControle4" to="." method="_on_vibrar_controle_3_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa03/VibrarControle4" to="." method="_on_vibrar_controle_4_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa03/VibrarControle4" to="." method="_on_vibrar_controle_2_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa03/VibrarControle4" to="." method="_on_vibrar_controle_3_body_entered"]
+[connection signal="body_exited" from="Labirinto/Nevoa03/VibrarControle4" to="." method="_on_vibrar_controle_2_body_exited"]
 [connection signal="body_exited" from="Labirinto/Nevoa03/VibrarControle4" to="." method="_on_vibrar_controle_4_body_exited"]
 [connection signal="body_exited" from="Labirinto/Nevoa03/VibrarControle4" to="." method="_on_vibrar_controle_3_body_exited"]
-[connection signal="body_exited" from="Labirinto/Nevoa03/VibrarControle4" to="." method="_on_vibrar_controle_2_body_exited"]
 [connection signal="body_entered" from="Labirinto/Nevoa3_5/Nevoa2/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa3_5/Nevoa2/StaticBody2D/Area2D" to="Labirinto/Nevoa01" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa3_5/Nevoa3/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
@@ -2220,25 +2386,28 @@ shape = SubResource("RectangleShape2D_ixm4h")
 [connection signal="body_entered" from="Labirinto/Nevoa04/Nevoa/StaticBody2D/Area2D" to="Labirinto/Nevoa01" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa04/Nevoa4/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa04/Nevoa4/StaticBody2D/Area2D" to="Labirinto/Nevoa01" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_4_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_2_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_5_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_3_body_entered"]
-[connection signal="body_exited" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_4_body_exited"]
-[connection signal="body_exited" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_3_body_exited"]
-[connection signal="body_exited" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_5_body_exited"]
+[connection signal="body_entered" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_4_body_entered"]
+[connection signal="body_entered" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_5_body_entered"]
+[connection signal="body_entered" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_2_body_entered"]
 [connection signal="body_exited" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_2_body_exited"]
+[connection signal="body_exited" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_4_body_exited"]
+[connection signal="body_exited" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_5_body_exited"]
+[connection signal="body_exited" from="Labirinto/Nevoa04/VibrarControle5" to="." method="_on_vibrar_controle_3_body_exited"]
 [connection signal="body_entered" from="Labirinto/Nevoa04/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa05/Nevoa3/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa05/Nevoa3/StaticBody2D/Area2D" to="Labirinto/Nevoa01" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa05/Nevoa2/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_4_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_2_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_5_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_3_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_6_body_entered"]
-[connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_4_body_exited"]
-[connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_3_body_exited"]
-[connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_5_body_exited"]
+[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_3_body_entered"]
+[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_4_body_entered"]
+[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_5_body_entered"]
+[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_2_body_entered"]
 [connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_6_body_exited"]
 [connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_2_body_exited"]
+[connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_4_body_exited"]
+[connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_5_body_exited"]
+[connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_3_body_exited"]
+[connection signal="body_entered" from="placas/P1" to="placas" method="_on_p_1_body_entered"]
+[connection signal="body_entered" from="placas/P2" to="placas" method="_on_p_2_body_entered"]
+[connection signal="body_entered" from="placas/P3" to="placas" method="_on_p_3_body_entered"]
