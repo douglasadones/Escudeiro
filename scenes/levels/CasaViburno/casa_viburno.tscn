@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://dyogq1sal8bdh"]
+[gd_scene load_steps=80 format=4 uid="uid://dyogq1sal8bdh"]
 
 [ext_resource type="Texture2D" uid="uid://cnwg1cfsamuac" path="res://assets/sprites/Fase1-BossFight/Texturas/Piso_interno_casa_Viburno.png" id="1_6uhgb"]
 [ext_resource type="Script" uid="uid://cvqc8igodacp3" path="res://scenes/levels/CasaViburno/casa_viburno.gd" id="1_34yt1"]
@@ -285,6 +285,9 @@ sources/0 = SubResource("TileSetAtlasSource_n7abr")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7j8ek"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j8ek"]
+size = Vector2(45, 4)
+
 [node name="CasaViburno" type="Node2D"]
 script = ExtResource("1_34yt1")
 
@@ -460,6 +463,12 @@ shape = SubResource("CircleShape2D_7j8ek")
 position = Vector2(1008, 223)
 shape = SubResource("CircleShape2D_7j8ek")
 
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(978.5, 230)
+shape = SubResource("RectangleShape2D_7j8ek")
+
 [connection signal="body_entered" from="interacao1" to="." method="_on_interacao_1_body_entered"]
 [connection signal="body_exited" from="interacao1" to="." method="_on_interacao_1_body_exited"]
 [connection signal="body_entered" from="interacao2" to="." method="_on_interacao_2_body_entered"]
@@ -468,3 +477,4 @@ shape = SubResource("CircleShape2D_7j8ek")
 [connection signal="body_exited" from="interacao3" to="." method="_on_interacao_3_body_exited"]
 [connection signal="body_entered" from="interacao4" to="." method="_on_interacao_4_body_entered"]
 [connection signal="body_exited" from="interacao4" to="." method="_on_interacao_4_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

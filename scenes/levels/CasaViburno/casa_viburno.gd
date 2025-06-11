@@ -1,11 +1,16 @@
 extends Node2D
 
 # Configurações
+const DIALOG_SYSTEM: PackedScene = preload("res://scenes/ui/dialog_box.tscn")
 @export var death_screen_duration: float = 9.0
 @export var die_screen_scene = preload("res://scenes/transicao/die_screen.tscn")
 const NEVOA02: PackedScene = preload("res://scenes/levels/CasaViburno/nevoas/nevoa_02_viburno.tscn")
 const NEVOA03: PackedScene = preload("res://scenes/levels/CasaViburno/nevoas/nevoa_03_viburno.tscn")
 const NEVOA04: PackedScene = preload("res://scenes/levels/CasaViburno/nevoas/nevoa_04_viburno.tscn")
+
+var dialogo_1: Dictionary = {
+	0: { "title": "Sikiana:", "dialog": "Posso te ouvir, Escudeiro. Seu coração ressoa de forma interessante. Ainda… que tente se ocultar… hoje e tantas vezes antes" },
+}
 
 # Referências
 @onready var player = get_node("Escudeiro")
@@ -43,6 +48,7 @@ func _ready():
 		player.hold_cancelled.connect(_on_player_hold_cancelled)
 
 func _on_player_hold_completed():
+	Input.start_joy_vibration(0, 0.8, 0.8, 0.2)
 	match zona_interacao_nevoa:
 		1:
 			ativar_nevoa02()
@@ -51,7 +57,9 @@ func _on_player_hold_completed():
 		3:
 			ativar_nevoa04()
 		4:
-			pass #coloca aqui a funcao de transição pra cena final
+			$interacao4.queue_free()
+			Global.current_scene_path = "res://scenes/levels/Fim/fim.tscn"
+			transition_screen.cap04()
 
 func _on_player_hold_cancelled():
 	print("Porta: Player cancelou o hold!")
@@ -66,6 +74,11 @@ func _check_player_death():
 		_on_player_died()
 	elif player.health <= 0:
 		_on_player_died()
+		
+func spawn_dialog(dialog_info: Dictionary) -> void:
+	var ds = DIALOG_SYSTEM.instantiate()
+	ds.dialog_data = dialog_info
+	add_child(ds)
 
 func ativar_nevoa02() -> void:
 
@@ -157,3 +170,10 @@ func _on_interacao_3_body_exited(body: Node2D) -> void:
 func _on_interacao_4_body_exited(body: Node2D) -> void:
 	if(body.name == "Escudeiro"):
 		zona_interacao_nevoa = 0
+	
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	if body.name == "Escudeiro" and not game_over:
+		$Area2D2.queue_free()
+		spawn_dialog(dialogo_1)

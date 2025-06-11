@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ca88w7rxfrom5"]
+[gd_scene load_steps=29 format=3 uid="uid://ca88w7rxfrom5"]
 
 [ext_resource type="Script" uid="uid://d3414itk3i3mj" path="res://scripts/transicao/transition_screen.gd" id="1_tcda8"]
 [ext_resource type="FontFile" uid="uid://durtnc0bh7ls6" path="res://assets/fonts/old_style/njo_14.ttf" id="2_5b7ua"]
@@ -25,9 +25,13 @@ font_size = 7
 font_color = Color(1, 0.439216, 1, 1)
 shadow_color = Color(1, 1, 1, 0.164706)
 
+[sub_resource type="LabelSettings" id="LabelSettings_85fis"]
+font = ExtResource("2_5b7ua")
+font_size = 22
+
 [sub_resource type="Animation" id="Animation_85fis"]
 resource_name = "Fim"
-length = 10.0
+length = 120.0
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -55,7 +59,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("AnimatedSprite2D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -67,7 +71,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("AnimatedSprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -223,7 +227,7 @@ tracks/14/path = NodePath("Label5:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 1.03, 3, 4),
+"times": PackedFloat32Array(0, 1.03, 18, 20.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -247,10 +251,100 @@ tracks/16/path = NodePath("TextureRect:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(4.2, 5, 9, 9.8),
+"times": PackedFloat32Array(20, 22.2, 32.4, 34),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Label5:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["E eis o começo da única história contada entre nós, Jardineiros… A única memória de uma 
+outra Era, sobrevivendo ainda em memória e em memória somente. E quando todos nós 
+terminarmos nosso momento, pequenos irmãos, tal como nós, também será apenas um com as 
+águas.
+                                                                         Um Jardineiro do Antigo Lago
+
+"]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Label5:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Label5:size")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(433, 78)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Label5:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 83)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Label6:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 9.78527, 67.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Label6:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(-0.2, 32.4, 34.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Label6:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(39.8, 67.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(103, 107), Vector2(103, -600)]
 }
 
 [sub_resource type="Animation" id="Animation_qe5t7"]
@@ -511,6 +605,96 @@ tracks/19/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Label5:text")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["E eis o começo da única história contada entre nós, Jardineiros… A única memória de uma 
+outra Era, sobrevivendo ainda em memória e em memória somente. E quando todos nós 
+terminarmos nosso momento, pequenos irmãos, tal como nós, também será apenas um com as 
+águas.
+                                                                         Um Jardineiro do Antigo Lago
+
+"]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Label5:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Label5:size")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(433, 78)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Label5:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 83)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Label6:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Label6:modulate")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Label6:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(103, 107)]
 }
 
 [sub_resource type="Animation" id="Animation_35det"]
@@ -1631,13 +1815,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Label5" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
-anchor_left = -1.56044
-anchor_right = -1.56044
+anchor_left = -3.29011
+anchor_right = -3.29011
 anchor_bottom = 0.222656
-offset_left = -63.0001
-offset_top = 90.0
-offset_right = 1157.0
-offset_bottom = 155.0
+offset_left = 1510.0
+offset_top = 83.0
+offset_right = 1943.0
+offset_bottom = 104.0
 text = "E eis o começo da única história contada entre nós, Jardineiros… A única memória de uma 
 outra Era, sobrevivendo ainda em memória e em memória somente. E quando todos nós 
 terminarmos nosso momento, pequenos irmãos, tal como nós, também será apenas um com as 
@@ -1647,6 +1831,44 @@ terminarmos nosso momento, pequenos irmãos, tal como nós, também será apenas
 "
 label_settings = SubResource("LabelSettings_6jonq")
 metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 103.0
+offset_top = 107.0
+offset_right = 344.0
+offset_bottom = 884.0
+text = "Escudeiro
+
+
+
+
+
+
+Desenvolvimento:
+Gabriel Sá
+Kauan Lucena
+
+Composição Musical:
+Biaggio Cardoso
+Douglas Adones
+
+Roteiro:
+Anônimo
+
+Arte:
+Douglas Freitas
+
+
+
+
+
+
+
+"
+label_settings = SubResource("LabelSettings_85fis")
+horizontal_alignment = 1
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {

@@ -41,6 +41,11 @@ func cap04() -> void:
 	animation.play("cap04")
 	Music.stop()
 
+func fim() -> void:
+	scene_path = Global.current_scene_path
+	is_skippable = false
+	animation.play("Fim")
+
 func fade() -> void:
 	scene_path = Global.current_scene_path
 	is_skippable = false
@@ -80,5 +85,8 @@ func _on_animation_finished(anim_name: String) -> void:
 		"cap01", "cap02", "cap03", "cap04":
 			get_tree().change_scene_to_file(scene_path)
 			animation.play("fade_out")
+		"Fim":
+			get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+			fade_in()
 		"fade_in2":
 			animation.play("fade_out")

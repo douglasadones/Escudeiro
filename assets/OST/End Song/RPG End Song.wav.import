@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyfvbys1yif6k"
+path="res://.godot/imported/RPG End Song.wav-0667c1cf9acb88806fdd739332336a0c.sample"
+
+[deps]
+
+source_file="res://assets/OST/End Song/RPG End Song.wav"
+dest_files=["res://.godot/imported/RPG End Song.wav-0667c1cf9acb88806fdd739332336a0c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

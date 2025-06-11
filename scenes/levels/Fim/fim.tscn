@@ -1,0 +1,224 @@
+[gd_scene load_steps=36 format=4 uid="uid://beyk1ckbd4g41"]
+
+[ext_resource type="PackedScene" uid="uid://c1vjis4w26m8o" path="res://scenes/levels/Caverna/env/mask.tscn" id="1_0xt75"]
+[ext_resource type="Script" uid="uid://gk03smfkkvtj" path="res://scenes/levels/Fim/fim.gd" id="1_hwb83"]
+[ext_resource type="PackedScene" uid="uid://ca57kmnku8pmw" path="res://scenes/levels/Floresta/env/background.tscn" id="2_tw2oi"]
+[ext_resource type="Texture2D" uid="uid://ch5v7ofs5gqn7" path="res://assets/sprites/Fase 1 - Floresta/Textura/Textura_piso_floresta.png" id="3_hwb83"]
+[ext_resource type="Texture2D" uid="uid://dcygpgl7mnaao" path="res://assets/sprites/Fase 1 - Floresta/Textura/textura_piso_casa_Viburno.png" id="4_o02hw"]
+[ext_resource type="Texture2D" uid="uid://ceif552an6ct2" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca2.png" id="5_hsbrn"]
+[ext_resource type="Texture2D" uid="uid://dlrc71n0bk2v7" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca3.png" id="6_brftx"]
+[ext_resource type="Texture2D" uid="uid://cbaxdfoi38t0k" path="res://assets/sprites/Fase 1 - Floresta/Mobilia-Estrutura/Cerca5.png" id="7_fwb03"]
+[ext_resource type="Texture2D" uid="uid://bmgxqfdabb33v" path="res://assets/sprites/Caverna/Itens_e_estruturas/Balde.png" id="8_6i4jq"]
+[ext_resource type="Texture2D" uid="uid://b23vu8eqmjojd" path="res://assets/sprites/Caverna/Itens_e_estruturas/Placeholder_item.png" id="9_5h4b5"]
+[ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="10_tw2oi"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3h8c"]
+texture = ExtResource("3_hwb83")
+texture_region_size = Vector2i(16, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8.02052, 8, -8.02052, 8, 16, -8, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vku1s"]
+texture = ExtResource("4_o02hw")
+texture_region_size = Vector2i(16, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -9.82767, 8, -9.95052, 8, 16, -8, 16)
+
+[sub_resource type="TileSet" id="TileSet_6ooti"]
+tile_size = Vector2i(16, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_f3h8c")
+sources/1 = SubResource("TileSetAtlasSource_vku1s")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_siv82"]
+texture = ExtResource("5_hsbrn")
+texture_region_size = Vector2i(169, 71)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lo4p0"]
+tile_size = Vector2i(169, 71)
+sources/0 = SubResource("TileSetAtlasSource_siv82")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s5kl"]
+texture = ExtResource("6_brftx")
+texture_region_size = Vector2i(141, 68)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gqmg7"]
+tile_size = Vector2i(141, 68)
+sources/0 = SubResource("TileSetAtlasSource_6s5kl")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1i5lm"]
+texture = ExtResource("7_fwb03")
+texture_region_size = Vector2i(212, 79)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2wu50"]
+tile_size = Vector2i(212, 79)
+sources/0 = SubResource("TileSetAtlasSource_1i5lm")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ashlu"]
+texture = ExtResource("8_6i4jq")
+texture_region_size = Vector2i(35, 42)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3guiq"]
+tile_size = Vector2i(35, 42)
+sources/0 = SubResource("TileSetAtlasSource_ashlu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqhas"]
+size = Vector2(21, 271.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oonj5"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6617i"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o70gn"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grfif"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fvbp"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8aki"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfgmu"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq2a4"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adlan"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fqx4"]
+atlas = ExtResource("9_5h4b5")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36knw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oonj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6617i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o70gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grfif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fvbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8aki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfgmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq2a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adlan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fqx4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwb83"]
+size = Vector2(26, 30.5)
+
+[node name="Fim" type="Node2D"]
+script = ExtResource("1_hwb83")
+
+[node name="LevelDesign" type="Node2D" parent="."]
+
+[node name="Mask" parent="LevelDesign" instance=ExtResource("1_0xt75")]
+color = Color(0.918278, 0.706105, 0.587532, 1)
+
+[node name="Background" parent="LevelDesign" instance=ExtResource("2_tw2oi")]
+
+[node name="Piso" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-1, 11)
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_6ooti")
+
+[node name="Cerca2" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-1125, 36)
+tile_map_data = PackedByteArray("AAAJAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_lo4p0")
+
+[node name="Cerca3" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-1056, 41)
+tile_map_data = PackedByteArray("AAANAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_gqmg7")
+
+[node name="Cerca5" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(-2757, 19)
+tile_map_data = PackedByteArray("AAASAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_2wu50")
+
+[node name="Balde" type="TileMapLayer" parent="LevelDesign"]
+position = Vector2(360, 78)
+scale = Vector2(0.65, 0.65)
+tile_map_data = PackedByteArray("AAAdAAUAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_3guiq")
+
+[node name="WorldBorder" type="StaticBody2D" parent="LevelDesign"]
+
+[node name="Collision" type="CollisionShape2D" parent="LevelDesign/WorldBorder"]
+position = Vector2(-6, 112)
+shape = SubResource("RectangleShape2D_gqhas")
+
+[node name="Collision2" type="CollisionShape2D" parent="LevelDesign/WorldBorder"]
+position = Vector2(1103, 112)
+shape = SubResource("RectangleShape2D_gqhas")
+
+[node name="Texture" type="AnimatedSprite2D" parent="LevelDesign"]
+position = Vector2(1032, 232)
+sprite_frames = SubResource("SpriteFrames_36knw")
+autoplay = "default"
+
+[node name="Escudeiro" parent="." instance=ExtResource("10_tw2oi")]
+position = Vector2(41, 197)
+
+[node name="Camera" type="Camera2D" parent="Escudeiro"]
+position = Vector2(8, -125)
+limit_left = 0
+limit_top = 0
+limit_right = 1100
+limit_smoothed = true
+position_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+editor_draw_drag_margin = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1031, 227.75)
+shape = SubResource("RectangleShape2D_hwb83")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
