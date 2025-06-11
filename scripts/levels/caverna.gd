@@ -3,7 +3,7 @@ class_name Caverna
 
 const DIALOG_SYSTEM: PackedScene = preload("res://scenes/ui/dialog_box.tscn")
 const DIE_SCREEN: PackedScene = preload("res://scenes/transicao/die_screen.tscn")
-# NOVO: Constante para a duração da interação de segurar
+# Duração da interação de segurar
 const HOLD_TO_INTERACT_DURATION: float = 1.0
 
 @onready var place_holder: Area2D = $LevelDesign/PlaceHolder
@@ -16,7 +16,6 @@ const HOLD_TO_INTERACT_DURATION: float = 1.0
 @onready var nevoa_3_5: Node2D = $Labirinto/Nevoa3_5
 @onready var audio_morcego: AudioStreamPlayer2D = $Morcego3/audio_morcego
 @onready var morcego: CharacterBody2D = $Morcego
-# Se você decidir adicionar um indicador visual, descomente a linha abaixo
 # @onready var hold_indicator: TextureProgressBar = $HoldIndicator
 
 @export_category("Variables")
@@ -26,18 +25,36 @@ var pode_interagir_dialogo: bool = false
 var pode_interagir_nevoa1: bool = false
 var pode_interagir_nevoa2: bool = false
 var pode_interagir_nevoa3: bool = false
-var pode_interagir_nevoa4: bool = false 
+var pode_interagir_nevoa4: bool = false
 var pode_interagir_nevoa5: bool = false
 var pode_remover_nevoa5: bool = false
 
-var motor_active := false
-var vibration_area_count := 0
-# NOVO: Variáveis para controlar a mecânica de segurar o botão
+# Variáveis para controlar a mecânica de segurar o botão
 var hold_timer: float = 0.0
 var is_holding_interact: bool = false
 
 var dialogo_inicial: Dictionary = {
 	0: { "title": "Garrafa de Vinho Forte​", "dialog": "Vinho adulterado..." },
+}
+
+var dialogo_2: Dictionary = {
+	0: { "title": "Escudeiro", "dialog": "[pensamento] Não consigo passar… Por que sinto a taça ficando mais fria… Será que?" },
+}
+
+var dialogo_3: Dictionary = {
+	0: { "title": "Escudeiro", "dialog": "[pensamento] Agora posso atravessar… acho…? Eles caminharam na neblina também… Será que eu… bem…" },
+}
+
+var dialogo_4: Dictionary = {
+	0: { "title": "Escudeiro", "dialog": "[pensamento] Terei que usar a taça novamente" },
+}
+
+var dialogo_5: Dictionary = {
+	0: { "title": "", "dialog": "Seu coração é compatível com a taça… mas o quanto será?" },
+}
+
+var dialogo_6: Dictionary = {
+	0: { "title": "", "dialog": "A taça faz a neblina tomar muitas formas… para contribuir com que nela bebe… e para…" },
 }
 
 func _ready() -> void:
@@ -86,9 +103,9 @@ func _ready() -> void:
 	if is_instance_valid(nevoa_3_5):
 		nevoa_3_5.visible = false; nevoa_3_5.process_mode = Node.PROCESS_MODE_DISABLED
 
-# NOVO: A função _process foi substituída para adicionar a lógica de "segurar"
+# Função _process modificada para controlar a interação e a vibração
 func _process(delta: float) -> void:
-	# A lógica de diálogo continua separada e com clique simples
+	# Lógica de diálogo com clique simples
 	if pode_interagir_dialogo and Input.is_action_just_pressed("interagir"):
 		spawn_dialog(dialogo_inicial)
 		if is_instance_valid(place_holder):
@@ -96,52 +113,43 @@ func _process(delta: float) -> void:
 		pode_interagir_dialogo = false
 		return
 
-	# Verifica se o jogador está em QUALQUER zona de interação com névoa
+	# Verifica se o jogador pode interagir com qualquer névoa
 	var pode_interagir_com_qualquer_nevoa = pode_interagir_nevoa1 or pode_interagir_nevoa2 or pode_interagir_nevoa3 or pode_interagir_nevoa4 or pode_interagir_nevoa5 or pode_remover_nevoa5
 	
 	# 1. Se o jogador APERTA o botão de interação e PODE interagir
 	if pode_interagir_com_qualquer_nevoa and Input.is_action_just_pressed("interagir"):
 		is_holding_interact = true
 		hold_timer = 0.0
-		# Se você tiver um indicador visual, mostre-o aqui:
-		# hold_indicator.visible = true
-		# hold_indicator.value = 0
+		# INICIA A VIBRAÇÃO com a mesma duração do carregamento
+		Input.start_joy_vibration(0, 0.7, 0.7, HOLD_TO_INTERACT_DURATION)
 
 	# 2. Se o jogador está SEGURANDO o botão
 	elif is_holding_interact and Input.is_action_pressed("interagir"):
-		hold_timer += delta # Aumenta o contador
-		# Se você tiver um indicador visual, atualize-o aqui:
-		# hold_indicator.value = (hold_timer / HOLD_TO_INTERACT_DURATION) * 100
+		hold_timer += delta # Incrementa o temporizador
 		
-		# Se o tempo foi atingido
+		# Se o tempo de segurar foi atingido
 		if hold_timer >= HOLD_TO_INTERACT_DURATION:
-			# Executa a ação correta baseado na zona em que o jogador está
-			if pode_remover_nevoa5:
-				remover_nevoa05()
-			elif pode_interagir_nevoa5:
-				ativar_nevoa05()
-			elif pode_interagir_nevoa4:
-				ativar_nevoa_3_5()
-			elif pode_interagir_nevoa3:
-				ativar_nevoa03()
-			elif pode_interagir_nevoa2:
-				ativar_nevoa02()
-			elif pode_interagir_nevoa1:
-				ativar_nevoa01()
+			Input.stop_joy_vibration(0) # Garante que a vibração pare
 			
-			# Reseta o estado para evitar múltiplas ativações
+			# Executa a ação da névoa correspondente
+			if pode_remover_nevoa5: remover_nevoa05()
+			elif pode_interagir_nevoa5: ativar_nevoa05()
+			elif pode_interagir_nevoa4: ativar_nevoa_3_5()
+			elif pode_interagir_nevoa3: ativar_nevoa03()
+			elif pode_interagir_nevoa2: ativar_nevoa02()
+			elif pode_interagir_nevoa1: ativar_nevoa01()
+			
+			# Reseta o estado da interação
 			is_holding_interact = false
-			# Se você tiver um indicador visual, esconda-o aqui:
-			# hold_indicator.visible = false
 	
-	# 3. Se o jogador SOLTA o botão, cancela tudo
+	# 3. Se o jogador SOLTA o botão antes de completar, cancela a ação
 	elif Input.is_action_just_released("interagir"):
-		is_holding_interact = false
-		# Se você tiver um indicador visual, esconda-o aqui:
-		# hold_indicator.visible = false
-		# hold_indicator.value = 0
+		if is_holding_interact:
+			Input.stop_joy_vibration(0) # PARA a vibração
+			is_holding_interact = false
 
-# O RESTO DO SEU CÓDIGO PERMANECE EXATAMENTE IGUAL
+
+# --- FUNÇÕES DE ATIVAÇÃO DE NÉVOA ---
 
 func ativar_nevoa01() -> void:
 	print("Ativando Névoa 01")
@@ -150,12 +158,14 @@ func ativar_nevoa01() -> void:
 	nevoa02.visible = false
 	nevoa02.process_mode = Node.PROCESS_MODE_DISABLED
 	pode_interagir_nevoa1 = false
+	spawn_dialog(dialogo_3)
 	$Labirinto/VibrarControle.queue_free()
 	
 func ativar_nevoa02() -> void:
 	print("Ativando Névoa 02")
 	nevoa02.visible = true
 	nevoa02.process_mode = Node.PROCESS_MODE_INHERIT
+	spawn_dialog(dialogo_5)
 	if is_instance_valid(nevoa01):
 		nevoa01.queue_free()
 	pode_interagir_nevoa2 = false
@@ -167,6 +177,7 @@ func ativar_nevoa03() -> void:
 	nevoa02.visible = false
 	nevoa02.process_mode = Node.PROCESS_MODE_DISABLED
 	pode_interagir_nevoa3 = false
+	spawn_dialog(dialogo_6)
 
 func ativar_nevoa04() -> void:
 	print("Ativando Névoa 04")
@@ -208,17 +219,13 @@ func spawn_dialog(dialog_info: Dictionary) -> void:
 	ds.dialog_data = dialog_info
 	add_child(ds)
 
-func continuous_vibration_loop() -> void:
-	if not motor_active:
-		return
-	Input.start_joy_vibration(0, 0.2, 0.2, 0.5)
-	await get_tree().create_timer(0.5).timeout
-	continuous_vibration_loop()
+# --- SINAIS (Signals) ---
 
+# Sinais de troca de cena e diálogo permanecem iguais
 func _on_troca_cena_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
 		Global.current_scene_path = "res://scenes/levels/Floresta/floresta.tscn"
-		transition_screen.cap03()
+		transition_screen.fade_in()
 
 func _on_place_holder_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
@@ -234,109 +241,57 @@ func _on_adega_body_entered(body: Node2D) -> void:
 		Global.current_scene_path = "res://scenes/levels/Adega/adega.tscn"
 		transition_screen.fade_in()
 
+# Sinais de controle de vibração foram simplificados
 func _on_vibrar_controle_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count += 1
-		if not motor_active:
-			motor_active = true
-			continuous_vibration_loop()
 		pode_interagir_nevoa1 = true
 
 func _on_vibrar_controle_body_exited(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count -= 1
-		if vibration_area_count <= 0:
-			motor_active = false
-			Input.stop_joy_vibration(0)
-			vibration_area_count = 0
 		pode_interagir_nevoa1 = false
 
 func _on_vibrar_controle_2_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count += 1
-		if not motor_active:
-			motor_active = true
-			continuous_vibration_loop()
 		pode_interagir_nevoa2 = true
 
 func _on_vibrar_controle_2_body_exited(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count -= 1
-		if vibration_area_count <= 0:
-			motor_active = false
-			Input.stop_joy_vibration(0)
-			vibration_area_count = 0
 		pode_interagir_nevoa2 = false
 
 func _on_vibrar_controle_3_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count += 1
-		if not motor_active:
-			motor_active = true
-			continuous_vibration_loop()
 		pode_interagir_nevoa3 = true
 
 func _on_vibrar_controle_3_body_exited(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count -= 1
-		if vibration_area_count <= 0:
-			motor_active = false
-			Input.stop_joy_vibration(0)
-			vibration_area_count = 0
 		pode_interagir_nevoa3 = false
 		
 func _on_vibrar_controle_4_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count += 1
-		if not motor_active:
-			motor_active = true
-			continuous_vibration_loop()
 		pode_interagir_nevoa4 = true
 
 func _on_vibrar_controle_4_body_exited(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count -= 1
-		if vibration_area_count <= 0:
-			motor_active = false
-			Input.stop_joy_vibration(0)
-			vibration_area_count = 0
 		pode_interagir_nevoa4 = false
 
 func _on_vibrar_controle_5_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count += 1
-		if not motor_active:
-			motor_active = true
-			continuous_vibration_loop()
 		pode_interagir_nevoa5 = true
 
 func _on_vibrar_controle_5_body_exited(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count -= 1
-		if vibration_area_count <= 0:
-			motor_active = false
-			Input.stop_joy_vibration(0)
-			vibration_area_count = 0
 		pode_interagir_nevoa5 = false
 
 func _on_vibrar_controle_6_body_entered(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count += 1
-		if not motor_active:
-			motor_active = true
-			continuous_vibration_loop()
 		pode_remover_nevoa5 = true
 
 func _on_vibrar_controle_6_body_exited(body: Node2D) -> void:
 	if body.name == "Escudeiro":
-		vibration_area_count -= 1
-		if vibration_area_count <= 0:
-			motor_active = false
-			Input.stop_joy_vibration(0)
-			vibration_area_count = 0
 		pode_remover_nevoa5 = false
 
-func die() -> void :
+# Funções de morte e áudio permanecem iguais
+func die() -> void:
 	var ds = DIE_SCREEN.instantiate()
 	add_child(ds)
 	await get_tree().create_timer(10.0).timeout
@@ -361,3 +316,16 @@ func _on_area_2d_nevoa_body_entered(body: Node2D) -> void:
 func _on_audio_morcego_finished() -> void:
 	await get_tree().create_timer(8.0).timeout
 	audio_morcego.play()
+
+# Sinais de mensagens de diálogo permanecem iguais
+func _on_msg_body_entered(body: Node2D) -> void:
+	if body.name == "Escudeiro":
+		$Escudeiro.texture.play("idle")
+		spawn_dialog(dialogo_2)
+		$Labirinto/VibrarControle/Texture.visible = true
+		$Msg.queue_free()
+func _on_msg_2_body_entered(body: Node2D) -> void:
+	if body.name == "Escudeiro":
+		$Escudeiro.texture.play("idle")
+		spawn_dialog(dialogo_2)
+		$Msg2.queue_free()

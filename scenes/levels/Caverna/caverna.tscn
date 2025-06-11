@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=4 uid="uid://du1u8gkq7fhm0"]
+[gd_scene load_steps=114 format=4 uid="uid://du1u8gkq7fhm0"]
 
 [ext_resource type="PackedScene" uid="uid://ca426214fppn1" path="res://scenes/player/escudeiro.tscn" id="1_kchbl"]
 [ext_resource type="Texture2D" uid="uid://cqy46xda63ih" path="res://assets/sprites/Caverna/Piso_caverna.png" id="1_u41vv"]
@@ -281,6 +281,49 @@ size = Vector2(21, 271.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oonj5"]
 size = Vector2(33, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe543"]
+atlas = ExtResource("17_grfif")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfsod"]
+atlas = ExtResource("17_grfif")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdb6f"]
+atlas = ExtResource("17_grfif")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8shg"]
+atlas = ExtResource("17_grfif")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwsta"]
+atlas = ExtResource("17_grfif")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t00q7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe543")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfsod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdb6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8shg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwsta")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0v003"]
 size = Vector2(107, 26)
@@ -650,54 +693,14 @@ size = Vector2(7, 89.0469)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixm4h"]
 size = Vector2(83.5, 6.76172)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fe543"]
-atlas = ExtResource("17_grfif")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tfsod"]
-atlas = ExtResource("17_grfif")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tdb6f"]
-atlas = ExtResource("17_grfif")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8shg"]
-atlas = ExtResource("17_grfif")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwsta"]
-atlas = ExtResource("17_grfif")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_t00q7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fe543")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tfsod")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tdb6f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d8shg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iwsta")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sbvf"]
 size = Vector2(52, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u84a"]
 size = Vector2(59, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s577l"]
+size = Vector2(27.5, 47.25)
 
 [node name="Caverna" type="Node2D"]
 script = ExtResource("1_y087k")
@@ -758,7 +761,7 @@ tile_map_data = PackedByteArray("AAABAAMAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_5fvbp")
 
 [node name="Poste" type="TileMapLayer" parent="LevelDesign"]
-position = Vector2(0, -33)
+position = Vector2(0, -35)
 tile_map_data = PackedByteArray("AAATAAEAAQAAAAAAAAAIAAEAAAAAAAAAAADt/wEAAQAAAAAAAAD5/wEAAQAAAAAAAAADAAEAAQAAAAAAAAAkAAEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_wt1po")
 
@@ -842,6 +845,43 @@ position = Vector2(-20, -1)
 position = Vector2(1874, 115)
 shape = SubResource("RectangleShape2D_oonj5")
 
+[node name="Morcego" type="CharacterBody2D" parent="LevelDesign"]
+position = Vector2(-4228, -16)
+script = ExtResource("17_5fvbp")
+velocidade = 150.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LevelDesign/Morcego"]
+position = Vector2(3081, 44)
+sprite_frames = SubResource("SpriteFrames_t00q7")
+autoplay = "default"
+
+[node name="Morcego2" type="CharacterBody2D" parent="LevelDesign"]
+position = Vector2(-4196, -33)
+script = ExtResource("17_5fvbp")
+velocidade = 150.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LevelDesign/Morcego2"]
+position = Vector2(3081, 44)
+sprite_frames = SubResource("SpriteFrames_t00q7")
+autoplay = "default"
+
+[node name="Morcego3" type="CharacterBody2D" parent="LevelDesign"]
+position = Vector2(-4165, 2)
+script = ExtResource("17_5fvbp")
+velocidade = 150.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LevelDesign/Morcego3"]
+position = Vector2(3081, 44)
+sprite_frames = SubResource("SpriteFrames_t00q7")
+autoplay = "default"
+
+[node name="audio_morcego" type="AudioStreamPlayer2D" parent="LevelDesign/Morcego3"]
+position = Vector2(3000, -27)
+stream = ExtResource("19_5fvbp")
+volume_db = -10.0
+autoplay = true
+max_distance = 1000.0
+
 [node name="Escudeiro" parent="." instance=ExtResource("1_kchbl")]
 position = Vector2(62, 180)
 
@@ -867,6 +907,7 @@ position = Vector2(461, 217)
 shape = SubResource("RectangleShape2D_0v003")
 
 [node name="Texture" type="AnimatedSprite2D" parent="Labirinto/VibrarControle"]
+visible = false
 position = Vector2(461, 217)
 sprite_frames = SubResource("SpriteFrames_xf84c")
 autoplay = "default"
@@ -1011,7 +1052,7 @@ frame = 3
 frame_progress = 0.542898
 
 [node name="Nevoa2" type="AnimatedSprite2D" parent="Labirinto/Nevoa01/Nevoa3"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(1122, 212)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_5fvbp")
@@ -1048,7 +1089,7 @@ frame = 3
 frame_progress = 0.573827
 
 [node name="Nevoa3" type="AnimatedSprite2D" parent="Labirinto/Nevoa01/Nevoa3"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(1233, 295)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dfgmu")
@@ -1134,7 +1175,7 @@ autoplay = "default"
 frame = 3
 
 [node name="Nevoa2" type="AnimatedSprite2D" parent="Labirinto/Nevoa02/Nevoa"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(-65, -21)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_rq2a4")
@@ -1142,7 +1183,7 @@ autoplay = "default"
 frame = 3
 
 [node name="Nevoa4" type="AnimatedSprite2D" parent="Labirinto/Nevoa02/Nevoa"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(-110, -62)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_adlan")
@@ -1164,7 +1205,7 @@ frame = 3
 frame_progress = 0.414201
 
 [node name="Nevoa7" type="AnimatedSprite2D" parent="Labirinto/Nevoa02/Nevoa"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(-200, -105)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_2fqx4")
@@ -1188,7 +1229,7 @@ frame_progress = 0.414201
 [node name="Dano" type="Node2D" parent="Labirinto/Nevoa02/Nevoa"]
 
 [node name="Nevoa3" type="AnimatedSprite2D" parent="Labirinto/Nevoa02/Nevoa/Dano"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(-88, -41)
 sprite_frames = SubResource("SpriteFrames_fe543")
 autoplay = "default"
@@ -1237,7 +1278,7 @@ position = Vector2(-64, -22)
 shape = SubResource("RectangleShape2D_86a1p")
 
 [node name="Nevoa2" type="AnimatedSprite2D" parent="Labirinto/Nevoa02"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(1442, 205)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dfgmu")
@@ -1386,7 +1427,7 @@ shape = SubResource("RectangleShape2D_o70gn")
 one_way_collision = true
 
 [node name="Nevoa2" type="AnimatedSprite2D" parent="Labirinto/Nevoa03"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(1111, 86)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dfgmu")
@@ -1519,7 +1560,7 @@ position = Vector2(-2.12501, 0)
 shape = SubResource("RectangleShape2D_tdb6f")
 
 [node name="Nevoa3" type="AnimatedSprite2D" parent="Labirinto/Nevoa03"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(738, 73)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dfgmu")
@@ -1743,7 +1784,7 @@ frame = 3
 frame_progress = 0.252193
 
 [node name="Nevoa3" type="AnimatedSprite2D" parent="Labirinto/Nevoa3_5"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(738, 73)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dfgmu")
@@ -1803,7 +1844,7 @@ frame_progress = 0.252193
 visible = false
 
 [node name="Nevoa" type="AnimatedSprite2D" parent="Labirinto/Nevoa04"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(1156, 201)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dfgmu")
@@ -1860,7 +1901,7 @@ frame = 3
 frame_progress = 0.252193
 
 [node name="Nevoa2" type="AnimatedSprite2D" parent="Labirinto/Nevoa04"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(1312, 189)
 sprite_frames = SubResource("SpriteFrames_w8aki")
 autoplay = "default"
@@ -1972,7 +2013,7 @@ position = Vector2(1281.5, 270)
 shape = SubResource("RectangleShape2D_t00q7")
 
 [node name="Nevoa4" type="AnimatedSprite2D" parent="Labirinto/Nevoa04"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(1553, 198)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dfgmu")
@@ -2108,7 +2149,7 @@ autoplay = "default"
 frame = 3
 
 [node name="Nevoa3" type="AnimatedSprite2D" parent="Labirinto/Nevoa05"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(1470, 164)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dfgmu")
@@ -2165,7 +2206,7 @@ frame = 3
 frame_progress = 0.252193
 
 [node name="Nevoa2" type="AnimatedSprite2D" parent="Labirinto/Nevoa05"]
-modulate = Color(0.568627, 0.568627, 0.568627, 1)
+modulate = Color(0.631373, 0.109804, 0.109804, 1)
 position = Vector2(1768, 198)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_dfgmu")
@@ -2268,43 +2309,6 @@ sprite_frames = SubResource("SpriteFrames_xf84c")
 autoplay = "default"
 frame_progress = 0.264837
 
-[node name="Morcego" type="CharacterBody2D" parent="."]
-position = Vector2(-3064, -10)
-script = ExtResource("17_5fvbp")
-velocidade = 150.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Morcego"]
-position = Vector2(3081, 44)
-sprite_frames = SubResource("SpriteFrames_t00q7")
-autoplay = "default"
-
-[node name="Morcego2" type="CharacterBody2D" parent="."]
-position = Vector2(-3032, -27)
-script = ExtResource("17_5fvbp")
-velocidade = 150.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Morcego2"]
-position = Vector2(3081, 44)
-sprite_frames = SubResource("SpriteFrames_t00q7")
-autoplay = "default"
-
-[node name="Morcego3" type="CharacterBody2D" parent="."]
-position = Vector2(-3001, 8)
-script = ExtResource("17_5fvbp")
-velocidade = 150.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Morcego3"]
-position = Vector2(3081, 44)
-sprite_frames = SubResource("SpriteFrames_t00q7")
-autoplay = "default"
-
-[node name="audio_morcego" type="AudioStreamPlayer2D" parent="Morcego3"]
-position = Vector2(3000, -27)
-stream = ExtResource("19_5fvbp")
-volume_db = -10.0
-autoplay = true
-max_distance = 1000.0
-
 [node name="placas" type="Node2D" parent="."]
 script = ExtResource("20_w8aki")
 
@@ -2345,19 +2349,32 @@ sprite_frames = SubResource("SpriteFrames_xf84c")
 autoplay = "default"
 frame_progress = 0.264837
 
-[connection signal="body_entered" from="LevelDesign/Adega" to="." method="_on_adega_body_entered"]
+[node name="Msg" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Msg"]
+position = Vector2(1644.75, 196.625)
+shape = SubResource("RectangleShape2D_s577l")
+
+[node name="Msg2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Msg2"]
+position = Vector2(2348.5, 188.25)
+shape = SubResource("RectangleShape2D_s577l")
+
 [connection signal="body_entered" from="LevelDesign/Adega" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="LevelDesign/Adega" to="." method="_on_adega_body_entered"]
 [connection signal="body_entered" from="LevelDesign/PlaceHolder" to="." method="_on_place_holder_body_entered"]
 [connection signal="body_exited" from="LevelDesign/PlaceHolder" to="." method="_on_place_holder_body_exited"]
 [connection signal="body_entered" from="LevelDesign/TrocaCena" to="." method="_on_troca_cena_body_entered"]
+[connection signal="finished" from="LevelDesign/Morcego3/audio_morcego" to="." method="_on_audio_morcego_finished"]
 [connection signal="body_entered" from="Labirinto/VibrarControle" to="." method="_on_vibrar_controle_body_entered"]
 [connection signal="body_exited" from="Labirinto/VibrarControle" to="." method="_on_vibrar_controle_body_exited"]
 [connection signal="body_entered" from="Labirinto/Nevoa01/Nevoa3/Nevoa2/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa01/Nevoa3/Nevoa3/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa01/VibrarControle2" to="." method="_on_vibrar_controle_2_body_entered"]
 [connection signal="body_exited" from="Labirinto/Nevoa01/VibrarControle2" to="." method="_on_vibrar_controle_2_body_exited"]
-[connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa" to="." method="_on_area_2d_nevoa_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa" to="." method="_on_area_2d_nevoa_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa/Area2D" to="Labirinto/Nevoa01" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa02/Nevoa/Area2DNevoa/Area2D2" to="." method="_on_area_2d_2_body_entered"]
@@ -2401,15 +2418,16 @@ frame_progress = 0.264837
 [connection signal="body_entered" from="Labirinto/Nevoa05/Nevoa2/StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_3_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_2_body_entered"]
-[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_6_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_5_body_entered"]
 [connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_4_body_entered"]
-[connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_6_body_exited"]
+[connection signal="body_entered" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_6_body_entered"]
 [connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_3_body_exited"]
 [connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_4_body_exited"]
 [connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_2_body_exited"]
 [connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_5_body_exited"]
-[connection signal="finished" from="Morcego3/audio_morcego" to="." method="_on_audio_morcego_finished"]
+[connection signal="body_exited" from="Labirinto/Nevoa05/VibrarControle6" to="." method="_on_vibrar_controle_6_body_exited"]
 [connection signal="body_entered" from="placas/P1" to="placas" method="_on_p_1_body_entered"]
 [connection signal="body_entered" from="placas/P2" to="placas" method="_on_p_2_body_entered"]
 [connection signal="body_entered" from="placas/P3" to="placas" method="_on_p_3_body_entered"]
+[connection signal="body_entered" from="Msg" to="." method="_on_msg_body_entered"]
+[connection signal="body_entered" from="Msg2" to="." method="_on_msg_2_body_entered"]
