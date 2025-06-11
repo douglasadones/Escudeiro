@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://ca426214fppn1"]
+[gd_scene load_steps=63 format=3 uid="uid://ca426214fppn1"]
 
 [ext_resource type="Script" uid="uid://6qevp5ufnqh6" path="res://scripts/player/escudeiro.gd" id="1_cq4o1"]
 [ext_resource type="Texture2D" uid="uid://co8owkptw5y0l" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Morrer_Escudeiro/Morrer_Escudeiro_NoArma-Sheet.png" id="2_7b8jh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgtc1xhpa828y" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Correndo_Escudeiro/CORRENDO_Escudeiro.png" id="5_hilbb"]
 [ext_resource type="PackedScene" uid="uid://b45r4vmfeae23" path="res://scenes/ui/health_bar.tscn" id="5_shct2"]
 [ext_resource type="Texture2D" uid="uid://db8lrx243e85b" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Caminhando_Escudeiro/Caminhando_Escudeiro.png" id="6_7b8jh"]
+[ext_resource type="Texture2D" uid="uid://b3ft16jg3wxmr" path="res://assets/sprites/Escudeiro_Sprite_Sheet/taca_rancor/Escudeiro_Tarçar_do_Rancor-Sheet.png" id="7_ei1ei"]
 [ext_resource type="Texture2D" uid="uid://mxvlwgmojbjr" path="res://assets/sprites/Escudeiro_Sprite_Sheet/Pulo_Escudeiro/Escudeiro_pulo_final.png" id="7_qrivr"]
 [ext_resource type="Script" uid="uid://ygucwys01rhy" path="res://scripts/player/texture.gd" id="9_2c1an"]
 
@@ -159,6 +160,30 @@ region = Rect2(896, 0, 112, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8xvub"]
 atlas = ExtResource("5_hilbb")
 region = Rect2(1008, 0, 112, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp01i"]
+atlas = ExtResource("7_ei1ei")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj0v5"]
+atlas = ExtResource("7_ei1ei")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke4yr"]
+atlas = ExtResource("7_ei1ei")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcta4"]
+atlas = ExtResource("7_ei1ei")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e340n"]
+atlas = ExtResource("7_ei1ei")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhgjf"]
+atlas = ExtResource("7_ei1ei")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fq3jc"]
 atlas = ExtResource("6_7b8jh")
@@ -331,6 +356,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_rp01i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sj0v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke4yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcta4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e340n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhgjf")
+}],
+"loop": true,
+"name": &"taca_rancor",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fq3jc")
 }, {
 "duration": 1.0,
@@ -365,8 +413,9 @@ script = ExtResource("1_cq4o1")
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_character")]
 scale = Vector2(0.69, 0.69)
 sprite_frames = SubResource("SpriteFrames_jn3j7")
-animation = &"idle"
+animation = &"taca_rancor"
 autoplay = "idle"
+frame_progress = 0.112206
 script = ExtResource("9_2c1an")
 _character = NodePath("..")
 

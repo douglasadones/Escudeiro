@@ -23,17 +23,84 @@ signal player_died
 @onready var is_running: bool = false
 @onready var is_rolling: bool = false
 @onready var texture: AnimatedSprite2D = $Texture
+var pode_ir: bool = false
 
 var walk_step_sound := preload("res://assets/audio/Sound Effects/Primeira Fase/passos/walk_step.wav")
 var walk_effect_path := "res://scenes/effects/walk_effect.tscn"
+signal hold_started
+signal hold_progress_updated(progress: float)
+signal hold_completed
+signal hold_cancelled
+
+@onready var hold_timer = Timer.new()
+@onready var audio_player = AudioStreamPlayer2D.new()
+
+var is_holding_e = false
+var hold_duration = 0.6
+var initial_position: Vector2
+var max_movement_distance = 50.0
 
 func _ready() -> void:
 	add_to_group("Player")
+	_setup_timer()
+	_setup_audio()
+	
+func _setup_timer():
+	add_child(hold_timer)
+	hold_timer.wait_time = hold_duration
+	hold_timer.one_shot = true
+	hold_timer.timeout.connect(_on_hold_complete)
+
+func _setup_audio():
+	add_child(audio_player)
+	# audio_player.stream = preload("res://sounds/hold_sound.ogg")
+
+func _input(event):
+	if event.is_action_pressed("interagir"):
+		_start_holding()
+	
+	if event.is_action_released("interagir"):
+		_stop_holding()
+
+func _start_holding():
+	if not is_holding_e:
+		is_holding_e = true
+		initial_position = global_position
+		hold_timer.start()
+		
+		hold_started.emit()
+		
+		if audio_player.stream:
+			audio_player.play()
+
+func _stop_holding():
+	if is_holding_e and hold_timer.time_left > 0:
+		_cancel_hold()
+
+func _cancel_hold():
+	if is_holding_e:
+		is_holding_e = false
+		hold_timer.stop()
+		hold_cancelled.emit()
+
+func _on_hold_complete():
+	if is_holding_e:
+		is_holding_e = false
+		hold_completed.emit()
+
 func _physics_process(delta: float) -> void:
 	vertical_move(delta)
 	horizontal_move()
-	move_and_slide()
 	texture.animate(velocity)
+	move_and_slide()
+	
+	if is_holding_e:
+		var progress = 1.0 - (hold_timer.time_left / hold_duration)
+		hold_progress_updated.emit(progress)
+		
+		# Verificar movimento
+		if global_position.distance_to(initial_position) > max_movement_distance:
+			_cancel_hold()
 
 func vertical_move(delta: float):
 	
@@ -41,13 +108,13 @@ func vertical_move(delta: float):
 		_on_floor = false
 		velocity += (get_gravity() * 1.5 ) * delta
 
-	if Input.is_action_just_pressed("pular") and is_on_floor() and !is_rolling:
+	if Input.is_action_just_pressed("pular") and is_on_floor() and !is_rolling and !Input.is_action_pressed("interagir"):
 		velocity.y = JUMP_VELOCITY
 
 func horizontal_move():
 	var direction := Input.get_axis("a", "d")
 	
-	if direction:
+	if direction and !Input.is_action_pressed("interagir"):
 		if !Input.is_action_pressed("correr"):
 			is_running = false
 			velocity.x = direction * SPEED / 2
@@ -59,9 +126,6 @@ func horizontal_move():
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if audio_effect.playing:
 			audio_effect.stop()
-			
-	
-
 
 func _on_texture_frame_changed() -> void:
 	match texture.animation:

@@ -9,6 +9,10 @@ var _is_on_action: bool = false
 func animate(_velocity: Vector2):
 	_verify_direction(_velocity.x)
 	
+	if Input.is_action_pressed("interagir") and _character.is_on_floor() and !_velocity:
+		play("taca_rancor")
+		return
+	
 	if _is_on_action:
 		return
 	if _character.is_dead:
@@ -16,11 +20,11 @@ func animate(_velocity: Vector2):
 		play("death")
 		return
 	
-	if not _velocity:
+	if not _velocity and !Input.is_action_pressed("interagir") and _character.is_on_floor():
 		play("idle")
 		return
 		
-	if _velocity.y:
+	if _velocity.y and !_character.is_on_floor():
 		if sign(_velocity.y) == -1:
 			play("jump")
 		if sign(_velocity.y) == 0:
@@ -30,7 +34,7 @@ func animate(_velocity: Vector2):
 		
 		return
 		
-	if _velocity.x:
+	if _velocity.x and !Input.is_action_pressed("interagir") and _character.is_on_floor():
 		if _character.is_running:
 			play("run")
 		else:

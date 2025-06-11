@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var direction: int = 1 
 
 # Configurações de arremesso
-@export var throw_range: float = 300.0
+@export var throw_range: float = 360.0
 @export var throw_cooldown: float = 2.1
 @export var projectiles_scenes = [
 	preload("res://scenes/enemies/projetil/faca.tscn"),
@@ -73,9 +73,9 @@ func patrol_movement():
 	velocity.x = direction * speed
 	
 	# Verifica se há uma parede ou buraco à frente
-	if is_on_wall():
-		direction *= -1
-		flip_sprite()
+	#if is_on_wall():
+		#direction *= -1
+		#flip_sprite()
 
 func flip_sprite():
 	# Vira o sprite baseado na direção
@@ -145,3 +145,10 @@ func _on_throw_timer_timeout():
 func _on_timer_andar_timeout() -> void:
 	andando = true
 	atirar = true
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print(body.name)
+	if body.name == "sikiana" or body.name == "Area2D":
+		direction *= -1
+		flip_sprite()

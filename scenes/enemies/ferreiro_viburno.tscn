@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://35emfprutep7"]
+[gd_scene load_steps=26 format=3 uid="uid://35emfprutep7"]
 
 [ext_resource type="Texture2D" uid="uid://b0od8bs2a1q5c" path="res://assets/sprites/Ferreiro_Viburno/Arremessando_Ferreiro/Ferreiro_arremessar-Sheet.png" id="1_ebbvm"]
 [ext_resource type="Script" uid="uid://cal7843x3exsa" path="res://scripts/enemies/ferreiro_viburno.gd" id="1_lqfp5"]
@@ -150,6 +150,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqfp5"]
+size = Vector2(33, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2mpb"]
 size = Vector2(20, 52)
 
 [node name="FerreiroViburno" type="CharacterBody2D" groups=["Inimigos"]]
@@ -183,9 +186,16 @@ position = Vector2(-7, -23)
 wait_time = 1.2
 one_shot = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 13)
+shape = SubResource("RectangleShape2D_lqfp5")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 13)
-shape = SubResource("RectangleShape2D_lqfp5")
+shape = SubResource("RectangleShape2D_w2mpb")
 
 [connection signal="timeout" from="Timer_andar" to="." method="_on_timer_andar_timeout"]
 [connection signal="timeout" from="Timer_tiro_delay" to="." method="_on_timer_tiro_delay_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
