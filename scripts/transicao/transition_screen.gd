@@ -19,28 +19,33 @@ func fade_in() -> void:
 
 func cap01() -> void:
 	scene_path = Global.current_scene_path
-	is_skippable = true
+	is_skippable = false
 	animation.play("cap01")
+	Music.stop()
 
 func cap02() -> void:
 	scene_path = Global.current_scene_path
-	is_skippable = true
+	is_skippable = false
 	animation.play("cap02")
+	Music.stop()
 	
 func cap03() -> void:
 	scene_path = Global.current_scene_path
-	is_skippable = true
+	is_skippable = false
 	animation.play("cap03")
+	Music.stop()
 
 func cap04() -> void:
 	scene_path = Global.current_scene_path
-	is_skippable = true
+	is_skippable = false
 	animation.play("cap04")
+	Music.stop()
 
 func fade() -> void:
 	scene_path = Global.current_scene_path
 	is_skippable = false
 	animation.play("fade_in2")
+	Music.stop()
 
 # MUDANÇA: A função agora aceita o nome da animação como um parâmetro.
 func _end_chapter_animation(anim_name: String) -> void:
@@ -73,6 +78,7 @@ func _on_animation_finished(anim_name: String) -> void:
 			get_tree().change_scene_to_file(scene_path)
 			animation.play("fade")
 		"cap01", "cap02", "cap03", "cap04":
-			_end_chapter_animation(anim_name)
+			get_tree().change_scene_to_file(scene_path)
+			animation.play("fade_out")
 		"fade_in2":
 			animation.play("fade_out")

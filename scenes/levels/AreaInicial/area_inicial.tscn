@@ -319,6 +319,13 @@ position = Vector2(346, 213)
 sprite_frames = SubResource("SpriteFrames_v5vns")
 autoplay = "default"
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Item"]
+position = Vector2(363, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item/StaticBody2D"]
+position = Vector2(60, 118)
+shape = SubResource("RectangleShape2D_aq8lk")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Item" to="." method="_on_item_body_entered"]
 [connection signal="body_exited" from="Item" to="." method="_on_item_body_exited"]

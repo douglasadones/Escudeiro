@@ -14,7 +14,7 @@ const HOLD_TO_INTERACT_DURATION: float = 1.0
 @onready var nevoa04: Node2D = $Labirinto/Nevoa04
 @onready var nevoa05: Node2D = $Labirinto/Nevoa05
 @onready var nevoa_3_5: Node2D = $Labirinto/Nevoa3_5
-@onready var audio_morcego: AudioStreamPlayer2D = $Morcego3/audio_morcego
+@onready var audio_morcego: AudioStreamPlayer2D = $LevelDesign/Morcego3/audio_morcego
 @onready var morcego: CharacterBody2D = $Morcego
 # @onready var hold_indicator: TextureProgressBar = $HoldIndicator
 
