@@ -51,7 +51,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Interação com escada
 	if pode_interagir and Input.is_action_just_pressed("pular"):
-		Global.spawn_pos_escudeiro = Vector2(1000, 160)
+		Global.spawn_pos_escudeiro = Vector2(2200, 160)
 		Global.current_scene_path = "res://scenes/levels/Caverna/caverna.tscn"
 		transition_screen.fade_in()
 

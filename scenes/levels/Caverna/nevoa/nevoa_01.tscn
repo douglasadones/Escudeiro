@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dg18arxi4gisy"]
+[gd_scene load_steps=17 format=3 uid="uid://dg18arxi4gisy"]
 
 [ext_resource type="Script" uid="uid://bivpahch7fjkb" path="res://scripts/levels/caverna/nevoa_01.gd" id="1_al1u6"]
 [ext_resource type="Texture2D" uid="uid://b05k4mwq4hm02" path="res://assets/sprites/Caverna/Névoa/Plataforma_nevoa-Sheet.png" id="2_010cl"]
@@ -70,6 +70,9 @@ size = Vector2(233.25, 8.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8aki"]
 size = Vector2(233.25, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al1u6"]
+size = Vector2(107, 26)
 
 [node name="Nevoa01" type="Node2D"]
 script = ExtResource("1_al1u6")
@@ -306,3 +309,9 @@ shape = SubResource("RectangleShape2D_grfif")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Nevoa3/Nevoa11/StaticBody2D"]
 position = Vector2(10.625, -2.5)
 shape = SubResource("RectangleShape2D_w8aki")
+
+[node name="VibrarControle2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VibrarControle2"]
+position = Vector2(1103.5, 182)
+shape = SubResource("RectangleShape2D_al1u6")
