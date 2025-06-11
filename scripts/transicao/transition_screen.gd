@@ -51,6 +51,12 @@ func fade() -> void:
 	is_skippable = false
 	animation.play("fade_in2")
 	Music.stop()
+	
+func fadeFim() -> void:
+	scene_path = "res://scenes/menu/main_menu.tscn"
+	is_skippable = false
+	animation.play("fade_in2")
+	Music.stop()
 
 # MUDANÇA: A função agora aceita o nome da animação como um parâmetro.
 func _end_chapter_animation(anim_name: String) -> void:
@@ -87,5 +93,6 @@ func _on_animation_finished(anim_name: String) -> void:
 			animation.play("fade_out")
 		"Fim":
 			get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+			fadeFim()
 		"fade_in2":
 			animation.play("fade_out")
