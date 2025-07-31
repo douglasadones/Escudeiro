@@ -32,7 +32,7 @@ var dialogo_inicial: Dictionary = {
 }
 
 var item: Dictionary = {
-	0: {"title": "", "dialog": "Vc pegou a taca do rancor"}
+	0: {"title": "", "dialog": "Vc pegou a taça do rancor"}
 }
 
 var novo_escudeiro

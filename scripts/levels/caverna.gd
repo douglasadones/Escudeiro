@@ -66,9 +66,10 @@ func _ready() -> void:
 		Global.primeira_vez_caverna = false
 	else:
 		escudeiro.position = Global.spawn_pos_escudeiro
+		
+	Music.set_music("res://assets/OST/Cave/Cave theme loop.wav", "res://assets/OST/Cave/cave theme pause loop.wav")
 	
 	if Global.foi_pra_floresta:
-		Music.set_music("res://assets/OST/Cave/Cave theme loop.wav", "res://assets/OST/Cave/cave theme pause loop.wav")
 		Global.foi_pra_floresta = false
 		if escudeiro.has_node("Sprite2D"):
 			escudeiro.get_node("Sprite2D").flip_h = true

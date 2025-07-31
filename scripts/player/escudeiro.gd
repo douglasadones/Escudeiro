@@ -121,7 +121,7 @@ func horizontal_move():
 
 		else:
 			is_running = true
-			velocity.x = direction * SPEED*1.2
+			velocity.x = direction * SPEED * 1.2
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if audio_effect.playing:
@@ -134,8 +134,8 @@ func _on_texture_frame_changed() -> void:
 				spawn_walk_effect()
 				play_step_sound(1.5)
 		"walk":
-			if texture.frame in [3, 8]:
-				play_step_sound(1.0)
+			if texture.frame in [0, 3, 8]:
+				play_step_sound(1.5)
 
 func spawn_walk_effect():
 	var offset: Vector2
